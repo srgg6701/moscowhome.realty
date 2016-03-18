@@ -6838,7 +6838,7 @@ button.close {
 }
 .cd-dropdown > span:after {
   content: '\00a0';
-  background-image: url('../assets/images/select_ar.png');
+  background-image: url('../images/select_ar.png');
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
