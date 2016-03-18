@@ -32,8 +32,10 @@
     .col-mobile-12{
         width: 100%;
     }
+    hr,
+    .hidden-mobile,
     .owl-controls,
-    .owl-wrapper-outer, #top-menu {
+    .owl-wrapper-outer{
         display: none !important;
     }
     #contacts{
