@@ -1,3 +1,6 @@
+/*  mediaqueries
+
+*/
 #test-box{
     background-color: yellow;
     bottom: 0;
@@ -19,9 +22,35 @@
 }
 
 @media (max-width:966px){
-    .owl-wrapper-outer{
+
+    .col-mobile-12{
+        width: 100%;
+    }
+
+    #contacts{
+        background-color: #F0F0F0;
+        height: 70px;
+        padding-top: 8px;
+        text-align: center;
+    }
+
+    #contacts .top-block_info-1{
+        color: #b23537;
+        font-size: 26.5px;
+        text-decoration: underline;
+    }
+    #contacts .top-block_info-2{
+        color: #333;
+        font-size: 12px;
+    }
+
+    #hr-separator-1{
+        visibility: hidden;
+    }
+
+    .owl-wrapper-outer,
+    #top-menu {
         display: none;
     }
 
-    /*.row.search-block*/
 }

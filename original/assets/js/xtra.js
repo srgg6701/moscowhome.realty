@@ -25,15 +25,20 @@ window.onload=function(){
 };
 
 function applyResizeChanges(jQuery){
-    var found=jQuery('#found');
+    var found=jQuery('#found'),
+        topSlider=jQuery('#top-slider');
     (function($){
         console.log('$', $);
         window.applyResizeChanges = function(){
             var iw=window.innerWidth, place;
+
             $('#test-box').html(iw);
             console.log({ iw: iw, place: place });
+
             place=(iw>=967)? 'after':'before';
             $('#search-box')[place](found);
+
+            $('#contacts').before()
         }
     }(jQuery));
 }
