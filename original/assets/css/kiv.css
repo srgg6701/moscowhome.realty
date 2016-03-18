@@ -7033,12 +7033,12 @@ button.close {
   background: #fff;
   color: #fff;
 }
-/*body {
+body {
   min-width: 970px;
-}*/
-/*.container {
+}
+.container {
   min-width: 970px !important;
-}*/
+}
 .paddingleft {
   padding-left: 55px;
 }
