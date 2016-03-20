@@ -136,6 +136,32 @@
     #logo-block{
         float: none;
     }
+    #search-box{
+        padding-top:12px;
+    }
+    #search-box 
+        div:first-child{
+        display: block;
+        float: none;
+        height: auto;
+        margin: auto;
+    }
+    #search-box 
+        .search-block_text::after{
+        color:#999;
+        content:"Поиск объектов";
+        display:block;
+        font-family: Roboto;
+        font-size:12px;
+        margin-left: -39px;
+        margin-top: 8px;
+        text-align:center;
+        text-transform:none;
+    }
+    #search-box div:last-child{
+        display: block;
+        float: none;
+    }    
     #top-block{
         position: relative;
     }
