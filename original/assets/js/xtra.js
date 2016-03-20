@@ -30,19 +30,23 @@ window.onload=function(){
 
 function applyResizeChanges(jQuery){
     var found=jQuery('#found'),
-        topSlider=jQuery('#top-slider'),
+        //topSlider=jQuery('#top-slider'),
         searchBox=jQuery('#search-box'),
+        //contactsBox=jQuery('#contacts'),
         $=jQuery;
     window.applyResizeChanges = function(){
         var windowWidth=window.innerWidth, place;
+        console.info('applyResizeChanges resize, windowWidth', windowWidth);
 
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
 
         if(windowWidth>=967) {
+            console.info('applyResizeChanges >=967, windowWidth: %c'+windowWidth, 'color:violet');
             searchBox.after(found);
+            //contactsBox.before($('#logo-block'));
         }else{
             searchBox.before(found);
-            $('#contacts').before(topSlider);
+            //contactsBox.before($('#top-slider'));
         }
     };
     applyResizeChanges();

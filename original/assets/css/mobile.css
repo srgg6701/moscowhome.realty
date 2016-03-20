@@ -161,7 +161,10 @@
     #search-box div:last-child{
         display: block;
         float: none;
-    }    
+    }  
+    #search-box-input{
+        margin-top:12px;
+    }  
     #top-block{
         position: relative;
     }
