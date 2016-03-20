@@ -562,10 +562,10 @@
     </div>
 </div>
 
-<div class="contacts-block">
+<div class="contacts-block hidden-mobile">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+            <div class="col-md-12 col-lg-12 center">
                <div class="module-title nofloat contacts-block-title">Наши контакты</div>
             </div>
         </div>
@@ -706,10 +706,7 @@
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH1xmBKAuW8tHc0BkYZOIHku_txc-UrI&callback=initialize">
 </script>
-
-
 <!--<script type="text/javascript">-->
-
     <!--var map;-->
     <!--function initMap() {-->
         <!--map = new google.maps.Map(document.getElementById('map'), {-->
@@ -717,19 +714,16 @@
             <!--zoom: 8-->
         <!--});-->
     <!--}-->
-
 <!--</script>-->
 <!--<script async defer-->
         <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfJUy_f5F8CUnh7SZgTppBQzucQ_c83ck&callback=initMap">-->
 <!--</script>-->
-
-
 <div class="contacts-map">
     <div class="feedbackblock">
         <form id="feedback" action="">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-7 col-sm-offset-7 col-md-offset-7 col-lg-offset-7 ">
+                    <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4 col-xs-offset-1 col-sm-offset-1 col-md-offset-7 col-lg-offset-7">
                         <div class="feedback-block_form">
                             <div class="feedback-text">Заполните форму и мы свяжемся с вами в ближайшее время</div>
                             <input type="text" name="fname" value="" placeholder="Имя">
@@ -749,29 +743,37 @@
 
 </div>
 
-
-
+<div class="contacts-block hidden-desktop">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 center">
+                <div class="module-title nofloat contacts-block-title">Наши контакты</div>
+                <div id="our-location">Одинцовский район, 11 км Рублево-Успенского шоссе, д. Усово, НПИЗ "Счастливый Дом", дом 1, Московская область</div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="footer-block">
     <div class="container">
         <div class="row top-block">
-            <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+          <div class="col-md-offset-1 col-lg-offset-1 col-md-4 col-lg-4 ">
                 <a href=""><img src="assets/images/logo.png"></a>
             </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 padding0">
+            <div id="contacts-bottom" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 padding0">
                 <div class="top-block_info-1">+7 (495) 133 33 88</div>
                 <div class="top-block_info-2">Ежедневно с 9:00 до 22:00</div>
 
             </div>
 
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 top-block_menu-block paddingright0">
+            <div class="hidden-mobile col-md-4 col-lg-4 top-block_menu-block paddingright0">
                 <div class="top-block_menu">
                     <ul>
                         <li><a href="">Городская</a></li>
                         <li><a href="">Загородная</a></li>
                         <li><a href="" class="marginright0">Коммерческая</a></li>
                     </ul>
-                </div>
-            </div>
+              </div>
+          </div>
         </div>
     </div>
 </div>

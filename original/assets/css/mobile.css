@@ -11,7 +11,7 @@
     right: 0;
     text-align: right;
     transition: all 0.2s ease;
-    width: 200px;
+    max-width: 200px;
     z-index: 10;
 }
 #test-box:hover{
@@ -20,24 +20,38 @@
 .transparent{
     opacity: 0;
 }
-
-@media (max-width: 970px){
+@media (min-width:970px){
+    .hidden-desktop{
+        display: none;
+    }
+}
+@media (max-width: 969px){
 
     body {
         min-width: inherit;
     }
+	.contacts-block{
+		margin-bottom:120px;
+	}
     .container {
         min-width: inherit !important;
     }
     .col-mobile-12{
         width: 100%;
     }
-
+    .feedbackblock{
+        margin-top: -19px;
+        margin-bottom: -7px;
+    }
+    .footer-block{
+    	padding-bottom: 17px;
+    	padding-top: 8px;
+    	text-align:center;
+    }
     .search-block-results_item{
         margin-bottom: 8px;
         position:relative;
     }
-
     .search-block-results 
         .search-block-results_item 
             .search-block-results-title{
@@ -64,10 +78,8 @@
         .search-block-results_item 
             .search-block-results-title
                 .search-block-results-title2{
-        /* background-color: black; */
         margin-left: 10px;
     }
-
     .search-block-results_item
         a.btn-main {
         display:table-cell;
@@ -77,32 +89,29 @@
         line-height: 16px;
         vertical-align:middle;
     }
-
     .search-block-results-btn{
         bottom: 21px;
         padding-top: 0 !important;
         position: absolute;
         left: 98px;
     }
-
     .search-block-results_item
         a.btn-main:first-child {
             border: none;
             margin-right:5px;
             width:90px;
     }
-
     .search-block-results_item
         a.btn-main:last-child {
             background-color: transparent;
             color: white;
             width:121px;
     }
-
     hr,
     .hidden-mobile,
     .owl-controls,
-    .owl-wrapper-outer{
+    .owl-wrapper-outer,
+    #map{
         display: none !important;
     }
     #contacts{
@@ -127,6 +136,26 @@
         color: #333;
         font-size: 12px;
     }
+	#contacts-bottom{
+		margin: auto;
+		top: -80px;
+		white-space: nowrap;
+		position: absolute;
+	}
+	#contacts-bottom>div{
+		display:table;
+		margin-left:auto;
+		margin-right:auto;
+		padding-left:0;
+	}
+	#contacts-bottom
+	   .top-block_info-1{
+		background-image: none;
+	}
+	#contacts-bottom
+	   .top-block_info-2{		
+        margin-top:-40px;
+	}
     #found{
         margin-top: 178px;
     }
@@ -135,6 +164,10 @@
     }
     #logo-block{
         float: none;
+    }
+    #our-location{
+    	max-width: 49%;
+    	margin: auto;
     }
     #search-box{
         padding-top:12px;

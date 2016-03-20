@@ -29,13 +29,13 @@ window.onload=function(){
 };
 
 function applyResizeChanges(jQuery){
-    var found=jQuery('#found'),
-        //topSlider=jQuery('#top-slider'),
-        searchBox=jQuery('#search-box'),
-        //contactsBox=jQuery('#contacts'),
-        $=jQuery;
+    var $=jQuery,
+        //contactsBlock=$('.contacts-block').eq(0),
+        found=$('#found'),
+        searchBox=$('#search-box');
     window.applyResizeChanges = function(){
         var windowWidth=window.innerWidth, place;
+
         console.info('applyResizeChanges resize, windowWidth', windowWidth);
 
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
@@ -43,11 +43,13 @@ function applyResizeChanges(jQuery){
         if(windowWidth>=967) {
             console.info('applyResizeChanges >=967, windowWidth: %c'+windowWidth, 'color:violet');
             searchBox.after(found);
-            //contactsBox.before($('#logo-block'));
+            //prevBlock=$('#investor-block2');
         }else{
             searchBox.before(found);
-            //contactsBox.before($('#top-slider'));
+            //prevBlock=$('.contacts-map')[0];
         }
+        //console.log({ contactBlock:contactsBlock, prevBlock:prevBlock });
+        //contactsBlock.after(prevBlock);
     };
     applyResizeChanges();
 }
