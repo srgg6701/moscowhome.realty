@@ -45,6 +45,16 @@
         width: 100%;
     }
     #body-object
+        .btn-object-close{
+        margin: auto;
+        margin-top: 21px;
+    }
+    #body-object
+        .description-block{
+        text-align: center;
+    }
+
+    #body-object
         .description-block-text-shadow{
         margin: auto -15px;
     }
@@ -68,12 +78,103 @@
     .menu-fixed{
         top:0;
     }
-    #body-object #img-slide-container{
+    #body-object
+        #bottom-block{
+        margin-bottom: -25px;
+    }
+    #body-object
+        .form-object-block-inner
+            input,
+    #body-object
+        .form-object-block-inner
+            textarea{
+        padding: 7px;
+        margin-bottom: 15px;
+    }
+
+    #body-object
+        .form-object-block-inner
+            button{
+margin-top: 8px;
+margin-bottom: 20px;
+line-height: 3px;
+}
+
+    #body-object
+        #img-slide-container{
         padding: 0;
     }
     #body-object
         .owl-item{
     	width:inherit !important;
+    }
+    #body-object
+        .object-block-info{
+        margin-top: -16px;
+    }
+
+    #body-object
+        .object-block-info >div >div:nth-child(2){
+        margin-top: -26px;
+    }
+    #body-object
+        .object-photo-block-title{
+        text-align: center;
+    }
+
+    #body-object
+        .features-block{
+        background-color: #f5f5f5;
+        /* background-color: aqua; */
+        display: block;
+        margin-top: -34px;
+        padding: 20px;
+        text-align: center;
+        padding-bottom: 0 !important;
+    }
+    #body-object
+        .features-block
+            ul{
+        display: table;
+        margin: auto;
+        padding: 0;
+    }
+
+    #body-object
+        .features-block
+            li{
+        list-style-image: none;
+        list-style-type: none;
+        margin-bottom: 28px;
+        margin-top: -15px;
+    }
+
+    #body-object
+        .form-object-block{
+        padding-top: 0;
+    }
+
+    #body-object
+        .features-block
+            li span{
+        padding-left: 16px;
+        background: url('../images/features.png') no-repeat;
+        background-position: 0 2px;
+    }
+
+    .object-info-title{
+        color: red;
+        font-size: 18px !important;
+    }
+    .object-info-pretext{
+        font-size: 12px;
+        margin-top: -11px;
+    }
+    .object-info-text{
+        color: #b23537;
+        margin-bottom: 21px;
+        margin-top: -6px;
+        font-size: 12px !important;
     }
     #body-object
         .owl-item
