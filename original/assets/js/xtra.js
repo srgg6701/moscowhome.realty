@@ -30,11 +30,11 @@ window.onload=function(){
 
 function applyResizeChanges(jQuery){
     var $=jQuery,
-        //contactsBlock=$('.contacts-block').eq(0),
         found=$('#found'),
         searchBox=$('#search-box');
     window.applyResizeChanges = function(){
-        var windowWidth=window.innerWidth, place;
+        var windowWidth=window.innerWidth, place,
+            sliderBlockDescrObj=$('.slider-block-descr-object').eq(0);
 
         console.info('applyResizeChanges resize, windowWidth', windowWidth);
 
@@ -43,13 +43,11 @@ function applyResizeChanges(jQuery){
         if(windowWidth>=967) {
             console.info('applyResizeChanges >=967, windowWidth: %c'+windowWidth, 'color:violet');
             searchBox.after(found);
-            //prevBlock=$('#investor-block2');
+            sliderBlockDescrObj.insertAfter($('.breadcrumbs-block').eq(0));
         }else{
             searchBox.before(found);
-            //prevBlock=$('.contacts-map')[0];
+            sliderBlockDescrObj.insertAfter($('.owl-wrapper-outer').eq(0));
         }
-        //console.log({ contactBlock:contactsBlock, prevBlock:prevBlock });
-        //contactsBlock.after(prevBlock);
     };
     applyResizeChanges();
 }
