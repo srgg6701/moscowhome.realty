@@ -41,7 +41,7 @@ function applyResizeChanges(jQuery){
 
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
 
-        if(windowWidth>=967) {
+        if(windowWidth>=970) {
             console.info('applyResizeChanges >=967, windowWidth: %c'+windowWidth, 'color:violet');
             searchBox.after(found);
             sliderBlockDescrObj.insertAfter($('.breadcrumbs-block').eq(0));
