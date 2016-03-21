@@ -44,6 +44,10 @@
     .col-mobile-12{
         width: 100%;
     }
+    #body-object
+        .description-block-text-shadow{
+        margin: auto -15px;
+    }
     .feedbackblock{
         margin-top: -19px;
         margin-bottom: -7px;
@@ -215,10 +219,18 @@
         margin-top: -35px;
         top: 1px;
  	}
+    #body-object
+        #contacts-bottom
+            {
+        display: none;
+    }
  	#feedback-form-container{
  		padding-left:0;
  		padding-right:0;
  	}
+    #form-application-block{
+        padding: 0;
+    }
     #found{
         margin-top: 178px;
     }
