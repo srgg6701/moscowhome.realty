@@ -12,7 +12,7 @@
     text-align: right;
     transition: all 0.2s ease;
     max-width: 200px;
-    z-index: 10;
+    z-index: 1000;
 }
 #test-box:hover{
     opacity: 1;
@@ -43,6 +43,10 @@
     .feedbackblock{
         margin-top: -19px;
         margin-bottom: -7px;
+    }
+    .feedback-text{
+    	text-align:center;
+    	margin-bottom: 18px !important;
     }
     .footer-block{
     	padding-bottom: 17px;
@@ -215,8 +219,10 @@ font-size: 18px;
     #search-box div:last-child{
         display: block;
         float: none;
-        /* width: 70px; */
     }  
+    #search-box .search-block_text{
+    	width:100px;
+    }
     #search-box-input{
         margin-top:12px;
     }
