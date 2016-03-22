@@ -31,25 +31,31 @@ window.onload=function(){
 function applyResizeChanges(jQuery){
     var $=jQuery,
         found=$('#found'),
+        objectDescribeWrapper = $('#object-descr-textblock-wrapper'),
+        sliderBlockDescrObj=$('#slider-block-descr-object'),
         searchBox=$('#search-box');
     window.applyResizeChanges = function(){
         var windowWidth=window.innerWidth, place,
-            sliderBlockDescrObj=$('.slider-block-descr-object').eq(0),
-            objPhotoBlock=$('.object-photo-block').eq(0);
+            objPhotoBlock=$('.object-photo-block').eq(0),
+            desktop = $(objectDescribeWrapper).find(sliderBlockDescrObj).length;
 
-        console.info('applyResizeChanges resize, windowWidth', windowWidth);
+        //console.info('applyResizeChanges resize, windowWidth', windowWidth);
 
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
 
         if(windowWidth>=970) {
-            console.info('applyResizeChanges >=970, windowWidth: %c'+windowWidth, 'color:violet');
-            searchBox.after(found);
-            sliderBlockDescrObj.insertAfter($('.breadcrumbs-block').eq(0));
-            objPhotoBlock.insertAfter($('.object-tags-block').eq(0));
+            if(!desktop){
+                //console.info('applyResizeChanges >=970, windowWidth: %c'+windowWidth, 'color:violet', {'sliderBlockDescrObj':sliderBlockDescrObj, objectDescribeWrapper:objectDescribeWrapper});
+                searchBox.after(found);
+                sliderBlockDescrObj.appendTo(objectDescribeWrapper);
+                objPhotoBlock.insertAfter($('.object-tags-block').eq(0));
+            }
         }else{
-            searchBox.before(found);
-            sliderBlockDescrObj.insertAfter($('.owl-wrapper-outer').eq(0));
-            objPhotoBlock.insertBefore($('.form-object-block').eq(0));
+            if(desktop){
+                searchBox.before(found);
+                sliderBlockDescrObj.insertAfter($('.owl-wrapper-outer').eq(0));
+                objPhotoBlock.insertBefore($('.form-object-block').eq(0));
+            }
         }
     };
     applyResizeChanges();

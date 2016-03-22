@@ -350,8 +350,8 @@
     #form-application-block{
         padding: 0;
     }
-    #found{
-        margin-top: 178px;
+    #body-index #found{
+        margin-top: 63px;
     }
     #hr-separator-1{
         display: none;
