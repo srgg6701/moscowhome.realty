@@ -77,10 +77,12 @@
     	padding-top: 8px;
     	text-align:center;
     }
-    .footer-block img{    	
-		transform: scale(0.8);    	
+    .footer-block img,
+    #logo-block img{
 		margin-top: -7px;
-    }
+		height: 37.6px;
+		width: 253.6px;
+		}
     .menu-fixed{
         top:0;
     }
