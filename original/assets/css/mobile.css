@@ -34,6 +34,10 @@
     .blockinfo hr{
         display: block !important;
     }
+    .btn-object-open{
+    	margin-left: auto;
+    	margin-right: auto;
+    }
 	.contacts-block{
 		margin-bottom:120px;
 		padding-top: 10px;
@@ -53,7 +57,9 @@
         .description-block{
         text-align: center;
     }
-
+	.description-block-text-inner{
+		text-align:left;
+	}
     #body-object
         .description-block-text-shadow{
         margin: auto -15px;
@@ -95,10 +101,14 @@
     #body-object
         .form-object-block-inner
             button{
-margin-top: 8px;
-margin-bottom: 20px;
-line-height: 3px;
-}
+		margin-top: 8px;
+		margin-bottom: 20px;
+		line-height: 3px;
+	}
+
+	.form-object-block-inner-title{
+		text-align:center;
+	}
 
     #body-object
         #img-slide-container{
@@ -202,6 +212,9 @@
 	.pricevalue-block-box > div.active{
 		outline:solid 1px red;
 	}
+	.pricevalue-block-box i{
+		width: 100%;
+	}
     .search-block-results_item{
         margin-bottom: 8px;
         position:relative;
@@ -266,12 +279,15 @@
     .wbr.cnt-1{
 
     }
-    hr,
+    hr:not(.separator),
     .hidden-mobile,
     #body-index .owl-controls,
     #body-index .owl-wrapper-outer,
     #body-index #map{
         display: none !important;
+    }
+    hr.separator{
+    	margin: -22px auto 19px;
     }
     #contacts{
         background-color: #F0F0F0;
