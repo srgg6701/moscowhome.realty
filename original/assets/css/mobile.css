@@ -418,7 +418,10 @@ font-size: 18px;
 			.slider-block-descr-object{
 		background-color: #2a2a2a;
 		height: inherit !important;
-    }
+		max-width: 750px;
+		left: 50%;
+		transform: translateX(-50%);
+		}
     #body-object
         #top-slider .slider-block-descr-object .slider-block-descr-textblock-object {
         margin: auto;
