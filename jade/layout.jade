@@ -1,0 +1,79 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		// The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+		title MoscowHomeRealty
+		// Bootstrap
+		link(href='assets/css/kiv.css', rel='stylesheet')
+		link(href='assets/css/styles.min.css', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,400italic,300&subset=latin,cyrillic-ext,cyrillic', rel='stylesheet', type='text/css')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='assets/css/mobile.css')
+		// HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+		// WARNING: Respond.js doesn't work if you view the page via file://
+		//if lt IE 9
+			script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+			script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+		script(src='assets/js/scripts.min.js')
+		script(src='assets/js/kiv.js')
+		script(src='assets/js/xtra.js')
+		script(src='assets/js/libs/jquery-2.2.2.min.js')
+	block vars
+	body(id="body-#{bodyindex}")
+		#test-box
+		.menu-fixed
+			.container
+				#top-block.row.top-block
+					#logo-block.col-md-offset-1.col-lg-offset-1.col-md-4.col-lg-4
+						a(href='')
+							img(src='assets/images/logo.png')
+					#contacts.col-mobile-12.col-md-2.col-lg-2.padding0
+						.top-block_info-1 +7 (495) 133 33 88
+						.top-block_info-2 Ежедневно с 9:00 до 22:00
+					#top-menu-box.col-md-4.col-lg-4.top-block_menu-block
+						.top-block_menu.hidden-mobile
+							ul
+								li
+									a(href='') Городская
+								li
+									a(href='') Загородная
+								li
+									a(href='') Коммерческая
+						#top-block-menu.top-block_menu-hide-button
+							i.fa.fa-bars
+							.row
+								.top-block_menu-hide
+									.top-block_menu-hide-margin
+									.top-block_menu-hide-ul
+										ul
+											li
+												a(href='') Поселки
+											li
+												a(href='') Инвесторам
+											li
+												a(href='news.html') Новости
+											li
+												a(href='articles.html') Статьи
+		block contents
+		.footer-block
+			.container
+				.row.top-block
+					.col-md-offset-1.col-lg-offset-1.col-md-4.col-lg-4
+						a(href='')
+							img(src='assets/images/logo.png')
+					#contacts-bottom.col-xs-12.col-sm-12.col-md-2.col-lg-2.padding0
+						.top-block_info-1 +7 (495) 133 33 88
+						.top-block_info-2 Ежедневно с 9:00 до 22:00
+					.hidden-mobile.col-md-4.col-lg-4.top-block_menu-block.paddingright0
+						.top-block_menu
+							ul
+								li
+									a(href='') Городская
+								li
+									a(href='') Загородная
+								li
+									a.marginright0(href='') Коммерческая
+		script(type='text/javascript', src='assets/js/retina.js')

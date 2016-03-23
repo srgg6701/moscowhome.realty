@@ -1,7 +1,471 @@
-doctype
-html
-	head
-	body
-		div="Hello"
-			p Me here?!!!!
-		footer
+extends ./layout
+block vars
+	-var bodyindex="index"
+block contents
+	hr#hr-separator-1.top-hr
+	#top-slider.owl-carousel
+		div
+			.slider-descr-abs
+				.container
+					.row.slider-block-descr-main
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							.slider-block-descr
+								.slider-block-descr-textblock
+									.slider-block-descr-textblock-m
+										.col-xs-1.col-sm-1.col-md-1.col-lg-1.discount-block
+											img(src='assets/images/icon-discount.png')
+										.col-xs-4.col-sm-4.col-md-4.col-lg-4
+											.slider-block-descr-textblock-info
+												| Дом под ключ с мебелью
+											.slider-block-descr-textblock-info2
+												a(href='') Любушкин Хутор
+												a(href='') Рублево-Успенское
+											.slider-block-descr-textblock-info3
+												.home-suare 500 кв. м.
+												.land-square 51 сотка
+												.distance 15 км
+										.col-xs-3.col-sm-3.col-md-3.col-lg-3.slider-block-second-mod
+											| Дом оборудован системой умный дом. Полностью меблирован мебелью известных итальянских марок. Интернет, кабельное ТВ. На участке ландшафтный дизайн с водопадом
+										.col-xs-4.col-sm-4.col-md-4.col-lg-4.slider-block-third-mod
+											.small-block
+												s 52 090 000 руб
+											.big-block
+												span.big-block-1 49 900 000
+												span.big-block-2  руб
+											.after-btn
+												a.module-button.inverse(href='') Посмотреть дом
+								.slider-block-opacity
+			.slider-down
+				img(src='assets/images/testimage/slider-down.png')
+			.slider-up
+				.container
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							img(src='assets/images/testimage/slider-up.png')
+			// <img src="assets/images/testimage/slider.png">
+		div
+			.slider-descr-abs
+				.container
+					.row.slider-block-descr-main
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							.slider-block-descr
+								.slider-block-descr-textblock
+									.slider-block-descr-textblock-m
+										.col-xs-1.col-sm-1.col-md-1.col-lg-1.discount-block
+											img(src='assets/images/icon-discount.png')
+										.col-xs-4.col-sm-4.col-md-4.col-lg-4
+											.slider-block-descr-textblock-info
+												| Дом под ключ с мебелью
+											.slider-block-descr-textblock-info2
+												a(href='') Любушкин Хутор
+												a(href='') Рублево-Успенское
+											.slider-block-descr-textblock-info3
+												.home-suare 500 кв. м.
+												.land-square 51 сотка
+												.distance 15 км
+										.col-xs-3.col-sm-3.col-md-3.col-lg-3.slider-block-second-mod
+											| Дом оборудован системой умный дом. Полностью меблирован мебелью известных итальянских марок. Интернет, кабельное ТВ. На участке ландшафтный дизайн с водопадом
+										.col-xs-4.col-sm-4.col-md-4.col-lg-4.slider-block-third-mod
+											.small-block
+												s 52 090 000 руб
+											.big-block
+												span.big-block-1 49 900 000
+												span.big-block-2  руб
+											.after-btn
+												a.module-button.inverse(href='') Посмотреть дом
+								.slider-block-opacity
+			.slider-down
+				img(src='assets/images/testimage/slider-down.png')
+			.slider-up
+				.container
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							img(src='assets/images/testimage/slider-up.png')
+			// <img src="assets/images/testimage/slider.png">
+	.container
+		#search-box.row.search-block
+			.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-3.col-sm-3.col-md-2.col-lg-1.search-block_text-block
+				.search-block_text Найти
+			#search-box-input.col-xs-10.col-sm-10.col-md-8.col-lg-9.col-sm-offset-1.col-xs-offset-1
+				input(type='text', name='search', placeholder='Название, поселок или населенный пункт', value='')
+		#found.row.search-block-results
+			.col-md-offset-1.col-lg-offset-1.col-xs-12.col-sm-12.col-md-10.col-lg-10
+				.row
+					.col-md-4.col-lg-4.search-block-results_item
+						.search-block-results-img-block
+							img(src='assets/images/testimage/img1.jpg')
+						.search-block-results-title
+							.search-block-results-title1
+								img(src='assets/images/icon-city-realty.png')
+							.search-block-results-title2
+								| Городская
+								br
+								|  недвижимость
+						.search-block-results-btn
+							a.btn-main.btn-buy(href='') Купить
+							a.btn-main(href='') Арендовать
+					.col-md-4.col-lg-4.search-block-results_item
+						.search-block-results-img-block
+							img(src='assets/images/testimage/img2.jpg')
+						.search-block-results-title
+							.search-block-results-title1
+								img(src='assets/images/icon-village-realty.png')
+							.search-block-results-title2
+								| Загородная
+								br
+								|  недвижимость
+						.search-block-results-btn
+							a.btn-main.btn-buy(href='') Купить
+							a.btn-main(href='') Арендовать
+					.col-md-4.col-lg-4.search-block-results_item
+						.search-block-results-img-block
+							img(src='assets/images/testimage/img3.jpg')
+						.search-block-results-title
+							.search-block-results-title1
+								img(src='assets/images/icon-commertial-realty.png')
+							.search-block-results-title2
+								| Коммерческая
+								br
+								|  недвижимость
+						.search-block-results-btn
+							a.btn-main.btn-buy(href='') Купить
+							a.btn-main(href='') Арендовать
+	.elite-block.hidden-mobile
+		.container
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10.elite-block-inner
+					.elite-block-inner_text1 элитная недвижимость
+					.elite-block-inner_text2 moscowhome
+					.row
+						.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1
+							.elite-block-inner_text3
+								| Агентство элитной недвижимости Moscow Home Realty, является частью многопрофильного холдинга Moscow Home. С 2005 года компания специализируется на загородной недвижимости бизнес и элит класса Западного направления ближнего Подмосковья (Минское, Можайское, Рублево-Успенское и Новорижское шоссе).
+					// <div class="row">
+					// <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">
+					.row
+						.col-xs-4.col-sm-4.col-md-4.col-lg-4
+							.elite-block-inner_img
+								img(src='assets/images/icon-first.png')
+							.elite-block-inner_text4 20 лет на рынке
+							.elite-block-inner_text5 Полностью меблирован мебелью известных итальянских марок.
+						.col-xs-4.col-sm-4.col-md-4.col-lg-4
+							.elite-block-inner_img
+								img(src='assets/images/icon-second.png')
+							.elite-block-inner_text4 2 000 объектов
+							.elite-block-inner_text5 Никаких комиссий и дополнительных сборов!Бесплатный трансфер от метро.
+						.col-xs-4.col-sm-4.col-md-4.col-lg-4
+							.elite-block-inner_img
+								img(src='assets/images/icon-third.png')
+							.elite-block-inner_text4 10 00 клиентов
+							.elite-block-inner_text5 н системой умный дом. Полностью меблирован мебелью известных итальянских мар
+					// </div>
+					// </div>
+	.news-block.hidden-mobile
+		.container
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10.news-block-inner
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.module-item_blocktop
+							.module-title Новости
+							.module-button-block
+								a.module-button(href='') Все новости
+					.row
+						.col-xs-3.col-sm-3.col-md-3.col-lg-3.main-news-item
+							.news-close
+								i.fa.fa-times
+							a.modal-item_title(data-news='1', href='') Подмосковная «загородка»: «мультиформатность» набирает популярность
+							.modal-item_date.modal-item_date-margin 21.11.15
+							.news-introtext
+								| Подмосковная «загородка»: «мультиформатность» набирает популярность Подмосковная «загородка»: «мультиформатность» набирает популярность
+						.col-xs-3.col-sm-3.col-md-3.col-lg-3.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.main-news-item
+							.news-close
+								i.fa.fa-times
+							a.modal-item_title(data-news='2', href='')
+								| Приобретение квартиры на Рублевке является престижным, удобным и отличным капиталовложением
+							.modal-item_date.modal-item_date-margin 14.11.15
+							.news-introtext
+								| Подмосковная «загородка»: «мультиформатность» набирает популярность Подмосковная «загородка»: «мультиформатность» набирает популярность
+						.col-xs-3.col-sm-3.col-md-3.col-lg-3.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.main-news-item
+							.news-close
+								i.fa.fa-times
+							a.modal-item_title(data-news='3', href='') Поселок находится всегов 17-ти км от МКАДпо Рублево-Успенскому шоссе
+							.modal-item_date.modal-item_date-margin 11.11.15
+							.news-introtext
+								| Подмосковная «загородка»: «мультиформатность» набирает популярность Подмосковная «загородка»: «мультиформатность» набирает популярность
+		.news-introtext-box
+			.container
+				.row
+					.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10.news-block-inv
+						.news-item-inv(data-news='1')
+							h1 Особенности строительства загородных домов на Рублевке
+							img(src='assets/images/testimage/timage3.png')
+							|                     Благоприятнейшая экология, тишина, отсутствие суеты – вот главные плюсы элитных коттеджных поселков Подмосковья. На нынешний день, все больше горожан желают жить в загородных коттеджных поселках ближайшего Подмосковья. Возможность единения с природой, свежий воздух, отсутствие необходимости  ограничивать себя габаритами городской квартиры и спокойная, уютная жизнь вдали от нескончаемого шума загазованных московских улиц – вот, что может дать приобретение загородного коттеджа.
+						.news-item-inv(data-news='2')
+							| 222 Благоприятнейшая экология, тишина, отсутствие суеты – вот главные плюсы элитных коттеджных поселков Подмосковья. На нынешний день, все больше горожан желают жить в загородных коттеджных поселках ближайшего Подмосковья. Возможность единения с природой, свежий воздух, отсутствие необходимости  ограничивать себя габаритами городской квартиры и спокойная, уютная жизнь вдали от нескончаемого шума загазованных московских улиц – вот, что может дать приобретение загородного коттеджа.
+						.news-item-inv(data-news='3')
+							| 222 Благоприятнейшая экология, тишина, отсутствие суеты – вот главные плюсы элитных коттеджных поселков Подмосковья. На нынешний день, все больше горожан желают жить в загородных коттеджных поселках ближайшего Подмосковья. Возможность единения с природой, свежий воздух, отсутствие необходимости  ограничивать себя габаритами городской квартиры и спокойная, уютная жизнь вдали от нескончаемого шума загазованных московских улиц – вот, что может дать приобретение загородного коттеджа.
+		.container
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
+					.row
+						.col-xs-3.col-sm-3.col-md-3.col-lg-3.adding-title
+							| Еще новости:
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.adding-item.news-adding-item
+							.modal-item_date 21.11.15
+							.modal-item_title.modal-item_title-marginleft
+								a(href='') Дуплексы – «темная лошадка» рынка загородной недвижимости
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.adding-item.news-adding-item
+							.modal-item_date 12.11.15
+							.modal-item_title.modal-item_title-marginleft
+								a(href='')
+									| Подорожание стройматериалов снизило спрос на участки без подряда Подорожание стройматериалов снизило спрос на участки без подряда Подорожание стройматериалов снизило спрос на участки без подряда Подорожание стройматериалов снизило спрос на участки без подряда
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.adding-item.news-adding-item
+							.modal-item_date 14.10.15
+							.modal-item_title.modal-item_title-marginleft
+								a(href='') Хорошо отдохнуть в своих загородных домах хотят многие жители столицы
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.adding-item.news-adding-item
+							.modal-item_date 30.09.15
+							.modal-item_title.modal-item_title-marginleft
+								a(href='') В коттеджном поселке «Европа» действует акция для покупателей
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.adding-button
+							.module-button Подгрузить еще
+	hr.margin25
+	.article-block.hidden-mobile
+		.container
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10.article-block-inner
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.module-item_blocktop
+							.module-title Статьи
+							.module-button-block
+								a.module-button(href='') Все статьи
+					.row
+						.col-xs-6.col-sm-6.col-md-6.col-lg-6.article-item
+							.row
+								.col-xs-5.col-sm-5.col-md-5.col-lg-5.article-item_img
+									img(src='assets/images/testimage/art1.png')
+								.col-xs-7.col-sm-7.col-md-7.col-lg-7.article-item_text
+									.article-item_text-title
+										a(href='') Особенности строительства загородных домов на Рублевке
+									.article-item_text_descr
+										| Очень ответственное занятие – постройка дома, ведь жилье нужно строить на совесть.
+						.col-xs-6.col-sm-6.col-md-6.col-lg-6.article-item
+							.row
+								.col-xs-5.col-sm-5.col-md-5.col-lg-5.article-item_img
+									img(src='assets/images/testimage/art2.png')
+								.col-xs-7.col-sm-7.col-md-7.col-lg-7.article-item_text
+									.article-item_text-title
+										a(href='') Особенности строительства загородных домов на Рублевке
+									.article-item_text_descr
+										| Очень ответственное занятие – постройка дома, ведь жилье нужно строить на совесть.
+						.col-xs-6.col-sm-6.col-md-6.col-lg-6.article-item
+							.row
+								.col-xs-5.col-sm-5.col-md-5.col-lg-5.article-item_img
+									img(src='assets/images/testimage/art3.png')
+								.col-xs-7.col-sm-7.col-md-7.col-lg-7.article-item_text
+									.article-item_text-title
+										a(href='') Особенности строительства загородных домов на Рублевке
+									.article-item_text_descr
+										| Очень ответственное занятие – постройка дома, ведь жилье нужно строить на совесть.
+						.col-xs-6.col-sm-6.col-md-6.col-lg-6.article-item
+							.row
+								.col-xs-5.col-sm-5.col-md-5.col-lg-5.article-item_img
+									img(src='assets/images/testimage/art4.png')
+								.col-xs-7.col-sm-7.col-md-7.col-lg-7.article-item_text
+									.article-item_text-title
+										a(href='') Особенности строительства загородных домов на Рублевке
+									.article-item_text_descr
+										| Очень ответственное занятие – постройка дома, ведь жилье нужно строить на совесть.
+						.col-xs-6.col-sm-6.col-md-6.col-lg-6.article-item
+							.row
+								.col-xs-5.col-sm-5.col-md-5.col-lg-5.article-item_img
+									img(src='assets/images/testimage/art5.png')
+								.col-xs-7.col-sm-7.col-md-7.col-lg-7.article-item_text
+									.article-item_text-title
+										a(href='') Особенности строительства загородных домов на Рублевке
+									.article-item_text_descr
+										| Очень ответственное занятие – постройка дома, ведь жилье нужно строить на совесть.
+						.col-xs-6.col-sm-6.col-md-6.col-lg-6.article-item
+							.row
+								.col-xs-5.col-sm-5.col-md-5.col-lg-5.article-item_img
+									img(src='assets/images/testimage/art6.png')
+								.col-xs-7.col-sm-7.col-md-7.col-lg-7.article-item_text
+									.article-item_text-title
+										a(href='') Особенности строительства загородных домов на Рублевке
+									.article-item_text_descr
+										| Очень ответственное занятие – постройка дома, ведь жилье нужно строить на совесть.
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.adding-button.center
+							.module-button.nofloat Подгрузить еще
+	.investor-block.hidden-mobile
+		.container
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-5.col-sm-5.col-md-5.col-lg-5
+					.investor-block-inner
+						.investor-block-inner_textblock
+							.investor-block-inner_textblockimg
+								img(src='assets/images/icon-investors.png')
+							.investor-block-inner_text Инвесторам
+						.investor-block-inner_texttext
+							| В наши дни ситуация с рынком не очень стабильная, с рынком недвижимости в том числе, но инвестиции по-прежнему остаются выгодным капиталовложением. Ситуация с рынком не очень стабильная, с рынком недвижимости в том числе, но инвестиции по-прежнему остаются выгодным капиталовложением.
+						.more-info
+							a(href='investors.html')  Подробнее
+				.col-xs-5.col-sm-5.col-md-6.col-lg-5
+					.investor-block-inner
+						.investor-block-inner_textblock
+							.investor-block-inner_textblockimg
+								img(src='assets/images/icon-flag.png')
+							.investor-block-inner_text Собственникам
+						.investor-block-inner_texttext
+							| Наши специалисты готовы предложить Вам полный набор услуг обеспечить высочайшее качество и, что немало важно, строгую конфиденциальность. Специалисты готовы предложить Вам полный набор услуг обеспечить высочайшее качество и, что немало важно, строгую конфиденциальность.
+						.more-info
+							a(href='owners.html') Подробнее
+	.contacts-block.hidden-mobile
+		.container
+			.row
+				.col-md-12.col-lg-12.center
+					.module-title.nofloat.contacts-block-title Наши контакты
+	script(type='text/javascript').
+		var map;
+		//    function initMap() {
+		//        map = new google.maps.Map(document.getElementById('map'), {
+		//            center: {lat: -34.397, lng: 150.644},
+		//            zoom: 8
+		//        });
+		//    }
+		function initialize() {
+			// Create an array of styles.
+			var styles = [
+				{
+					stylers: [
+						//{ hue: "#f7f7f7" },
+						//{color: '#f7f7f7'}
+						//{ saturation: -20 },
+						//{lightness: 97}
+					]
+				},
+				{
+					featureType: "all",
+					stylers: [
+						//{color: '#f7f7f7'},
+						{saturation: -100}
+					]
+				},
+				{
+					featureType: "road",
+					elementType: "geometry",
+					stylers: [
+						{color: '#ff8c8e'}
+						//{ lightness: 100 },
+						//{ visibility: "simplified" }
+					]
+				}, {
+					featureType: "road",
+					elementType: "labels",
+					stylers: [
+						{color: ''}
+						//{weight: 0}
+						//{ visibility: "on" }
+					]
+				},
+				{
+					name: 'MH'
+				}
+			];
+			// Create a map object, and include the MapTypeId to add
+			// to the map type control.
+			var customMapTypeId = 'MH';
+			var mapOptions = {
+				zoom: 15,
+				//center: new google.maps.LatLng(55.765045, 37.3619133),
+				center: new google.maps.LatLng(55.765045, 37.365775),
+				disableDefaultUI: false,
+				scrollwheel: false,
+				mapTypeControlOptions: {
+					mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+				}
+				//            mapTypeControlOptions: {
+				//                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+				//            }
+			};
+			var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+			// Create a new StyledMapType object, passing it the array of styles,
+			// as well as the name to be displayed on the map type control.
+			var styledMap = new google.maps.StyledMapType(styles,
+							{name: "MoscowHome"});
+			map.mapTypes.set(customMapTypeId, styledMap);
+			map.setMapTypeId(customMapTypeId);
+			//map.setOptions({styles: styles});
+			//Associate the styled map with the MapTypeId and set it to display.
+			//map.mapTypes.set('map_style', styledMap);
+			//map.setMapTypeId('map_style');
+			//        infoBubble = new InfoBubble({
+			//            map: map,
+			//            content: '<div class="mylabel">The label</div>',
+			//            position: new google.maps.LatLng(55.765045, 37.3619133),
+			//            shadowStyle: 1,
+			//            padding: 0,
+			//            backgroundColor: 'rgb(0,0,0)',
+			//            borderRadius: 5,
+			//            borderColor: '#2c2c2c',
+			//            backgroundClassName: 'transparent'
+			//
+			//        });
+			//
+			//        infoBubble.open();
+			var infowindow = new google.maps.InfoWindow({
+				content: '<div style="font-size:20px; color:#fff;margin-top: 10px;">MOSCOW<b>HOME</b></div><div style="font-size: 12px; color: #fff;margin-top: 20px">Одинцовский район, 11 км Рублево-Успенского шоссе, д. Усово, НПИЗ "Счастливый Дом", дом 1, Московская область</div> ',
+				position: {lat: 55.765045, lng: 37.3619133},
+				maxWidth: 270
+			});
+			infowindow.open(map);
+			google.maps.event.addListener(infowindow, 'domready', function () {
+				jQuery(".gm-style-iw").css('background-color', '#ce3133'); //#c74b4b
+				jQuery(".gm-style-iw").prev().html('' +
+								'<div style="width: 0px; height: 0px; border-right-width: 10px; border-right-style: solid; border-right-color: transparent; border-left-width: 10px; border-left-style: solid; border-left-color: transparent; border-top-width: 24px; border-top-style: solid;border-top-color: rgba(206, 49, 51, 0.0980392); position: absolute; left: 152px; top: 138px;/* background-color: #c74; */"></div><div style="position: absolute; left: 0px; top: 0px;border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; width: 323px; height: 138px;opacity: 1;background-color: #ce3133;"></div><div style="border-top-width: 24px; position: absolute; left: 152px; top: 135px;"><div style="position: absolute; overflow: hidden; left: -6px; top: -1px; width: 16px; height: 30px;"><div style="position: absolute; left: 6px; transform: skewX(22.6deg); transform-origin: 0px 0px 0px; height: 24px; width: 10px; box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(206, 49, 51);opacity: 1;"></div></div><div style="position: absolute; overflow: hidden; top: -1px; left: 10px; width: 16px; height: 30px;"><div style="position: absolute; left: 0px; transform: skewX(-22.6deg); transform-origin: 10px 0px 0px; height: 24px; width: 10px;box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(206, 49, 51);"></div></div></div><div style="position: absolute; left: 1px; top: 1px; border-radius: 2px; width: 321px; height: 136px;/* background-color: rgb(255, 255, 255); */"></div>' +
+								'');
+				jQuery(".gm-style-iw").next().css('display', 'none');
+				//console.log('ready');
+			});
+		}
+		jQuery(window).resize(function () {
+			initialize();
+		});
+		// initialize();
+	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH1xmBKAuW8tHc0BkYZOIHku_txc-UrI&callback=initialize')
+	// <script type="text/javascript">
+	// var map;
+	// function initMap() {
+	// map = new google.maps.Map(document.getElementById('map'), {
+	// center: {lat: -34.397, lng: 150.644},
+	// zoom: 8
+	// });
+	// }
+	// </script>
+	// <script async defer
+	// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfJUy_f5F8CUnh7SZgTppBQzucQ_c83ck&callback=initMap">
+	// </script>
+	.contacts-map
+		.feedbackblock
+			form#feedback(action='')
+				.container
+					.row
+						#feedback-form-container.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-md-offset-7.col-lg-offset-7
+							.feedback-block_form
+								.feedback-text Заполните форму и мы свяжемся с вами в ближайшее время
+								input(type='text', name='fname', value='', placeholder='Имя')
+								input(type='text', name='fcompany', value='', placeholder='Компания')
+								input(type='text', name='femail', value='', placeholder='Email')
+								input(type='text', name='ftel', value='', placeholder='Телефон')
+								textarea(name='fcomment', placeholder='Комментарий', rows='4')
+								button.module-button.inverse.feedback-button(type='submit') Отправить заявку
+			#map
+	.contacts-block.hidden-desktop
+		.container
+			.row
+				.col-xs-12.col-sm-12.center
+					#our-contacts.module-title.nofloat.contacts-block-title Наши контакты
+					#our-location
+						| Одинцовский район, 11 км Рублево-Успенского шоссе, д. Усово, НПИЗ "Счастливый Дом", дом 1, Московская область
