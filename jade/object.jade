@@ -1,0 +1,355 @@
+extends ./layout
+block vars
+	-var bodyindex="object"
+block contents
+	hr#hr-separator-1.top-hr
+	.print
+		.container
+			.row.slider-block-descr-main
+				.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+					.row
+						.col-xs-10.col-sm-10.col-md-10.col-lg-10
+							.slider-block-descr-textblock-info
+								| Дом в коттеджном поселке Азарово
+							.breadcrumbs-block
+								| Рублево-Успенское/ Лапино/ Азарово
+							.big-block
+								span.big-block-1 49 900 000
+								span.big-block-2  руб
+						.col-xs-2.col-sm-2.col-md-2.col-lg-2
+							.qr
+								img(src='https://chart.googleapis.com/chart?cht=qr&chs=120x120&chl=http://moscowhome.ru')
+			.row
+				.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+					img(src='assets/images/testimage/imageinner2.png')
+	#top-slider.owl-carousel-object
+		div
+			.slider-descr-abs.nonprint
+				.container
+					.row.slider-block-descr-main
+						#object-descr-textblock-wrapper.col-xs-5.col-sm-5.col-md-5.col-lg-5.col-xs-offset-6.col-sm-offset-6.col-md-offset-6.col-lg-offset-6
+							#slider-block-descr-object.slider-block-descr-object
+								#slider-block-descr-textblock-object.slider-block-descr-textblock-object
+									.slider-block-descr-textblock-m
+										.icons-block
+											.add-to-favour
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-icon.img-block-icon-print
+													i.fa.fa-print
+											.print-object
+										.breadcrumbs-block
+											| Рублево-Успенское/ Лапино/ Азарово
+										.slider-block-descr-textblock-info
+											span.wbr.cnt-1 Дом
+											|  в коттеджном поселке Азарово
+											.subinfo ИЛ-4029
+										.big-block
+											span.big-block-1 49 900 000
+											span.big-block-2  руб
+										.pricevalue-block
+											.pricevalue-block-title Показать цену в
+											.pricevalue-block-box
+												.pricevalue-block-rub.active
+													i.fa.fa-rub.active
+												.pricevalue-block-dollar
+													i.fa.fa-dollar
+												.pricevalue-block-euro
+													i.fa.fa-euro
+										.blockinfo
+											.row
+												.col-xs-9.col-sm-9.col-md-9.col-lg-9.blockinfo-text
+													| Площадь дома
+												.col-xs-3.col-sm-3.col-md-3.col-lg-3.blockinfo-value
+													| 420 кв.м.
+											hr.separator
+											.row
+												.col-xs-9.col-sm-9.col-md-9.col-lg-9.blockinfo-text
+													| Площадь участка
+												.col-xs-3.col-sm-3.col-md-3.col-lg-3.blockinfo-value
+													| 7 сот
+											hr.separator
+											.row
+												.col-xs-9.col-sm-9.col-md-9.col-lg-9.blockinfo-text
+													| Состояние
+												.col-xs-3.col-sm-3.col-md-3.col-lg-3.blockinfo-value
+													| отличное
+								.slider-block-opacity
+			.slider-down.nonprint
+				img(src='assets/images/testimage/imageinner-down.png')
+				// <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+				// <filter id="blur">
+				// <feGaussianBlur stdDeviation="3" />
+				// </filter>
+				// </svg>
+			.slider-up.nonprint
+				.container
+					.row
+						#img-slide-container.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							img(src='assets/images/testimage/imageinner2.png')
+			// <img src="assets/images/testimage/slider.png">
+	.container
+		.row
+			.col-xs-12.col-sm-12.col-md-6.col-lg-6.col-md-offset-1.col-lg-offset-1.col-print-10
+				.row.object-block-info
+					.col-xs-6.col-sm-6.col-md-6.col-lg-6
+						.col-print-6
+							.object-info-title Дом
+							.object-info-pretext Площадь дома
+							.object-info-text 420 кв.м.
+							hr.separator
+							.object-info-pretext Площадь участка
+							.object-info-text 7 сот
+							hr.separator
+							.object-info-pretext Состояние
+							.object-info-text отличное
+						.col-print-6
+							.object-info-title Коммуникации
+							.object-info-pretext Электричество
+							.object-info-text Да
+							hr.separator
+							.object-info-pretext Газ
+							.object-info-text Да
+							hr.separator
+							.object-info-pretext Вода
+							.object-info-text Да
+					.col-xs-6.col-sm-6.col-md-6.col-lg-6
+						.col-print-6
+							.object-info-title Участок
+							.object-info-pretext Площадь участка
+							.object-info-text 7000 кв.м.
+							hr.separator
+							.object-info-pretext Ландшафт
+							.object-info-text есть
+							hr.separator
+							.object-info-pretext Рельеф
+							.object-info-text ровный
+						.col-print-6
+							.object-info-title Дополнительно
+							.object-info-pretext Охрана
+							.object-info-text ФСО РФ
+							hr.separator
+							.object-info-pretext Готовность
+							.object-info-text под отделку
+				.row.object-tags-block.nonprint.hidden-mobile
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.object-tags-title
+							| Состоит в выборке
+						.object-tags
+							a(href='') Роскошный особняк
+							a(href='') Близко к Москве
+							a(href='') Дома для прислуги
+							a(href='') У воды
+							a(href='') С ремонтом
+				.row.object-photo-block
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.object-photo-block-title Фотографии
+						.col-print-6.print-padding
+							img(src='assets/images/testimage/inhouse1.png')
+						.col-print-6.print-padding
+							img(src='assets/images/testimage/inhouse1.png')
+						.col-print-6.print-padding
+							img(src='assets/images/testimage/inhouse4.png')
+						.col-print-6.print-padding
+							img(src='assets/images/testimage/inhouse4.png')
+			#bottom-block.col-xs-12.col-sm-12.col-md-4.col-lg-4.nonprint
+				.row.maps-block.hidden-mobile
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.maps-title Расположение
+						#maps-object
+							#maps-object-item
+							// <img src="assets/images/testimage/maps2.png">
+				.row.features-block
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.features-block-title Особенности и преимущества объекта
+						ul
+							li
+								span Роскошный вид
+							li
+								span Возле воды
+							li
+								span Охрана ФСО
+							li
+								span Престижный поселок
+							li
+								span Экологичный район
+				.row.description-block
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.description-block-title Описание объекта
+						.description-block-text.description-block-text-shadow
+						.description-block-text-inner
+							| Дом обеспечен всем необходимым для проживания: магистральный газ, электроснабжение, водопровод, центральная канализация.  Состояние дома: под отделку. Дом построен с расчетом на настоящую русскую зиму и легко выдерживает большие перепады температур.
+							| Дом обеспечен всем необходимым для проживания: магистральный газ, электроснабжение, водопровод, центральная канализация.  Состояние дома: под отделку. Дом построен с расчетом на настоящую русскую зиму и легко выдерживает большие перепады температур.
+						.btn-more.btn-more-object.btn-object-close Полное описание
+				.row.form-object-block
+					#form-application-block.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.form-object-block-inner
+							.form-object-block-inner-title Заявка на просмотр объекта
+							.row
+								.col-md-7.col-lg-7
+									input(type='text', maxlength='50', name='fio', value='', placeholder='Имя')
+								.col-md-5.col-lg-5
+									input(type='text', maxlength='100', name='company', value='', placeholder='Компания')
+							.row
+								.col-md-7.col-lg-7
+									input(type='text', maxlength='50', name='email', value='', placeholder='Email')
+								.col-md-5.col-lg-5
+									input(type='text', name='tel', value='', placeholder='Телефон')
+							.row
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12
+									textarea(placeholder='Комментарий', name='comment')
+							.row
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12
+									button.btn-send(type='submit', name='sendform') Отправить заявку
+				.row.other-object-block.hidden-mobile
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.other-object-block-inner.main-block
+							.other-object-block-title Другие объекты в этой местности:
+							a(href='#')
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer
+												| Еще 25 объектов в этой местности
+												// 49 900 000 руб
+										img(src='assets/images/testimage/object1.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Villagio
+										// <span class="params1">
+										// <span class="land-square">25 сот</span>
+										// <span class="home-suare">510 кв. м.</span>
+										// <span class="dop"> с мебелью</span>
+										// </span>
+							// <div class="other-object-block-search">
+							// <a href="" class="active">Дом в Ренессанс Парк</a>
+							// <a href="">Дом в Ивантеевке</a>
+							// <a href="">Дом в Green Park</a>
+							// </div>
+				.row.subscriber-object-block.hidden-mobile
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.subscriber-object-block-inner
+							.subscriber-object-block-title
+								.subscriber-object-block-icon
+								| Узнавайте о новинках первыми, подпишитесь:
+							form.subscribe-form(name='subscribe')
+								.row
+									.col-xs-8.col-sm-8.col-md-8.col-lg-8
+										input(type='text', name='email', value='', placeholder='введите ваш Email')
+									.col-xs-4.col-sm-4.col-md-4.col-lg-4.paddingleft0
+										button(type='submit', name='sendemail', value='') Подписаться
+				.row.share-object-block.hidden-mobile
+					.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.share-object-block-inner
+							.share-object-block-title Показать друзьям
+							.share-object-block-icons
+								a(href='http://facebook.com', rel='nofollow', onclick="window.open('http://www.facebook.com/sharer.php?image=&u=localhost&t=', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=550, height=440, toolbar=0, status=0');return false", title='Поделиться в Facebook', target='_blank')
+									i.fa.fa-facebook
+								a(href='https://twitter.com', rel='nofollow', onclick="window.open('https://twitter.com/intent/tweet?text='+document.title+' '+window.location, '_blank', 'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0');return false", title='Поделиться В Twitter', target='_blank')
+									i.fa.fa-twitter
+								a(href='https://vk.com', rel='nofollow', onclick="window.open('http://vk.com/share.php?url=localhost&title=', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0');return false", title='Поделиться ВКонтакте', target='_blank')
+									i.fa.fa-vk
+								a(href='https://ok.com', rel='nofollow', onclick="window.open('http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments='+encodeURIComponent('')+'&st._surl='+encodeURIComponent(''), '_blank', 'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0');return false", title='Поделиться в Одноклассники', target='_blank')
+									i.fa.fa-odnoklassniki
+								// <a class="tumblr-share-button" href="https://www.tumblr.com/share"><i class="fa fa-tumblr"></i></a>
+								a(href='https://tumblr.com', rel='nofollow', onclick="window.open('https://www.tumblr.com/widgets/share/tool?canonicalUrl=http://moscowhomerealty.ru', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0');return false", title='Поделиться в Tumblr', target='_blank')
+									i.fa.fa-tumblr
+block afterFooter
+	script(type='text/javascript').
+		var map;
+		function initialize() {
+			var styles = [
+				{
+					featureType: "all",
+					stylers: [
+						{saturation: -100}
+					]
+				},
+				{
+					featureType: "road",
+					elementType: "geometry",
+					stylers: [
+						{color: '#ff8c8e'}
+					]
+				}, {
+					featureType: "road",
+					elementType: "labels",
+					stylers: [
+						{color: ''}
+					]
+				}
+			];
+			var mapOptions = {
+				zoom: 15,
+				center: new google.maps.LatLng(55.765045, 37.365775),
+				disableDefaultUI: true,
+				scrollwheel: true
+			};
+			var map = new google.maps.Map(document.getElementById('maps-object-item'), mapOptions);
+			map.setOptions({styles: styles});
+			var bounds = new google.maps.LatLngBounds();
+			var markersPointer = [
+				[55.765045, 37.365775]
+			];
+			var infoArray = [
+				'House1'
+			];
+
+			function setMarkersArray(markersArrayPosition) {
+				var i = 0;
+				var markersArray = [];
+				for (i = 0; i < markersArrayPosition.length; i++) {
+					markersArray[i] = new google.maps.Marker({
+						position: new google.maps.LatLng(markersArrayPosition[i][0], markersArrayPosition[i][1]),
+						icon: 'assets/images/map-house.png'
+					});
+					bounds.extend(new google.maps.LatLng(markersArrayPosition[i][0], markersArrayPosition[i][1]));
+				}
+				return markersArray;
+			}
+
+			var markers = setMarkersArray(markersPointer);
+			var infowindow = new google.maps.InfoWindow();
+
+			function setInfoWindowToMarkers(info, markersArray, map) {
+				var i = 0;
+				for (i = 0; i < markersArray.length; i++) {
+					markersArray[i].content = '<div style="color: #fff;">' + info[i] + '</div>';
+					google.maps.event.addListener(markersArray[i], 'click', function () {
+						infowindow.setContent(this.content);
+						infowindow.open(map, this);
+						jQuery(".gm-style-iw").css('background-color', '#c74b4b');
+						jQuery(".gm-style-iw").prev().html('' +
+										'<div style="width: 0px; height: 0px; border-right-width: 10px; border-right-style: solid; border-right-color: transparent; border-left-width: 10px; border-left-style: solid; border-left-color: transparent; border-top-width: 24px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0.0980392); position: absolute; left: 39px; top: 40px;"></div><div style="position: absolute; left: 0px; top: 0px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; width: 97px; height: 40px; background-color: rgba(0, 0, 0, 0.2);/* border: 20px; */"></div><div style="border-top-width: 24px; position: absolute; left: 39px; top: 37px;"><div style="position: absolute; overflow: hidden; left: -6px; top: -1px; width: 16px; height: 30px;"><div style="position: absolute; left: 6px; transform: skewX(22.6deg); transform-origin: 0px 0px 0px; height: 24px; width: 10px; box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(199, 75, 75);"></div></div><div style="position: absolute; overflow: hidden; top: -1px; left: 10px; width: 16px; height: 30px;"><div style="position: absolute; left: 0px; transform: skewX(-22.6deg); transform-origin: 10px 0px 0px; height: 24px; width: 10px; box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(199, 75, 75);"></div></div></div><div style="position: absolute; left: 1px; top: 1px; border-radius: 2px; width: 95px; height: 38px;background-color: rgb(199, 75, 75);"></div>' +
+										'');
+						//jQuery(".gm-style-iw").next().css('display', 'none');
+					});
+				}
+			}
+
+			setInfoWindowToMarkers(infoArray, markers, map);
+			var clusterStyles = [{
+				textColor: '#fff',
+				fontFamily: 'Roboto',
+				textSize: 18,
+				width: 64,
+				height: 64,
+				url: 'assets/images/cluster-image-back.png'
+			}
+			];
+			var mcOptions = {
+				gridSize: 50,
+				styles: clusterStyles,
+				maxZoom: 15
+			};
+			var mc = new MarkerClusterer(map, markers, mcOptions);
+			//map.fitBounds(bounds);
+			//map.panToBounds(bounds);
+		}
+		//    jQuery(window).resize(function(){
+		//        initialize();
+		//    });
+	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH1xmBKAuW8tHc0BkYZOIHku_txc-UrI&callback=initialize')
