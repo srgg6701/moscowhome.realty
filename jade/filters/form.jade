@@ -1,4 +1,6 @@
 extends ../layout
+block filterVars
+	-var relpath="../../"
 block contents
 	h4 Фильтр объектов
 	input(placeholder="Название, посёлок или населённый пункт", name="object_name")
@@ -70,13 +72,17 @@ block contents
 		input(placeholder="от", name="b_from")
 		input(placeholder="до", name="b_to")
 	label
-		input(type="checkbox", name="bath") Баня
+		input(type="checkbox", name="bath")
+		|Баня
 	label
-		input(type="checkbox", name="pool") Бассейн
+		input(type="checkbox", name="pool")
+		|Бассейн
 	label
-		input(type="checkbox", name="garage") Гараж
+		input(type="checkbox", name="garage")
+		|Гараж
 	label
-		input(type="checkbox", name="security") Охрана
+		input(type="checkbox", name="security")
+		|Охрана
 	p от МКАД
 		input(placeholder="от", name="mkad_from")
 		input(placeholder="до", name="mkad_to")
@@ -86,6 +92,3 @@ block contents
 		option(value="a2", name="a2") Бетонное
 		option(value="a3", name="a3") Асфальтовое
 		option(value="a4", name="a4") Грунтовое
-
-
-
