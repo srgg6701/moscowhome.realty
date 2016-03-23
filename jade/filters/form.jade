@@ -47,48 +47,58 @@ block contents
 	p #{area}
 		input(placeholder="от", name="a_from")
 		input(placeholder="до", name="a_to")
-	p Площадь участка
-		input(placeholder="от", name="lt_from")
-		input(placeholder="до", name="lt_to")
-	p Тип участка
-		input(placeholder="от", name="tl_from")
-		input(placeholder="до", name="tl_to")
-	p Состояние
-	select(name="state")
-		option(value="st1", name="st1") Любое
-		option(value="st2", name="st2") Безупречное
-		option(value="st3", name="st3") Хорошее
-		option(value="st4", name="st4") Стрёмное
-	p Комнат
-		input(placeholder="от", name="r_from")
-		input(placeholder="до", name="r_to")
-	p Продажа
-	select(name="sale")
-		option(value="sl1", name="sl1") Первичная и вторичная
-		option(value="sl2", name="sl2") Предварительная
-		option(value="sl3", name="sl3") В слепую
-		option(value="sl4", name="sl4") Третичная
-	p Санузлов
-		input(placeholder="от", name="b_from")
-		input(placeholder="до", name="b_to")
-	label
-		input(type="checkbox", name="bath")
-		|Баня
-	label
-		input(type="checkbox", name="pool")
-		|Бассейн
-	label
-		input(type="checkbox", name="garage")
-		|Гараж
-	label
-		input(type="checkbox", name="security")
-		|Охрана
-	p от МКАД
-		input(placeholder="от", name="mkad_from")
-		input(placeholder="до", name="mkad_to")
-	p Шоссе
-	select(name="autoban")
-		option(value="a1", name="a1") Все
-		option(value="a2", name="a2") Бетонное
-		option(value="a3", name="a3") Асфальтовое
-		option(value="a4", name="a4") Грунтовое
+	if bodyindex=='filter-city-family_house' || bodyindex=='city-filter-towns' || bodyindex == 'filter-country-house' || bodyindex == 'filter-country-towns' || bodyindex == 'filter-country-yard'
+		p Площадь участка
+			input(placeholder="от", name="lt_from")
+			input(placeholder="до", name="lt_to")
+		p Тип участка
+			input(placeholder="от", name="tl_from")
+			input(placeholder="до", name="tl_to")
+	if bodyindex!='filter-country-yard'
+		p Состояние
+		select(name="state")
+			option(value="st1", name="st1") Любое
+			option(value="st2", name="st2") Безупречное
+			option(value="st3", name="st3") Хорошее
+			option(value="st4", name="st4") Стрёмное
+	if bodyindex=='filter-city-apartments' || bodyindex=='filter-city-flats' || bodyindex=='filter-city-penthouse' || bodyindex=='filter-country-flats'
+		p Комнат
+			input(placeholder="от", name="r_from")
+			input(placeholder="до", name="r_to")
+	if bodyindex=='filter-city-apartments' || bodyindex=='filter-city-flats' || bodyindex=='filter-city-penthouse'
+		p Продажа
+		select(name="sale")
+			option(value="sl1", name="sl1") Первичная и вторичная
+			option(value="sl2", name="sl2") Предварительная
+			option(value="sl3", name="sl3") В слепую
+			option(value="sl4", name="sl4") Третичная
+	if bodyindex=='filter-city-apartments' || bodyindex=='filter-city-flats'
+		p Санузлов
+			input(placeholder="от", name="b_from")
+			input(placeholder="до", name="b_to")
+	if bodyindex=='filter-city-family_house' || bodyindex=='filter-city-towns' || bodyindex=='filter-country-house' || bodyindex=='filter-country-towns'
+		label
+			input(type="checkbox", name="bath")
+			|Баня
+	if bodyindex=='filter-country-house'
+		label
+			input(type="checkbox", name="pool")
+			|Бассейн
+	if bodyindex=='filter-city-family_house' || bodyindex=='filter-city-towns' || bodyindex=='filter-country-house' || bodyindex=='filter-country-towns'
+		label
+			input(type="checkbox", name="garage")
+			|Гараж
+	if bodyindex=='filter-city-family_house' || bodyindex=='filter-city-towns' || bodyindex=='filter-country-house' || bodyindex=='filter-country-towns' || bodyindex=='filter-country-yard'
+		label
+			input(type="checkbox", name="security")
+			|Охрана
+	if bodyindex=='filter-country-flats' || bodyindex=='filter-country-house' || bodyindex=='filter-country-towns' || bodyindex=='filter-country-yard'
+		p от МКАД
+			input(placeholder="от", name="mkad_from")
+			input(placeholder="до", name="mkad_to")
+		p Шоссе
+		select(name="autoban")
+			option(value="a1", name="a1") Все
+			option(value="a2", name="a2") Бетонное
+			option(value="a3", name="a3") Асфальтовое
+			option(value="a4", name="a4") Грунтовое
