@@ -327,6 +327,41 @@ block contents
 			.row
 				.col-md-12.col-lg-12.center
 					.module-title.nofloat.contacts-block-title Наши контакты
+	// <script type="text/javascript">
+	// var map;
+	// function initMap() {
+	// map = new google.maps.Map(document.getElementById('map'), {
+	// center: {lat: -34.397, lng: 150.644},
+	// zoom: 8
+	// });
+	// }
+	// </script>
+	// <script async defer
+	// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfJUy_f5F8CUnh7SZgTppBQzucQ_c83ck&callback=initMap">
+	// </script>
+	.contacts-map
+		.feedbackblock
+			form#feedback(action='')
+				.container
+					.row
+						#feedback-form-container.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-md-offset-7.col-lg-offset-7
+							.feedback-block_form
+								.feedback-text Заполните форму и мы свяжемся с вами в ближайшее время
+								input(type='text', name='fname', value='', placeholder='Имя')
+								input(type='text', name='fcompany', value='', placeholder='Компания')
+								input(type='text', name='femail', value='', placeholder='Email')
+								input(type='text', name='ftel', value='', placeholder='Телефон')
+								textarea(name='fcomment', placeholder='Комментарий', rows='4')
+								button.module-button.inverse.feedback-button(type='submit') Отправить заявку
+			#map
+	.contacts-block.hidden-desktop
+		.container
+			.row
+				.col-xs-12.col-sm-12.center
+					#our-contacts.module-title.nofloat.contacts-block-title Наши контакты
+					#our-location
+						| Одинцовский район, 11 км Рублево-Успенского шоссе, д. Усово, НПИЗ "Счастливый Дом", дом 1, Московская область
+block afterFooter
 	script(type='text/javascript').
 		var map;
 		//    function initMap() {
@@ -435,39 +470,5 @@ block contents
 		});
 		// initialize();
 	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH1xmBKAuW8tHc0BkYZOIHku_txc-UrI&callback=initialize')
-	// <script type="text/javascript">
-	// var map;
-	// function initMap() {
-	// map = new google.maps.Map(document.getElementById('map'), {
-	// center: {lat: -34.397, lng: 150.644},
-	// zoom: 8
-	// });
-	// }
-	// </script>
-	// <script async defer
-	// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfJUy_f5F8CUnh7SZgTppBQzucQ_c83ck&callback=initMap">
-	// </script>
-	.contacts-map
-		.feedbackblock
-			form#feedback(action='')
-				.container
-					.row
-						#feedback-form-container.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-md-offset-7.col-lg-offset-7
-							.feedback-block_form
-								.feedback-text Заполните форму и мы свяжемся с вами в ближайшее время
-								input(type='text', name='fname', value='', placeholder='Имя')
-								input(type='text', name='fcompany', value='', placeholder='Компания')
-								input(type='text', name='femail', value='', placeholder='Email')
-								input(type='text', name='ftel', value='', placeholder='Телефон')
-								textarea(name='fcomment', placeholder='Комментарий', rows='4')
-								button.module-button.inverse.feedback-button(type='submit') Отправить заявку
-			#map
-	.contacts-block.hidden-desktop
-		.container
-			.row
-				.col-xs-12.col-sm-12.center
-					#our-contacts.module-title.nofloat.contacts-block-title Наши контакты
-					#our-location
-						| Одинцовский район, 11 км Рублево-Успенского шоссе, д. Усово, НПИЗ "Счастливый Дом", дом 1, Московская область
-block afterFooter
+
 	// got script?

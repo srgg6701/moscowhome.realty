@@ -1,0 +1,91 @@
+extends ../layout
+block contents
+	h4 Фильтр объектов
+	input(placeholder="Название, посёлок или населённый пункт", name="object_name")
+	p Тип
+	select(name="object_type")
+		option(value="Дом") Дом
+		option(value="Квартира") Квартира
+		option(value="Лофт") Лофт
+		option(value="Бункер") Бункер
+		option(value="Студия") Студия
+		option(value="Ангар") Ангар
+	p Цена
+	input(placeholder="от", name="price_from")
+	input(placeholder="до", name="price_to")
+	select(name="object_type")
+		option(value="ru", name="currency_r") ₽
+		option(value="us", name="currency_us") $
+		option(value="eu", name="currency_eu") €
+	p Жилой комплекс
+	select(name="habitant_complex")
+		option(value="p1", name="p1") Полянка
+		option(value="p2", name="p2") Опушка
+		option(value="p3", name="p3") Космодромка
+		option(value="p4", name="p4") Овражка
+	p Район
+	select(name="habitant_area")
+		option(value="r1", name="r1") Лучший
+		option(value="r2", name="r2") Хороший
+		option(value="r3", name="r3") Так себе
+		option(value="r4", name="r4") Отстойный
+	p Улица
+	select(name="habitant_street")
+		option(value="s1", name="s1") Абрикосовая
+		option(value="s2", name="s2") Виноградная
+		option(value="s3", name="s3") Тенистая
+		option(value="s4", name="s4") Знойная
+	p Метро
+	select(name="metro")
+		option(value="m1", name="m1") Библиотека им. Ленина
+		option(value="m2", name="m2") Арбатская
+		option(value="m3", name="m3") Фили
+		option(value="m4", name="m4") Динамо
+	// Общая площадь, площадь дома/пентхауза/квартиры
+	p #{area}
+		input(placeholder="от", name="a_from")
+		input(placeholder="до", name="a_to")
+	p Площадь участка
+		input(placeholder="от", name="lt_from")
+		input(placeholder="до", name="lt_to")
+	p Тип участка
+		input(placeholder="от", name="tl_from")
+		input(placeholder="до", name="tl_to")
+	p Состояние
+	select(name="state")
+		option(value="st1", name="st1") Любое
+		option(value="st2", name="st2") Безупречное
+		option(value="st3", name="st3") Хорошее
+		option(value="st4", name="st4") Стрёмное
+	p Комнат
+		input(placeholder="от", name="r_from")
+		input(placeholder="до", name="r_to")
+	p Продажа
+	select(name="sale")
+		option(value="sl1", name="sl1") Первичная и вторичная
+		option(value="sl2", name="sl2") Предварительная
+		option(value="sl3", name="sl3") В слепую
+		option(value="sl4", name="sl4") Третичная
+	p Санузлов
+		input(placeholder="от", name="b_from")
+		input(placeholder="до", name="b_to")
+	label
+		input(type="checkbox", name="bath") Баня
+	label
+		input(type="checkbox", name="pool") Бассейн
+	label
+		input(type="checkbox", name="garage") Гараж
+	label
+		input(type="checkbox", name="security") Охрана
+	p от МКАД
+		input(placeholder="от", name="mkad_from")
+		input(placeholder="до", name="mkad_to")
+	p Шоссе
+	select(name="autoban")
+		option(value="a1", name="a1") Все
+		option(value="a2", name="a2") Бетонное
+		option(value="a3", name="a3") Асфальтовое
+		option(value="a4", name="a4") Грунтовое
+
+
+
