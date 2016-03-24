@@ -66,8 +66,9 @@ block contents
 			p #{area}пентхауза!{mtr}
 		if bodyindex == 'filter-country-flats'
 			p #{area}квартиры!{mtr}
-		input.short(placeholder="от", name="a_from")
-		input.short(placeholder="до", name="a_to")
+		if bodyindex != 'filter-country-yard'
+			input.short(placeholder="от", name="a_from")
+			input.short(placeholder="до", name="a_to")
 		if bodyindex=='filter-city-family_house' || bodyindex=='city-filter-towns' || bodyindex == 'filter-country-house' || bodyindex == 'filter-country-towns' || bodyindex == 'filter-country-yard'
 			p Площадь участка
 			input.short(placeholder="от", name="lt_from")
