@@ -1,16 +1,25 @@
+[id^="body-filter"] #contacts-bottom {
+    display: none;
+}
+
+
 #filters-set {
     color: #222;
     background-color: #f6f6f6;
-    padding-top: 20px;
+    padding-top: 11px;
     max-width: 360px !important;
     margin-left: 0 !important;
 }
 #filters-set h4 {
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 19px;
 }
 
 #filters-set p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    margin-top: 14px;
     text-align: center;
 }
 #filters-set select,
@@ -23,9 +32,11 @@ input:not([type="checkbox"]):not([type="radio"]) {
 
 #filters-set
 input:not([type="checkbox"]):not([type="radio"]) {
-    height: 42px;
+    height: 32px;
 }
-
+#filters-set input[name="object_name"]{
+    height:42px !important;
+}
 #filters-set {
 
 }
@@ -41,7 +52,9 @@ input:not([type="checkbox"]):not([type="radio"]) {
 }
 
 @media (max-width: 969px) {
-
+    [id^="body-filter"] #top-block{
+        padding-bottom:0;
+    }
 }
 
 

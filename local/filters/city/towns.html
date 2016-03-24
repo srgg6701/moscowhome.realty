@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500,400italic,300&amp;subset=latin,cyrillic-ext,cyrillic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/filters.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--if lt IE 9
@@ -74,9 +75,9 @@
         <option value="Ангар">Ангар</option>
       </select>
       <p>Цена</p>
-      <input placeholder="от" name="price_from">
-      <input placeholder="до" name="price_to">
-      <select name="object_type">
+      <input placeholder="от" name="price_from" class="short">
+      <input placeholder="до" name="price_to" class="short">
+      <select name="object_type" class="short">
         <option value="ru" name="currency_r">₽</option>
         <option value="us" name="currency_us">$</option>
         <option value="eu" name="currency_eu">€</option>
@@ -111,8 +112,8 @@
       </select>
       <!-- Общая площадь, площадь дома/пентхауза/квартиры-->
       <p>
-        <input placeholder="от" name="a_from">
-        <input placeholder="до" name="a_to">
+        <input placeholder="от" name="a_from" class="short">
+        <input placeholder="до" name="a_to" class="short">
       </p>
       <p>Состояние</p>
       <select name="state">

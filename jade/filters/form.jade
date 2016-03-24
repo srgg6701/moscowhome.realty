@@ -14,9 +14,9 @@ block contents
 			option(value="Студия") Студия
 			option(value="Ангар") Ангар
 		p Цена
-		input(placeholder="от", name="price_from")
-		input(placeholder="до", name="price_to")
-		select(name="object_type")
+		input.short(placeholder="от", name="price_from")
+		input.short(placeholder="до", name="price_to")
+		select.short(name="object_type")
 			option(value="ru", name="currency_r") ₽
 			option(value="us", name="currency_us") $
 			option(value="eu", name="currency_eu") €
@@ -46,15 +46,15 @@ block contents
 			option(value="m4", name="m4") Динамо
 		// Общая площадь, площадь дома/пентхауза/квартиры
 		p #{area}
-			input(placeholder="от", name="a_from")
-			input(placeholder="до", name="a_to")
+			input.short(placeholder="от", name="a_from")
+			input.short(placeholder="до", name="a_to")
 		if bodyindex=='filter-city-family_house' || bodyindex=='city-filter-towns' || bodyindex == 'filter-country-house' || bodyindex == 'filter-country-towns' || bodyindex == 'filter-country-yard'
 			p Площадь участка
-				input(placeholder="от", name="lt_from")
-				input(placeholder="до", name="lt_to")
+				input.short(placeholder="от", name="lt_from")
+				input.short(placeholder="до", name="lt_to")
 			p Тип участка
-				input(placeholder="от", name="tl_from")
-				input(placeholder="до", name="tl_to")
+				input.short(placeholder="от", name="tl_from")
+				input.short(placeholder="до", name="tl_to")
 		if bodyindex!='filter-country-yard'
 			p Состояние
 			select(name="state")
@@ -64,8 +64,8 @@ block contents
 				option(value="st4", name="st4") Стрёмное
 		if bodyindex=='filter-city-apartments' || bodyindex=='filter-city-flats' || bodyindex=='filter-city-penthouse' || bodyindex=='filter-country-flats'
 			p Комнат
-				input(placeholder="от", name="r_from")
-				input(placeholder="до", name="r_to")
+				input.short(placeholder="от", name="r_from")
+				input.short(placeholder="до", name="r_to")
 		if bodyindex=='filter-city-apartments' || bodyindex=='filter-city-flats' || bodyindex=='filter-city-penthouse'
 			p Продажа
 			select(name="sale")
@@ -75,8 +75,8 @@ block contents
 				option(value="sl4", name="sl4") Третичная
 		if bodyindex=='filter-city-apartments' || bodyindex=='filter-city-flats'
 			p Санузлов
-				input(placeholder="от", name="b_from")
-				input(placeholder="до", name="b_to")
+				input.short(placeholder="от", name="b_from")
+				input.short(placeholder="до", name="b_to")
 		if bodyindex=='filter-city-family_house' || bodyindex=='filter-city-towns' || bodyindex=='filter-country-house' || bodyindex=='filter-country-towns'
 			label
 				input(type="checkbox", name="bath")
@@ -95,8 +95,8 @@ block contents
 				|Охрана
 		if bodyindex=='filter-country-flats' || bodyindex=='filter-country-house' || bodyindex=='filter-country-towns' || bodyindex=='filter-country-yard'
 			p от МКАД
-				input(placeholder="от", name="mkad_from")
-				input(placeholder="до", name="mkad_to")
+				input.short(placeholder="от", name="mkad_from")
+				input.short(placeholder="до", name="mkad_to")
 			p Шоссе
 			select(name="autoban")
 				option(value="a1", name="a1") Все

@@ -25,7 +25,7 @@
     <script src="assets/js/xtra.js"></script>
     <script src="assets/js/libs/jquery-2.2.2.min.js"></script>
   </head>
-  <body id="body-filter-country-flats">
+  <body id="body-filter-country-towns">
     <div id="test-box"></div>
     <div class="menu-fixed">
       <div class="container">
@@ -115,6 +115,14 @@
         <input placeholder="от" name="a_from" class="short">
         <input placeholder="до" name="a_to" class="short">
       </p>
+      <p>Площадь участка
+        <input placeholder="от" name="lt_from" class="short">
+        <input placeholder="до" name="lt_to" class="short">
+      </p>
+      <p>Тип участка
+        <input placeholder="от" name="tl_from" class="short">
+        <input placeholder="до" name="tl_to" class="short">
+      </p>
       <p>Состояние</p>
       <select name="state">
         <option value="st1" name="st1">Любое</option>
@@ -122,10 +130,15 @@
         <option value="st3" name="st3">Хорошее</option>
         <option value="st4" name="st4">Стрёмное</option>
       </select>
-      <p>Комнат
-        <input placeholder="от" name="r_from" class="short">
-        <input placeholder="до" name="r_to" class="short">
-      </p>
+      <label>
+        <input type="checkbox" name="bath">Баня
+      </label>
+      <label>
+        <input type="checkbox" name="garage">Гараж
+      </label>
+      <label>
+        <input type="checkbox" name="security">Охрана
+      </label>
       <p>от МКАД
         <input placeholder="от" name="mkad_from" class="short">
         <input placeholder="до" name="mkad_to" class="short">

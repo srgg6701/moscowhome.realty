@@ -334,10 +334,6 @@
         margin: -22px auto 19px;
     }
 
-    [id^="body-filter"] #contacts-bottom {
-        display: none;
-    }
-
     #contacts {
         background-color: #F0F0F0;
         height: 70px;
@@ -518,6 +514,7 @@
     #top-slider
     .slider-block-descr-object,
     #filters-set {
+        margin-top: 143px;
         max-width: 750px;
         width: 100%;
     }
