@@ -24,7 +24,7 @@
     <script src="assets/js/xtra.js"></script>
     <script src="assets/js/libs/jquery-2.2.2.min.js"></script>
   </head>
-  <body id="body-filter-appartments">
+  <body id="body-filter-country-flats">
     <div id="test-box"></div>
     <div class="menu-fixed">
       <div class="container">
@@ -61,111 +61,82 @@
         </div>
       </div>
     </div>
-    <h4>Фильтр объектов</h4>
-    <input placeholder="Название, посёлок или населённый пункт" name="object_name">
-    <p>Тип</p>
-    <select name="object_type">
-      <option value="Дом">Дом</option>
-      <option value="Квартира">Квартира</option>
-      <option value="Лофт">Лофт</option>
-      <option value="Бункер">Бункер</option>
-      <option value="Студия">Студия</option>
-      <option value="Ангар">Ангар</option>
-    </select>
-    <p>Цена</p>
-    <input placeholder="от" name="price_from">
-    <input placeholder="до" name="price_to">
-    <select name="object_type">
-      <option value="ru" name="currency_r">₽</option>
-      <option value="us" name="currency_us">$</option>
-      <option value="eu" name="currency_eu">€</option>
-    </select>
-    <p>Жилой комплекс</p>
-    <select name="habitant_complex">
-      <option value="p1" name="p1">Полянка</option>
-      <option value="p2" name="p2">Опушка</option>
-      <option value="p3" name="p3">Космодромка</option>
-      <option value="p4" name="p4">Овражка</option>
-    </select>
-    <p>Район</p>
-    <select name="habitant_area">
-      <option value="r1" name="r1">Лучший</option>
-      <option value="r2" name="r2">Хороший</option>
-      <option value="r3" name="r3">Так себе</option>
-      <option value="r4" name="r4">Отстойный</option>
-    </select>
-    <p>Улица</p>
-    <select name="habitant_street">
-      <option value="s1" name="s1">Абрикосовая</option>
-      <option value="s2" name="s2">Виноградная</option>
-      <option value="s3" name="s3">Тенистая</option>
-      <option value="s4" name="s4">Знойная</option>
-    </select>
-    <p>Метро</p>
-    <select name="metro">
-      <option value="m1" name="m1">Библиотека им. Ленина</option>
-      <option value="m2" name="m2">Арбатская</option>
-      <option value="m3" name="m3">Фили</option>
-      <option value="m4" name="m4">Динамо</option>
-    </select>
-    <!-- Общая площадь, площадь дома/пентхауза/квартиры-->
-    <p>
-      <input placeholder="от" name="a_from">
-      <input placeholder="до" name="a_to">
-    </p>
-    <p>Площадь участка
-      <input placeholder="от" name="lt_from">
-      <input placeholder="до" name="lt_to">
-    </p>
-    <p>Тип участка
-      <input placeholder="от" name="tl_from">
-      <input placeholder="до" name="tl_to">
-    </p>
-    <p>Состояние</p>
-    <select name="state">
-      <option value="st1" name="st1">Любое</option>
-      <option value="st2" name="st2">Безупречное</option>
-      <option value="st3" name="st3">Хорошее</option>
-      <option value="st4" name="st4">Стрёмное</option>
-    </select>
-    <p>Комнат
-      <input placeholder="от" name="r_from">
-      <input placeholder="до" name="r_to">
-    </p>
-    <p>Продажа</p>
-    <select name="sale">
-      <option value="sl1" name="sl1">Первичная и вторичная</option>
-      <option value="sl2" name="sl2">Предварительная</option>
-      <option value="sl3" name="sl3">В слепую</option>
-      <option value="sl4" name="sl4">Третичная</option>
-    </select>
-    <p>Санузлов
-      <input placeholder="от" name="b_from">
-      <input placeholder="до" name="b_to">
-    </p>
-    <label>
-      <input type="checkbox" name="bath">Баня
-    </label>
-    <label>
-      <input type="checkbox" name="pool">Бассейн
-    </label>
-    <label>
-      <input type="checkbox" name="garage">Гараж
-    </label>
-    <label>
-      <input type="checkbox" name="security">Охрана
-    </label>
-    <p>от МКАД
-      <input placeholder="от" name="mkad_from">
-      <input placeholder="до" name="mkad_to">
-    </p>
-    <p>Шоссе</p>
-    <select name="autoban">
-      <option value="a1" name="a1">Все</option>
-      <option value="a2" name="a2">Бетонное</option>
-      <option value="a3" name="a3">Асфальтовое</option>
-      <option value="a4" name="a4">Грунтовое</option>
-    </select>
+    <div id="filters-set" class="container">
+      <h4>Фильтр объектов</h4>
+      <input placeholder="Название, посёлок или населённый пункт" name="object_name">
+      <p>Тип</p>
+      <select name="object_type">
+        <option value="Дом">Дом</option>
+        <option value="Квартира">Квартира</option>
+        <option value="Лофт">Лофт</option>
+        <option value="Бункер">Бункер</option>
+        <option value="Студия">Студия</option>
+        <option value="Ангар">Ангар</option>
+      </select>
+      <p>Цена</p>
+      <input placeholder="от" name="price_from">
+      <input placeholder="до" name="price_to">
+      <select name="object_type">
+        <option value="ru" name="currency_r">₽</option>
+        <option value="us" name="currency_us">$</option>
+        <option value="eu" name="currency_eu">€</option>
+      </select>
+      <p>Жилой комплекс</p>
+      <select name="habitant_complex">
+        <option value="p1" name="p1">Полянка</option>
+        <option value="p2" name="p2">Опушка</option>
+        <option value="p3" name="p3">Космодромка</option>
+        <option value="p4" name="p4">Овражка</option>
+      </select>
+      <p>Район</p>
+      <select name="habitant_area">
+        <option value="r1" name="r1">Лучший</option>
+        <option value="r2" name="r2">Хороший</option>
+        <option value="r3" name="r3">Так себе</option>
+        <option value="r4" name="r4">Отстойный</option>
+      </select>
+      <p>Улица</p>
+      <select name="habitant_street">
+        <option value="s1" name="s1">Абрикосовая</option>
+        <option value="s2" name="s2">Виноградная</option>
+        <option value="s3" name="s3">Тенистая</option>
+        <option value="s4" name="s4">Знойная</option>
+      </select>
+      <p>Метро</p>
+      <select name="metro">
+        <option value="m1" name="m1">Библиотека им. Ленина</option>
+        <option value="m2" name="m2">Арбатская</option>
+        <option value="m3" name="m3">Фили</option>
+        <option value="m4" name="m4">Динамо</option>
+      </select>
+      <!-- Общая площадь, площадь дома/пентхауза/квартиры-->
+      <p>
+        <input placeholder="от" name="a_from">
+        <input placeholder="до" name="a_to">
+      </p>
+      <p>Состояние</p>
+      <select name="state">
+        <option value="st1" name="st1">Любое</option>
+        <option value="st2" name="st2">Безупречное</option>
+        <option value="st3" name="st3">Хорошее</option>
+        <option value="st4" name="st4">Стрёмное</option>
+      </select>
+      <p>Комнат
+        <input placeholder="от" name="r_from">
+        <input placeholder="до" name="r_to">
+      </p>
+      <p>от МКАД
+        <input placeholder="от" name="mkad_from">
+        <input placeholder="до" name="mkad_to">
+      </p>
+      <p>Шоссе</p>
+      <select name="autoban">
+        <option value="a1" name="a1">Все</option>
+        <option value="a2" name="a2">Бетонное</option>
+        <option value="a3" name="a3">Асфальтовое</option>
+        <option value="a4" name="a4">Грунтовое</option>
+      </select>
+    </div>
     <div class="footer-block">
       <div class="container">
         <div class="row top-block">
