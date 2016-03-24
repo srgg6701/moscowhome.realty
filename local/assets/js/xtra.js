@@ -3,6 +3,11 @@ window.onload=function(){
         var jq=document.createElement('script');
         document.getElementsByTagName('head')[0].appendChild(jq);
         jq.src="assets/js/libs/jquery-2.2.2.min.js";
+    }else{
+        var checkboxes = jQuery('#filters-set input[type="checkbox"]');
+        checkboxes.on('click', function(){
+            jQuery(this).toggleClass('checked');
+        })
     }
     var i= 0,
         intrvl=setTimeout(function(){

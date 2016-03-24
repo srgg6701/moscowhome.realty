@@ -75,8 +75,10 @@
         <option value="Ангар">Ангар</option>
       </select>
       <p>Цена</p>
-      <input placeholder="от" name="price_from" class="short">
-      <input placeholder="до" name="price_to" class="short">
+      <div class="pull-left">
+        <input placeholder="от" name="price_from" class="short">
+        <input placeholder="до" name="price_to" class="short">
+      </div>
       <select name="object_type" class="short">
         <option value="ru" name="currency_r">₽</option>
         <option value="us" name="currency_us">$</option>
@@ -111,10 +113,9 @@
         <option value="m4" name="m4">Динамо</option>
       </select>
       <!-- Общая площадь, площадь дома/пентхауза/квартиры-->
-      <p>
-        <input placeholder="от" name="a_from" class="short">
-        <input placeholder="до" name="a_to" class="short">
-      </p>
+      <p>Площадь пентхауза, <span class='week'>м<sup>2</sup></span></p>
+      <input placeholder="от" name="a_from" class="short">
+      <input placeholder="до" name="a_to" class="short">
       <p>Состояние</p>
       <select name="state">
         <option value="st1" name="st1">Любое</option>
@@ -122,10 +123,9 @@
         <option value="st3" name="st3">Хорошее</option>
         <option value="st4" name="st4">Стрёмное</option>
       </select>
-      <p>Комнат
-        <input placeholder="от" name="r_from" class="short">
-        <input placeholder="до" name="r_to" class="short">
-      </p>
+      <p>Комнат</p>
+      <input placeholder="от" name="r_from" class="short">
+      <input placeholder="до" name="r_to" class="short">
       <p>Продажа</p>
       <select name="sale">
         <option value="sl1" name="sl1">Первичная и вторичная</option>
@@ -133,6 +133,8 @@
         <option value="sl3" name="sl3">В слепую</option>
         <option value="sl4" name="sl4">Третичная</option>
       </select>
+      <button class="module-button inverse">Показать объекты</button>
+      <div id="filters-set-commands"><a href="javascript:void()">Свернуть</a><a href="javascript:void()">Сбросить</a></div>
     </div>
     <div class="footer-block">
       <div class="container">

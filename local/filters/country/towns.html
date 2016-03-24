@@ -75,12 +75,24 @@
         <option value="Ангар">Ангар</option>
       </select>
       <p>Цена</p>
-      <input placeholder="от" name="price_from" class="short">
-      <input placeholder="до" name="price_to" class="short">
+      <div class="pull-left">
+        <input placeholder="от" name="price_from" class="short">
+        <input placeholder="до" name="price_to" class="short">
+      </div>
       <select name="object_type" class="short">
         <option value="ru" name="currency_r">₽</option>
         <option value="us" name="currency_us">$</option>
         <option value="eu" name="currency_eu">€</option>
+      </select>
+      <p>от МКАД</p>
+      <input placeholder="от" name="mkad_from" class="short">
+      <input placeholder="до" name="mkad_to" class="short">
+      <p>Шоссе</p>
+      <select name="autoban">
+        <option value="a1" name="a1">Все</option>
+        <option value="a2" name="a2">Бетонное</option>
+        <option value="a3" name="a3">Асфальтовое</option>
+        <option value="a4" name="a4">Грунтовое</option>
       </select>
       <p>Жилой комплекс</p>
       <select name="habitant_complex">
@@ -111,18 +123,15 @@
         <option value="m4" name="m4">Динамо</option>
       </select>
       <!-- Общая площадь, площадь дома/пентхауза/квартиры-->
-      <p>
-        <input placeholder="от" name="a_from" class="short">
-        <input placeholder="до" name="a_to" class="short">
-      </p>
-      <p>Площадь участка
-        <input placeholder="от" name="lt_from" class="short">
-        <input placeholder="до" name="lt_to" class="short">
-      </p>
-      <p>Тип участка
-        <input placeholder="от" name="tl_from" class="short">
-        <input placeholder="до" name="tl_to" class="short">
-      </p>
+      <p>Площадь дома, <span class='week'>м<sup>2</sup></span></p>
+      <input placeholder="от" name="a_from" class="short">
+      <input placeholder="до" name="a_to" class="short">
+      <p>Площадь участка</p>
+      <input placeholder="от" name="lt_from" class="short">
+      <input placeholder="до" name="lt_to" class="short">
+      <p>Тип участка</p>
+      <input placeholder="от" name="tl_from" class="short">
+      <input placeholder="до" name="tl_to" class="short">
       <p>Состояние</p>
       <select name="state">
         <option value="st1" name="st1">Любое</option>
@@ -139,17 +148,8 @@
       <label>
         <input type="checkbox" name="security">Охрана
       </label>
-      <p>от МКАД
-        <input placeholder="от" name="mkad_from" class="short">
-        <input placeholder="до" name="mkad_to" class="short">
-      </p>
-      <p>Шоссе</p>
-      <select name="autoban">
-        <option value="a1" name="a1">Все</option>
-        <option value="a2" name="a2">Бетонное</option>
-        <option value="a3" name="a3">Асфальтовое</option>
-        <option value="a4" name="a4">Грунтовое</option>
-      </select>
+      <button class="module-button inverse">Показать объекты</button>
+      <div id="filters-set-commands"><a href="javascript:void()">Свернуть</a><a href="javascript:void()">Сбросить</a></div>
     </div>
     <div class="footer-block">
       <div class="container">
