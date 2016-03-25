@@ -595,6 +595,7 @@
         display: block;
         margin-bottom: 0;
         min-height: inherit;
+        overflow: hidden;
         padding: 0 15px;
     }
 

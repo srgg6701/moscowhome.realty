@@ -82,9 +82,9 @@ function applyResizeChanges(jQuery){
         objectDescribeWrapper = $('#object-descr-textblock-wrapper'),
         sliderBlockDescrObj=$('#slider-block-descr-object'),
         searchBox=$('#search-box'),
-        handleBlock=function(target, place, actionCheck, reverse){
+        handleDOMBlocksOrder=function(target, place, actionCheck, reverse){
             if(target.length&&place.length){
-                console.groupCollapsed('handleBlock');
+                console.groupCollapsed('handleDOMBlocksOrder');
                     /*console.log('Both target & place have found',
                         { target:target, place:place });*/
                 if(actionCheck=='has' && !place.has(target).length){
@@ -105,8 +105,7 @@ function applyResizeChanges(jQuery){
                                 actionDo:actionDo
                             },
                             arguments:arguments
-                        });
-                        //console.trace();
+                        }); //console.trace();
                     console.groupEnd();
                     // target[after]()[0].id!=place[0].id
                     //   target[insertBefore](place);
@@ -143,20 +142,20 @@ function applyResizeChanges(jQuery){
         // go desktop
         if(desktop) {
             console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:orange');
-            handleBlock(searchBox, found, 'after'); // defined on the top
-            handleBlock(sliderBlockDescrObj, objectDescribeWrapper, 'has');
+            handleDOMBlocksOrder(searchBox, found, 'after'); // defined on the top
+            handleDOMBlocksOrder(sliderBlockDescrObj, objectDescribeWrapper, 'has');
             // фото на стр. объекта
-            handleBlock(objPhotoBlock, objTagsBlock, 'after', true);
-            handleBlock(villageHeader, villageCard, 'before', true);
-            handleBlock(villageInfo, villageCard, 'has');
+            handleDOMBlocksOrder(objPhotoBlock, objTagsBlock, 'after', true);
+            handleDOMBlocksOrder(villageHeader, villageCard, 'before', true);
+            handleDOMBlocksOrder(villageInfo, villageCard, 'has');
         }else{ // go mobile
             console.log('applyResizeChanges <'+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet');
-            handleBlock(searchBox, found, 'before');
-            handleBlock(sliderBlockDescrObj, owlWrapperOuter, 'before');
+            handleDOMBlocksOrder(searchBox, found, 'before');
+            handleDOMBlocksOrder(sliderBlockDescrObj, owlWrapperOuter, 'before');
             // фото на стр. объекта
-            handleBlock(objPhotoBlock, formObjectBlock, 'before', true);
-            handleBlock(villageHeader, villageCard, 'after', true);
-            handleBlock(villageInfo, villageHeader, 'has');
+            handleDOMBlocksOrder(objPhotoBlock, formObjectBlock, 'before', true);
+            handleDOMBlocksOrder(villageHeader, villageCard, 'after', true);
+            handleDOMBlocksOrder(villageInfo, villageHeader, 'has');
         }
         window.handleContactsPanel(desktop);
     };
