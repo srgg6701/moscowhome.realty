@@ -17,7 +17,13 @@
 #test-box:hover {
     opacity: 1;
 }
-
+.fixed{
+    position:fixed;
+}
+#contacts.fixed{
+    margin-top:0;
+    top:0;
+}
 .transparent {
     opacity: 0;
 }
@@ -100,7 +106,8 @@
     }
 
     .menu-fixed {
-        top: 0;
+        /* top: 0; */
+        position: relative;
     }
 
     #body-object
@@ -403,7 +410,7 @@
     }
 
     #body-index #found {
-        margin-top: 63px;
+        /* margin-top: 63px; */
     }
 
     #hr-separator-1 {
@@ -480,7 +487,7 @@
     }
 
     #top-block {
-        position: relative;
+        /* position: relative; */
     }
 
     #body-object #top-block {
