@@ -419,6 +419,8 @@
     #body-object
     #contacts-bottom,
     #body-poselok
+    #contacts-bottom,
+    #body-cottage
     #contacts-bottom {
         display: none;
     }
@@ -624,36 +626,22 @@
 
     #body-poselok .house-item_textblock
     .direction {
-
         clear: both;
-
         color: white;
-
         height: 12px;
-
         float: left;
-
         font-size: 13px;
-
         width: auto;
-
     }
 
     #body-poselok .house-item_textblock
     .name {
-
         height: 26px;
-
         margin-bottom: 0;
-
         float: left;
-
         font-size: 15px;
-
         clear: both;
-
         color: white;
-
     }
 
     #body-poselok .house-item_textblock
@@ -661,7 +649,6 @@
         float: left;
         clear: left;
         margin-bottom: 5px;
-
     }
 
     #body-poselok .house-item_textblock
@@ -673,7 +660,8 @@
         background: transparent;
     }
 
-    #body-poselok .topbottompagepadding{
+    #body-poselok .topbottompagepadding,
+    #body-cottage .topbottompagepadding{
         margin-bottom:0;
     }
 
@@ -685,7 +673,7 @@
     #top-menu-box {
         padding-right: 0;
         position: absolute;
-        right: -15px;
+        /*right: -15px;*/
         right: 0;
         top: 0;
         z-index: 999;
@@ -766,5 +754,107 @@
         font-size: 13px;
         margin-bottom: 44px;
         margin-top: 10px;
+    }
+    #body-cottage .module-title{
+        font-size: 24px;
+        text-align:center;
+        margin-top: 5px;
+    }
+    #body-cottage .cottage-poselok-item{
+        border:none;
+        position: relative;
+    }
+    #body-cottage .info-bottom{
+        /* margin-left: 15px; */
+        position:static;
+        height: inherit;
+        min-height: 80px;
+    }
+    #body-cottage 
+        .cottage-poselok-item-info >
+        .cottage-poselok-item-info-text:first-child,
+    #body-cottage 
+        .cottage-poselok-item-name,
+    #body-cottage 
+        .cottage-poselok-item-info2-price{
+        position:absolute;
+    }
+    #body-cottage 
+        .cottage-poselok-item-info-text:not(:first-child){
+        color:#333;
+        font-size: 13px;
+        margin-bottom: 0px;
+        margin-top: 2px;
+    }
+    #body-cottage 
+        .cottage-poselok-item-info >
+        .cottage-poselok-item-info-text:first-child{
+        bottom: 130px;
+        color: white;
+        font-size: 11px;
+        z-index: 1;
+    }
+    #body-cottage .img-box
+        .cottage-poselok-item-info-text{
+        position: absolute;
+        bottom: 60px;
+        color: white;
+        margin-left: 15px;
+    }
+    #body-cottage 
+        .cottage-poselok-item-name{
+        bottom: 37px;
+        font-size: 18px;
+        /* top: 50%; */
+        color: white;
+        /* color: red; */
+        margin-left: 15px;
+    }
+    #body-cottage 
+        .cottage-poselok-item-info2-price{
+        bottom: 8px;
+        color:white;
+        font-size: 18px;
+        /* left:15px; */
+        margin-left: 15px;
+        /* z-index: 10; */
+    }
+    #body-cottage 
+        .cottage-poselok-item-info{
+        padding-left:0;
+        /* position: relative; */
+        z-index: 1;
+    }
+    #body-cottage 
+        .cottage-poselok-item-info2{
+        /* background-color:#F0F0F0; */
+        height: inherit;
+        min-height: 80px;
+        margin-top: 0;
+    }
+    #body-cottage 
+        .info-right-side >
+    .cottage-poselok-item-info2-text:nth-child(1){
+        margin-bottom:0;
+        margin-top: 10px;
+    }
+    #body-cottage 
+        .info-right-side >
+    .cottage-poselok-item-info2-text:nth-child(2){
+        margin-bottom:0;
+        margin-top: 0px;
+    }
+    #body-cottage 
+        .info-right-side{
+        position:absolute;
+    }
+    #body-cottage 
+        .info-box{
+        background-color: #f0f0f0;
+        display: block;
+        margin: auto 15px;
+        overflow: hidden;
+        /* position: relative; */
+        z-index: 0;
     }
 }
