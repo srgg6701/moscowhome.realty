@@ -1,3 +1,4 @@
+var mobilePoint=970, doc = $(document);
 window.onload=function(){
 
     if(!jQuery){
@@ -11,11 +12,7 @@ window.onload=function(){
             if(jQuery){
                 applyResizeChanges(jQuery);
                 var $=jQuery,
-                    checkboxes = $('#filters-set input[type="checkbox"]'),
-                    contactsPanel = $('#contacts'),
-                    classFixed = 'fixed',
-                    doc = $(document),
-                    contactsOffsetTop = contactsPanel.offset().top;
+                    checkboxes = $('#filters-set input[type="checkbox"]');
 
                 window.onresize=applyResizeChanges;
 
@@ -27,16 +24,7 @@ window.onload=function(){
                 });
 
                 window.onscroll = function(){
-                    /*console.log({
-                        'document.scrollTop()':doc.scrollTop(),
-                        contactsOffsetTop:contactsOffsetTop });*/
-                    // Зафиксировать/расфиксировать панель контактов
-                    if(doc.scrollTop()>=contactsOffsetTop){
-                        if(!contactsPanel.hasClass(classFixed))
-                            contactsPanel.addClass(classFixed);
-                    }else if(contactsPanel.hasClass(classFixed)){
-                        contactsPanel.removeClass(classFixed);
-                    }
+                    handleContactsPanel();
                 };
                 clearInterval(intrvl);
             }
@@ -73,29 +61,67 @@ function applyResizeChanges(jQuery){
             }
         };
     window.applyResizeChanges = function(){
-        var windowWidth     =window.innerWidth, place,
+        var windowWidth     =window.innerWidth,
             objPhotoBlock   =$('.object-photo-block').eq(0),
             objTagsBlock    =$('.object-tags-block').eq(0),
             owlWrapperOuter =$('.owl-wrapper-outer').eq(0),
-            formObjectBlock =$('.form-object-block').eq(0);
+            formObjectBlock =$('.form-object-block').eq(0),
+            desktop = windowWidth>=mobilePoint;
 
         console.info('applyResizeChanges resize, windowWidth', { windowWidth:windowWidth});
 
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
 
-        if(windowWidth>=970) {
+        if(desktop) {
             //if(!desktop){
-            console.log('applyResizeChanges >=970, windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertBefore', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
+            console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertBefore', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
             handleBlock(searchBox, found, 'after');
             handleBlock(sliderBlockDescrObj, objectDescribeWrapper, 'has');
             handleBlock(objPhotoBlock, objTagsBlock, 'before');
         }else{
-            console.log('applyResizeChanges >=970, windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertAfter', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
+            console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertAfter', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
             handleBlock(searchBox, found, 'before');
             handleBlock(sliderBlockDescrObj, owlWrapperOuter, 'before');
             handleBlock(objPhotoBlock, formObjectBlock, 'after');
         }
+        handleContactsPanel(desktop);
     };
     applyResizeChanges();
 }
 
+function handleContactsPanel(desktop){
+    var contactsPanel = $('#contacts'),
+        classFixed = 'fixed',
+        contactsPanelOffsetTop=contactsPanel.offset().top,
+        removeFixed = function(){
+            if(contactsPanel.hasClass(classFixed)){
+                contactsPanel.removeClass(classFixed);
+                return true;
+            }else{
+                return false;
+            }
+        };
+    handleContactsPanel = function(desktop){
+        console.log({
+            'document.scrollTop()':doc.scrollTop(),
+            contactsOffsetTop:contactsPanelOffsetTop });
+        // Зафиксировать/расфиксировать панель контактов
+        if(desktop){
+            return removeFixed();
+        }
+
+        if(doc.scrollTop()==contactsPanelOffsetTop){
+            if(window.innerWidth>=mobilePoint)
+                return removeFixed();
+        }
+
+        if(doc.scrollTop()>=contactsPanelOffsetTop){
+            if( window.innerWidth<mobilePoint
+                && !contactsPanel.hasClass(classFixed) )
+                contactsPanel.addClass(classFixed);
+        }else{
+            removeFixed();
+        }
+    };
+    handleContactsPanel(desktop);
+}
