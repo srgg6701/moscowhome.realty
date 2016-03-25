@@ -4,13 +4,20 @@ block vars
 block contents
 	hr.top-hr
 	.container
-		.row
-			.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+		#village-header.row
+			p.breadcrumb
+				span Рублево-Успенское/
+				span Лапино/
+				span Азарово
+			.col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1
 				.module-title.title-inner-page
 					| Поселок
 					.red-text Green Village
-		.row
-			.col-xs-7.col-sm-7.col-md-7.col-lg-7.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+			#village-price
+				span oт
+				include partials/price
+		#village-card.row
+			#village-description.col-md-7.col-lg-7.col-md-offset-1.col-lg-offset-1
 				.subtitle-page
 					| Коттеджный поселок расположен в тихом живописном, экологически чистом месте Рублево-Успенского ш. Со 2-го Успенского шоссе организован совместный охраняемый въезд, ведется согласование освещения.
 				.page-slider
@@ -21,7 +28,7 @@ block contents
 							img(src='assets/images/testimage/fotorama2.jpg')
 						a(href='#')
 							img(src='assets/images/testimage/fotorama3.jpg')
-			.col-xs-3.col-sm-3.col-md-3.col-lg-3
+			#village-info.col-md-3.col-lg-3
 				.module-village-info
 					| Информация о поселке
 				.module-village-info_small
@@ -41,23 +48,24 @@ block contents
 					// <img src="assets/images/testimage/maps2.png">
 		.topbottompagepadding
 			.row
-				.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.main-block
+				.col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1.main-block
 					.filter-block
 						.row
-							.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							.col-md-12.col-lg-12
 								.filter-block_find
 									.filter-block_find-number 87
-									.filter-block_find-text объектов для инвестиций
+									.filter-block_find-text объектов
+										span.hidden-mobile для инвестиций
 						.row
-							.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							.col-md-12.col-lg-12
 								ul.finder-menu
 									li.active По цене
 									li По площади
 					.row
-						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+						.col-md-12.col-lg-12
 							.row
 								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
 												span.img-block-icon
@@ -75,7 +83,7 @@ block contents
 												span.params2
 													span.dop  с мебелью
 								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
 												span.img-block-icon
@@ -93,7 +101,7 @@ block contents
 												span.params2
 													span.dop  с мебелью
 								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
 												span.img-block-icon
@@ -111,7 +119,7 @@ block contents
 												span.params2
 													span.dop  с мебелью
 								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
 												span.img-block-icon
@@ -129,7 +137,7 @@ block contents
 												span.params2
 													span.dop  с мебелью
 								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
 												span.img-block-icon
@@ -147,7 +155,7 @@ block contents
 												span.params2
 													span.dop  с мебелью
 								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
 												span.img-block-icon
@@ -165,7 +173,7 @@ block contents
 												span.params2
 													span.dop  с мебелью
 								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
 												span.img-block-icon

@@ -44,18 +44,7 @@ block contents
 											span.wbr.cnt-1 Дом
 											|  в коттеджном поселке Азарово
 											.subinfo ИЛ-4029
-										.big-block
-											span.big-block-1 49 900 000
-											span.big-block-2  руб
-										.pricevalue-block
-											.pricevalue-block-title Показать цену в
-											.pricevalue-block-box
-												.pricevalue-block-rub.active
-													i.fa.fa-rub.active
-												.pricevalue-block-dollar
-													i.fa.fa-dollar
-												.pricevalue-block-euro
-													i.fa.fa-euro
+										include partials/price
 										.blockinfo
 											.row
 												.col-xs-9.col-sm-9.col-md-9.col-lg-9.blockinfo-text
@@ -141,7 +130,7 @@ block contents
 							a(href='') Дома для прислуги
 							a(href='') У воды
 							a(href='') С ремонтом
-				.row.object-photo-block
+				#object-photo-block.row.object-photo-block
 					.col-xs-12.col-sm-12.col-md-12.col-lg-12
 						.object-photo-block-title Фотографии
 						.col-print-6.print-padding
