@@ -17,20 +17,24 @@
 #test-box:hover {
     opacity: 1;
 }
-.fixed{
-    position:fixed;
+
+.fixed {
+    position: fixed;
 }
-#contacts.fixed{
-    margin-top:0;
+
+#contacts.fixed {
+    margin-top: 0;
     left: 0;
     right: 0;
-    top:0;
+    top: 0;
     z-index: 10;
 }
+
 #village-header .breadcrumb,
 #village-price {
-    display:none;
+    display: none;
 }
+
 .transparent {
     opacity: 0;
 }
@@ -61,9 +65,10 @@
         padding-top: 10px;
     }
 
-    .menu-fixed >.container:first-child{        
+    .menu-fixed > .container:first-child {
         /* padding: 0; */
     }
+
     .container {
         min-width: inherit !important;
     }
@@ -102,8 +107,8 @@
         margin-bottom: 18px !important;
     }
 
-    .filter-block{
-        text-align:center;
+    .filter-block {
+        text-align: center;
     }
 
     .footer-block {
@@ -251,7 +256,8 @@
         left: 50%;
         position: relative;
     }
-    #village-price .pricevalue-block-box{
+
+    #village-price .pricevalue-block-box {
         display: inline-block;
         margin-left: 10px;
     }
@@ -340,9 +346,10 @@
         width: 121px;
     }
 
-    .top-block .top-block_menu-hide{
-        right:0;    
+    .top-block .top-block_menu-hide {
+        right: 0;
     }
+
     hr:not(.separator),
     .hidden-mobile,
     #body-index .owl-controls,
@@ -410,6 +417,8 @@
     }
 
     #body-object
+    #contacts-bottom,
+    #body-poselok
     #contacts-bottom {
         display: none;
     }
@@ -505,10 +514,11 @@
     }
 
     #body-object #top-block,
-    #body-poselok #top-block  {
+    #body-poselok #top-block {
         padding-bottom: 0;
     }
-    #body-poselok .filter-block_find{
+
+    #body-poselok .filter-block_find {
         /*font-weight:bold;*/
         margin-top: 29px;
         text-transform: uppercase;
@@ -576,13 +586,94 @@
         display: none;
     }
 
-    #body-poselok .fotorama__nav-wrap{
-        display:none;
+    #body-poselok .fotorama__nav-wrap {
+        display: none;
     }
-    #body-poselok .house-item{
+
+    #body-poselok .house-item {
         border: none;
-        display:block;
+        display: block;
+        margin-bottom: 0;
+        min-height: inherit;
         padding: 0 15px;
+    }
+
+    #body-poselok .house-item .img-block {
+        max-height: inherit;
+    }
+
+    #body-poselok .img-block-icon {
+
+    }
+
+    #body-poselok .img-block-price {
+        bottom: 60px;
+        font-size: 22px;
+        padding-left: 15px;
+    }
+
+    #body-poselok .house-item_textblock {
+        background: transparent;
+        bottom: 0;
+        color: white;
+        left: 15px;
+        padding-left: 15px;
+        position: absolute;
+    }
+
+    #body-poselok .house-item_textblock
+    .direction {
+
+        clear: both;
+
+        color: white;
+
+        height: 12px;
+
+        float: left;
+
+        font-size: 13px;
+
+        width: auto;
+
+    }
+
+    #body-poselok .house-item_textblock
+    .name {
+
+        height: 26px;
+
+        margin-bottom: 0;
+
+        float: left;
+
+        font-size: 15px;
+
+        clear: both;
+
+        color: white;
+
+    }
+
+    #body-poselok .house-item_textblock
+    .params1 {
+        float: left;
+        clear: left;
+        margin-bottom: 5px;
+
+    }
+
+    #body-poselok .house-item_textblock
+    .params2 {
+        float: left;
+    }
+
+    #body-poselok .opacity-layer {
+        background: transparent;
+    }
+
+    #body-poselok .topbottompagepadding{
+        margin-bottom:0;
     }
 
     #top-block-menu {
@@ -598,71 +689,80 @@
         top: 0;
         z-index: 999;
     }
-    
-    #village-card .subtitle-page{
-        display:none;
+
+    #village-card .subtitle-page {
+        display: none;
     }
 
     .fotorama__loaded--img img,
     .fotorama__stage__shaft,
-    .fotorama__stage.fotorama__pointer{
-        width:100% !important;    
-    }
-    
-    #village-description{
-        padding:0;
+    .fotorama__stage.fotorama__pointer {
+        width: 100% !important;
     }
 
-    #village-description .page-slider{
-        margin-top:0;
+    #village-description {
+        padding: 0;
+    }
+
+    #village-description .page-slider {
+        margin-top: 0;
         margin-bottom: 0;
     }
 
-    #village-header{
+    #village-header {
         background-color: #f5f5f5;
         text-align: center;
         padding-top: 20px;
     }
-    #village-header .breadcrumb{
-        display:block;
+
+    #village-header .breadcrumb {
+        display: block;
         margin-bottom: 0;
     }
-    #village-header .title-inner-page{
+
+    #village-header .title-inner-page {
         margin-bottom: 7px;
         margin-top: -2px;
         font-size: 24px;
     }
-    #village-info .module-village-info{
-        color:#999;
+
+    #village-info .module-village-info {
+        color: #999;
     }
-    #village-info .module-village-info_small{        
-        margin-top: -6px;        
+
+    #village-info .module-village-info_small {
+        margin-top: -6px;
         margin-bottom: 15px;
     }
-    #village-info .module-village-info_small-text{
-        
-width: 20%;
+
+    #village-info .module-village-info_small-text {
+        width: 20%;
     }
-    #village-price{
-        display:block;
+
+    #village-price {
+        display: block;
         font-size: 23px;
     }
-    #village-price >span{
+
+    #village-price > span {
         color: #ce3133;
     }
-    #village-price .big-block{
-        display:inline-block;
+
+    #village-price .big-block {
+        display: inline-block;
         color: #ce3133;
     }
-    #village-price .big-block-1{
+
+    #village-price .big-block-1 {
 
     }
-    #village-price .big-block-2{
-        
-text-transform: uppercase;
+
+    #village-price .big-block-2 {
+        text-transform: uppercase;
     }
-    #village-price .pricevalue-block{
-        font-size:13px;
+
+    #village-price .pricevalue-block {
+        font-size: 13px;
         margin-bottom: 44px;
         margin-top: 10px;
     }

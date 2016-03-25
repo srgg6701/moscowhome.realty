@@ -82,44 +82,43 @@ function applyResizeChanges(jQuery){
         objectDescribeWrapper = $('#object-descr-textblock-wrapper'),
         sliderBlockDescrObj=$('#slider-block-descr-object'),
         searchBox=$('#search-box'),
-        handleBlock=function(target, place, actionCheck, reverse){//, actionDo
+        handleBlock=function(target, place, actionCheck, reverse){
             if(target.length&&place.length){
                 console.groupCollapsed('handleBlock');
-                    console.log('Both target & place have found',
-                        { target:target, place:place });
+                    /*console.log('Both target & place have found',
+                        { target:target, place:place });*/
                 if(actionCheck=='has' && !place.has(target).length){
-                    console.log(target);console.log('appendTo');console.log(place);
+                    console.log(target[0]);console.log('%cappendTo', 'color:blue');console.log(place[0]);
                     target.appendTo(place);
                 }else{
                     var actionDo='insert',
                         checkAction=(reverse)? 'before':'after',
                         elementToGet=target[actionCheck]();
                     actionDo+=(actionCheck==checkAction)? 'Before':'After';
-
-                    /*console.groupCollapsed('%ccheck target or place', 'background-color:yellow');
+                    console.group('%ccheck target or place', 'background-color:yellow');
                         console.log({
-                            '-1 actionCheck':actionCheck,
-                            '0 target':target,
-                            '1 place':place,
-                            '2 target[actionCheck]()[0]':target[actionCheck]()[0],
-                            '3 place[0]':place[0],
+                            '1 elementToGet[0].id':elementToGet[0].id,
+                            '2 place[0].id':place[0].id,
+                            '3 reverse':reverse,
+                            'actions':{
+                                actionCheck:actionCheck,
+                                actionDo:actionDo
+                            },
                             arguments:arguments
                         });
-                        console.trace();
-                    console.groupEnd();*/
-
+                        //console.trace();
+                    console.groupEnd();
                     // target[after]()[0].id!=place[0].id
                     //   target[insertBefore](place);
                     // target[before]()[0].id!=place[0].id
                     //   target[insertAfter](place);
-
                     if(!elementToGet[0] ||
                         elementToGet[0].id!=place[0].id ) {
                         //console.log(place[actionCheck](target)[0].id+'=='+place[0].id);
                         console.log('%cПерестановка', 'color: brown', {
-                            '0 target':target,
+                            '0 target':target[0],
                             '1 actionDo':actionDo,
-                            '2 place':place
+                            '2 place':place[0]
                         });
                         target[actionDo](place);
                     }
@@ -143,20 +142,20 @@ function applyResizeChanges(jQuery){
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
         // go desktop
         if(desktop) {
-            //console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertBefore', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
+            console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:orange');
             handleBlock(searchBox, found, 'after'); // defined on the top
             handleBlock(sliderBlockDescrObj, objectDescribeWrapper, 'has');
             // фото на стр. объекта
             handleBlock(objPhotoBlock, objTagsBlock, 'after', true);
-            handleBlock(villageHeader, villageCard, 'after');
+            handleBlock(villageHeader, villageCard, 'before', true);
             handleBlock(villageInfo, villageCard, 'has');
         }else{ // go mobile
-            //console.log('applyResizeChanges <'+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertAfter', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
+            console.log('applyResizeChanges <'+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet');
             handleBlock(searchBox, found, 'before');
             handleBlock(sliderBlockDescrObj, owlWrapperOuter, 'before');
             // фото на стр. объекта
             handleBlock(objPhotoBlock, formObjectBlock, 'before', true);
-            handleBlock(villageHeader, villageCard, 'before');
+            handleBlock(villageHeader, villageCard, 'after', true);
             handleBlock(villageInfo, villageHeader, 'has');
         }
         window.handleContactsPanel(desktop);
