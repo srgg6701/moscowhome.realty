@@ -1,4 +1,5 @@
-var mobilePoint=970, doc = $(document);
+var mobilePoint=970;
+
 window.onload=function(){
 
     if(!jQuery){
@@ -10,11 +11,55 @@ window.onload=function(){
     var i= 0,
         intrvl=setTimeout(function(){
             if(jQuery){
-                applyResizeChanges(jQuery);
                 var $=jQuery,
-                    checkboxes = $('#filters-set input[type="checkbox"]');
+                    checkboxes = $('#filters-set input[type="checkbox"]'),
+                    contactsPanel = $('#contacts'),
+                    classFixed = 'fixed',
+                    contactsPanelOffsetTop=contactsPanel.offset().top,
+                    doc = $(document);
 
-                window.onresize=applyResizeChanges;
+                window.removeFixed = function(){
+                    if(contactsPanel.hasClass(classFixed)){
+                        contactsPanel.removeClass(classFixed);
+                        return true;
+                    }else{
+                        return false;
+                    }
+                };
+
+                window.handleContactsPanel = function (desktop){
+                    //window.handleContactsPanel = function(desktop){
+                    /*console.log({
+                     'document.scrollTop()':document.scrollTop(),
+                     contactsOffsetTop:contactsPanelOffsetTop });*/
+                    // Зафиксировать/расфиксировать панель контактов
+                    if(desktop){
+                        return removeFixed();
+                    }
+
+                    if(doc.scrollTop()==contactsPanelOffsetTop){
+                        if(window.innerWidth>=mobilePoint)
+                            return removeFixed();
+                    }
+
+                    if(doc.scrollTop()>=contactsPanelOffsetTop){
+                        if( window.innerWidth<mobilePoint
+                            && !contactsPanel.hasClass(classFixed) )
+                            contactsPanel.addClass(classFixed);
+                    }else{
+                        removeFixed();
+                    }
+                    //};
+                };
+
+                window.handleContactsPanel();
+
+                applyResizeChanges(jQuery);
+
+                window.onresize = applyResizeChanges;
+                window.onscroll = function(){
+                    window.handleContactsPanel();
+                };
 
                 $('#test-box').on('dblclick', function(){
                     $(this).toggle('transparent')
@@ -23,9 +68,6 @@ window.onload=function(){
                     $(this).toggleClass('checked');
                 });
 
-                window.onscroll = function(){
-                    handleContactsPanel();
-                };
                 clearInterval(intrvl);
             }
             i++;
@@ -68,7 +110,7 @@ function applyResizeChanges(jQuery){
             formObjectBlock =$('.form-object-block').eq(0),
             desktop = windowWidth>=mobilePoint;
 
-        console.info('applyResizeChanges resize, windowWidth', { windowWidth:windowWidth});
+        //console.info('applyResizeChanges resize, windowWidth', { windowWidth:windowWidth});
 
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
 
@@ -84,44 +126,7 @@ function applyResizeChanges(jQuery){
             handleBlock(sliderBlockDescrObj, owlWrapperOuter, 'before');
             handleBlock(objPhotoBlock, formObjectBlock, 'after');
         }
-        handleContactsPanel(desktop);
+        window.handleContactsPanel(desktop);
     };
     applyResizeChanges();
-}
-
-function handleContactsPanel(desktop){
-    var contactsPanel = $('#contacts'),
-        classFixed = 'fixed',
-        contactsPanelOffsetTop=contactsPanel.offset().top,
-        removeFixed = function(){
-            if(contactsPanel.hasClass(classFixed)){
-                contactsPanel.removeClass(classFixed);
-                return true;
-            }else{
-                return false;
-            }
-        };
-    handleContactsPanel = function(desktop){
-        console.log({
-            'document.scrollTop()':doc.scrollTop(),
-            contactsOffsetTop:contactsPanelOffsetTop });
-        // Зафиксировать/расфиксировать панель контактов
-        if(desktop){
-            return removeFixed();
-        }
-
-        if(doc.scrollTop()==contactsPanelOffsetTop){
-            if(window.innerWidth>=mobilePoint)
-                return removeFixed();
-        }
-
-        if(doc.scrollTop()>=contactsPanelOffsetTop){
-            if( window.innerWidth<mobilePoint
-                && !contactsPanel.hasClass(classFixed) )
-                contactsPanel.addClass(classFixed);
-        }else{
-            removeFixed();
-        }
-    };
-    handleContactsPanel(desktop);
 }

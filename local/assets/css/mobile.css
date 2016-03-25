@@ -54,6 +54,9 @@
         padding-top: 10px;
     }
 
+    .menu-fixed >.container:first-child{
+        padding: 0;
+    }
     .container {
         min-width: inherit !important;
     }
@@ -106,7 +109,7 @@
     }
 
     .menu-fixed {
-        /* top: 0; */
+        overflow: hidden;
         position: relative;
     }
 
@@ -497,7 +500,7 @@
     #body-object #top-slider {
         /* top: 159px; */
         /* margin-bottom: 159px; */
-        margin-top: 159px;
+        /* margin-top: 159px; */
         position: static;
     }
 
@@ -521,7 +524,7 @@
     #top-slider
     .slider-block-descr-object,
     #filters-set {
-        margin-top: 143px;
+        /* margin-top: 143px; */
         max-width: 750px;
         width: 100%;
     }
