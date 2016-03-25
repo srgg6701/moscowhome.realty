@@ -28,7 +28,6 @@ window.onload=function(){
                 };
 
                 window.handleContactsPanel = function (desktop){
-                    //window.handleContactsPanel = function(desktop){
                     /*console.log({
                      'document.scrollTop()':document.scrollTop(),
                      contactsOffsetTop:contactsPanelOffsetTop });*/
@@ -49,7 +48,6 @@ window.onload=function(){
                     }else{
                         removeFixed();
                     }
-                    //};
                 };
 
                 window.handleContactsPanel();
@@ -115,13 +113,12 @@ function applyResizeChanges(jQuery){
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
 
         if(desktop) {
-            //if(!desktop){
-            console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertBefore', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
+            //console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertBefore', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
             handleBlock(searchBox, found, 'after');
             handleBlock(sliderBlockDescrObj, objectDescribeWrapper, 'has');
             handleBlock(objPhotoBlock, objTagsBlock, 'before');
         }else{
-            console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertAfter', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
+            //console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet', { searchBox:searchBox, action:'insertAfter', found: found, 'sliderBlockDescrObj':sliderBlockDescrObj, objPhotoBlock:objPhotoBlock, objectTagsBlock:objTagsBlock });
             handleBlock(searchBox, found, 'before');
             handleBlock(sliderBlockDescrObj, owlWrapperOuter, 'before');
             handleBlock(objPhotoBlock, formObjectBlock, 'after');
