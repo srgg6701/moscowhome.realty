@@ -98,6 +98,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
 
 input.short{
     margin-right: 4px;
+    max-width: 50%;
     width: calc(50% - 8px) !important;
 }
 
@@ -115,6 +116,15 @@ select.short{
 @media (max-width: 969px) {
     [id^="body-filter"] #top-block{
         padding-bottom:0;
+    }
+    select, 
+    input[type="text"]:not([name="object_name"]), 
+    input[type="email"],
+    input[type="password"], 
+    input[type="tel"],
+    input[type="url"], 
+    input[type="file"]{
+        height:33px;
     }
 }
 
