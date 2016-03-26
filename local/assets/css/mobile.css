@@ -331,10 +331,13 @@
 
     .search-block-results-btn {
         bottom: 21px;
+        display: table;
         padding-top: 0 !important;
         position: absolute;
         left: 50%;
         transform:translateX(-50%);
+        white-space: nowrap;
+        /* width: 200px; */
     }
 
     .search-block-results_item
