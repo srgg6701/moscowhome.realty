@@ -275,8 +275,12 @@
         outline: solid 1px #ce3133;
     }
 
-    .pricevalue-block-box i {
-        width: 100%;
+    .pricevalue-block-box > div > i {
+        display: block !important;
+        height: 17px;
+        padding: 0;
+        text-align: center;
+        width: 20px;
     }
 
     .search-block-results_item {
@@ -329,7 +333,8 @@
         bottom: 21px;
         padding-top: 0 !important;
         position: absolute;
-        left: 98px;
+        left: 50%;
+        transform:translateX(-50%);
     }
 
     .search-block-results_item
