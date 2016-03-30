@@ -58,7 +58,7 @@ block contents
 		// Общая площадь, площадь дома/пентхауза/квартиры
 		-var area="Площадь "
 		-var mtr=", <span class='week'>м<sup>2</sup></span>";
-		if bodyindex=='filter-city-appartments' || bodyindex=='city-filter-flats' || bodyindex == 'filter-commercial-industrial' || bodyindex == 'filter-commercial-invset' || bodyindex == 'filter-commercial-office' || bodyindex == 'filter-commercial-trade'
+		if bodyindex=='filter-city-appartments' || bodyindex=='filter-city-flats' || bodyindex=='filter-city-towns' || bodyindex=='filter-commercial-industrial' || bodyindex=='filter-commercial-invset' || bodyindex=='filter-commercial-office' || bodyindex=='filter-commercial-trade'
 			p Общая площадь!{mtr}
 		if bodyindex == 'filter-city-family_house' || bodyindex == 'city-filter-towns' || bodyindex == 'filter-country-house' || bodyindex == 'filter-country-towns'
 			p #{area}дома!{mtr}
@@ -69,7 +69,7 @@ block contents
 		if bodyindex != 'filter-country-yard'
 			input.short(placeholder="от", name="a_from")
 			input.short(placeholder="до", name="a_to")
-		if bodyindex=='filter-city-family_house' || bodyindex=='city-filter-towns' || bodyindex == 'filter-country-house' || bodyindex == 'filter-country-towns' || bodyindex == 'filter-country-yard'
+		if bodyindex=='filter-city-family_house' || bodyindex=='city-filter-towns' || bodyindex=='filter-country-house' || bodyindex=='filter-country-towns' || bodyindex=='filter-country-yard'
 			p Площадь участка
 			input.short(placeholder="от", name="lt_from")
 			input.short(placeholder="до", name="lt_to")
@@ -116,5 +116,5 @@ block contents
 				|Охрана
 		button.module-button.inverse Показать объекты
 		#filters-set-commands
-			a(href="javascript:void()") Свернуть
-			a(href="javascript:void()") Сбросить
+			a(href="javascript:void(0)") Свернуть
+			a(href="javascript:void(0)") Сбросить
