@@ -152,11 +152,11 @@
     </div>
     <script type="text/javascript" src="assets/js/retina.js"></script>
     <div id="filter-manager">
-      <div class="show-filters">Показать фильтры</div>
+      <div data-action="show-filters" class="show-filters">Показать фильтры</div>
       <div class="send-by-email hidden">
-        <div class="pull-left">Отправить на емэйл</div>
-        <div class="pull-left">Скрыть</div>
-      </div><span class="img-block-icon"><i class="fa fa-star-o"></i></span>
+        <div data-action="send-by-email" class="pull-left">Отправить на емэйл</div>
+        <div data-action="hide" class="pull-left">Скрыть</div>
+      </div><span class="img-block-icon"><i data-action="show-favorites" class="fa fa-star-o"></i></span>
     </div>
     <script type="text/javascript">
       var map;

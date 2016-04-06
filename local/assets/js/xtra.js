@@ -66,6 +66,30 @@ window.onload=function(){
                     $(this).toggleClass('checked');
                 });
 
+                var filterManager =$('#filter-manager'),
+                    showFilters = $('[data-action="show-filters"]', filterManager),
+                    sendByEmail = $('[data-action="send-by-email"]', filterManager),
+                    showFavorites = $('[data-action="show-favorites"]', filterManager),
+                    emailHide = $('[data-action="hide"]', filterManager);
+
+                filterManager.on('click', function(event){
+
+                    switch (event.target) {
+                        case showFilters[0]:
+                            console.log('showFilters');
+                            break;
+                        case sendByEmail[0]:
+                            console.log('sendByEmail');
+                            break;
+                        case showFavorites[0]:
+                            console.log('showFavorites');
+                            break;
+                        case emailHide[0]:
+                            console.log('emailHide');
+                            break;
+                    }
+                });
+
                 clearInterval(intrvl);
             }
             i++;

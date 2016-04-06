@@ -179,12 +179,12 @@ block contents
 					// </div>
 block afterFooter
 	#filter-manager
-		.show-filters Показать фильтры
+		.show-filters(data-action="show-filters") Показать фильтры
 		.send-by-email.hidden
-			.pull-left Отправить на емэйл
-			.pull-left Скрыть
+			.pull-left(data-action="send-by-email") Отправить на емэйл
+			.pull-left(data-action="hide") Скрыть
 		span.img-block-icon
-			i.fa.fa-star-o
+			i.fa.fa-star-o(data-action="show-favorites")
 	script(type='text/javascript').
 		var map;
 		function initialize() {
