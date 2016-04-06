@@ -1,4 +1,5 @@
 @charset "utf-8";
+/* #ce3133 */
 /*  mediaqueries */
 #test-box {
     background-color: yellow;
@@ -47,13 +48,47 @@
 
 @media (max-width: 969px) {
 
+    #filter-manager{
+        /* outline: solid 1px blue; */
+        background-color: white;
+        bottom: 100px;
+        height: 40px;
+        position: fixed;
+        text-align: center;
+        text-transform:uppercase;
+        width: 100%;
+    }
+
+    #filter-manager .show-filters{
+        background-color:#ce3133;
+        color:white;
+        cursor: pointer;
+        line-height:40px;
+        margin-right: 40px;
+    }
+
+    #filter-manager .img-block-icon{
+        background-color: whitesmoke;
+        height: 40px;
+        position:absolute;
+        right:0;
+        top: 0;
+        width: 40px;
+    }
+
+    #filter-manager .img-block-icon .fa{
+        color: #ce3133;
+        cursor: pointer;
+        font-size: 25px;
+        margin-top: 7px;
+    }
 
     .main-block ul.finder-menu li:first-child{
-margin-right: 10px;
-}
-    .main-block ul.finder-menu li:last-child{
-        margin-left: 10px;
-        margin-right: 0;
+        margin-right: 10px;
+    }
+    .main-block ul.finder-menu li:last-child{        
+        margin-left: 10px;        
+        margin-right: 0;
     }
 
 
