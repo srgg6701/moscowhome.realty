@@ -66,22 +66,40 @@ window.onload=function(){
                     $(this).toggleClass('checked');
                 });
 
-                var filterManager =$('#filter-manager'),
+                var filtersSet = $('#filters-set'),
+                    filterManager =$('#filter-manager'),
                     showFilters = $('[data-action="show-filters"]', filterManager),
                     sendByEmailBox = $('>.send-by-email', filterManager),
                     sendByEmail = $('[data-action="send-by-email"]', filterManager),
                     showFavorites = $('[data-action="show-favorites"]', filterManager),
                     emailHide = $('[data-action="hide"]', filterManager),
                     emailForm = $('form', filterManager),
-                    hiddenClass = 'hidden';
+                    hiddenClass = 'hidden',
+                    body = $('body'),
+                    sTop;
+
+                // свернуть фильтр
+                $('#filters-set-commands').on('click', function(){
+                    filtersSet.slideUp();
+                });
 
                 filterManager.on('click', function(event){
 
                     switch (event.target) {
-                        case showFilters[0]:
-                            console.log('showFilters');
+                        case showFilters[0]: // Показать фильтры
                             showFilters.addClass(hiddenClass);
                             sendByEmailBox.removeClass(hiddenClass);
+                            filtersSet.slideDown(10, function(){
+                                sTop = body.scrollTop();
+                                console.log('showFilters', {
+                                    body: body,
+                                    height: filtersSet.height(),
+                                    sTop: sTop
+                                });
+                                body.animate({
+                                    scrollTop:filtersSet.height()+sTop-160
+                                }, 300);
+                            });
                             //console.log({showFilters:showFilters, sendByEmail:sendByEmail});
                             break;
                         case sendByEmail[0]:

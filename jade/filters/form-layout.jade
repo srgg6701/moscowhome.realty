@@ -1,8 +1,4 @@
-extends ../layout
-block filterVars
-	-var relpath="../../"
-include form-layout
-//block contents
+block contents
 	#filters-set.container
 		h4 Фильтр объектов
 		input(placeholder="Название, посёлок или населённый пункт", name="object_name")
@@ -59,7 +55,7 @@ include form-layout
 		// Общая площадь, площадь дома/пентхауза/квартиры
 		-var area="Площадь "
 		-var mtr=", <span class='week'>м<sup>2</sup></span>";
-		if bodyindex=='filter-city-appartments' || bodyindex=='filter-city-flats' || bodyindex=='filter-city-towns' || bodyindex=='filter-commercial-industrial' || bodyindex=='filter-commercial-invset' || bodyindex=='filter-commercial-office' || bodyindex=='filter-commercial-trade'
+		if bodyindex=='filter-city-appartments' || bodyindex=='filter-city-flats' || bodyindex=='filter-city-towns' || bodyindex=='filter-commercial-industrial' || bodyindex=='filtered' || bodyindex=='filter-commercial-invset' || bodyindex=='filter-commercial-office' || bodyindex=='filter-commercial-trade'
 			p Общая площадь!{mtr}
 		if bodyindex == 'filter-city-family_house' || bodyindex == 'city-filter-towns' || bodyindex == 'filter-country-house' || bodyindex == 'filter-country-towns'
 			p #{area}дома!{mtr}

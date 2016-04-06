@@ -92,10 +92,6 @@ input:not([type="checkbox"]):not([type="radio"]) {
     width: calc(100% - 72px);
 }
 
-#filters-set {
-
-}
-
 input.short{
     margin-right: 4px;
     max-width: 50%;

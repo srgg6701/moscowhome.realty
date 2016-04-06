@@ -23,10 +23,6 @@
     position: fixed;
 }
 
-.overflow-collapsed{
-    height:0;    
-}
-
 #contacts.fixed {
     margin-top: 0;
     left: 0;
@@ -66,9 +62,14 @@
         z-index: 100;
     }
 
+    #body-filtered #filters-set,
+    #filter-manager form {
+        display: none;
+    }
+
+
     #filter-manager form{
         background-color: whitesmoke;
-        display: none;
         position: absolute;
         height: 440px;
         max-height: 1000%;

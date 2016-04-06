@@ -162,24 +162,10 @@ block contents
 													span.home-suare 510 кв. м.
 												span.params2
 													span.dop  с мебелью
-					// <div class="pagination">
-					// <div class="row">
-					// <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
-					// <ul>
-					// <li class="prev"><a href=""><i class="fa fa-chevron-left"></i>Назад</a></li>
-					// <li class="active"><a href="">1</a></li>
-					// <li><a href="">2</a></li>
-					// <li><a href="">3</a></li>
-					// <li class="between"><a href="">&mdash;</a></li>
-					// <li><a href="">46</a></li>
-					// <li class="next"><a href="">Следующая <i class="fa fa-chevron-right"></i></a></li>
-					// </ul>
-					// </div>
-					// </div>
-					// </div>
+	include filters/form-layout
 	#filter-manager.container
 		-var sendToEmail = "Отправить на емэйл"
-		form.overflow-collapsed
+		form
 			h4 #{sendToEmail}
 			input(type="email", placeholder="Адрес Email")
 			button #{sendToEmail}
