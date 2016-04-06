@@ -425,6 +425,63 @@
         top: 1px;
     }
 
+    #filtered{
+        clear:both;
+    }
+
+    #filter-primary{
+        margin: 12px auto;
+    }
+
+    #filter-primary > .pull-left{
+        padding: 0 8px 0 0;
+        width:50%;
+    }
+
+    #filter-primary .inner{
+        border: solid 1px #ce3234;
+        padding: 0 8px 0 0;
+        position: relative;
+    }
+
+    #filter-primary p{
+        font-size: 10px;
+        margin:0;
+        margin-bottom: -1px;
+        padding: 7px;
+        padding-bottom: 0;
+        text-transform: uppercase;
+    }
+
+    #filter-primary select{
+        border: none;
+        color: #b23537;
+        /* background-color: cyan; */
+        font-size: 18px;
+        font-weight: bold;
+        height: 26px;
+        outline: none;
+        padding-left: 5px;
+        text-transform: uppercase;
+        width:100%;
+    }
+
+    #filter-primary .pointer{
+        background-color: white;
+        bottom: 0px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 6px;
+        padding-top: 13px;
+        pointer-events: none;
+        right: 7px;
+        position:absolute;
+        text-align: center;
+        transform: rotate(180deg) scale(1.5, 0.85);
+        /* height: 28px; */
+        /* width: 20px; */
+    }
+
     #body-object
         #contacts-bottom,
     #body-poselok

@@ -84,18 +84,18 @@ function applyResizeChanges(jQuery){
         searchBox=$('#search-box'),
         handleDOMBlocksOrder=function(target, place, actionCheck, reverse){
             if(target.length&&place.length){
-                console.groupCollapsed('handleDOMBlocksOrder');
+                //console.groupCollapsed('handleDOMBlocksOrder');
                     /*console.log('Both target & place have found',
                         { target:target, place:place });*/
                 if(actionCheck=='has' && !place.has(target).length){
-                    console.log(target[0]);console.log('%cappendTo', 'color:blue');console.log(place[0]);
+                    //console.log(target[0]);console.log('%cappendTo', 'color:blue');console.log(place[0]);
                     target.appendTo(place);
                 }else{
                     var actionDo='insert',
                         checkAction=(reverse)? 'before':'after',
                         elementToGet=target[actionCheck]();
                     actionDo+=(actionCheck==checkAction)? 'Before':'After';
-                    console.group('%ccheck target or place', 'background-color:yellow');
+                    /*console.group('%ccheck target or place', 'background-color:yellow');
                         console.log({
                             '1 elementToGet[0].id':elementToGet[0].id,
                             '2 place[0].id':place[0].id,
@@ -106,7 +106,7 @@ function applyResizeChanges(jQuery){
                             },
                             arguments:arguments
                         }); //console.trace();
-                    console.groupEnd();
+                    console.groupEnd();*/
                     // target[after]()[0].id!=place[0].id
                     //   target[insertBefore](place);
                     // target[before]()[0].id!=place[0].id
@@ -114,15 +114,15 @@ function applyResizeChanges(jQuery){
                     if(!elementToGet[0] ||
                         elementToGet[0].id!=place[0].id ) {
                         //console.log(place[actionCheck](target)[0].id+'=='+place[0].id);
-                        console.log('%cПерестановка', 'color: brown', {
+                        /*console.log('%cПерестановка', 'color: brown', {
                             '0 target':target[0],
                             '1 actionDo':actionDo,
                             '2 place':place[0]
-                        });
+                        });*/
                         target[actionDo](place);
                     }
                 }
-                console.groupEnd();
+                //console.groupEnd();
             }
         };
     window.applyResizeChanges = function(){
@@ -141,7 +141,7 @@ function applyResizeChanges(jQuery){
         $('#test-box').html(windowWidth); //console.log({ windowWidth: windowWidth, place: place });
         // go desktop
         if(desktop) {
-            console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:orange');
+            //console.log('applyResizeChanges >='+mobilePoint+', windowWidth: %c'+windowWidth, 'color:orange');
             handleDOMBlocksOrder(searchBox, found, 'after'); // defined on the top
             handleDOMBlocksOrder(sliderBlockDescrObj, objectDescribeWrapper, 'has');
             // фото на стр. объекта
