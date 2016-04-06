@@ -1,0 +1,260 @@
+extends ./layout
+block vars
+	-var bodyindex="filtered"
+block contents
+	hr.top-hr
+	.container
+		.topbottompagepadding
+			.row
+				.col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1.main-block
+					.filter-block
+						.row
+							.col-md-12.col-lg-12
+								.filter-block_find
+									.filter-block_find-number 87
+									.filter-block_find-text объектов
+										span.hidden-mobile для инвестиций
+						.row
+							.col-md-12.col-lg-12
+								ul.finder-menu
+									li.active По цене
+									li По площади
+					.row
+						.col-md-12.col-lg-12
+							.row
+								a(href='#')
+									span.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/art3.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/art3.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/house3.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/house2.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/house1.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/art3.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/art3.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+					// <div class="pagination">
+					// <div class="row">
+					// <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+					// <ul>
+					// <li class="prev"><a href=""><i class="fa fa-chevron-left"></i>Назад</a></li>
+					// <li class="active"><a href="">1</a></li>
+					// <li><a href="">2</a></li>
+					// <li><a href="">3</a></li>
+					// <li class="between"><a href="">&mdash;</a></li>
+					// <li><a href="">46</a></li>
+					// <li class="next"><a href="">Следующая <i class="fa fa-chevron-right"></i></a></li>
+					// </ul>
+					// </div>
+					// </div>
+					// </div>
+block afterFooter
+	script(type='text/javascript').
+		var map;
+		function initialize() {
+			var styles = [
+				{
+					featureType: "all",
+					stylers: [
+						{saturation: -100}
+					]
+				},
+				{
+					featureType: "road",
+					elementType: "geometry",
+					stylers: [
+						{color: '#ff8c8e'}
+					]
+				}, {
+					featureType: "road",
+					elementType: "labels",
+					stylers: [
+						{color: ''}
+					]
+				}
+			];
+			var mapOptions = {
+				zoom: 15,
+				center: new google.maps.LatLng(55.765045, 37.365775),
+				disableDefaultUI: true,
+				scrollwheel: true
+			};
+			var map = new google.maps.Map(document.getElementById('maps-object-item'), mapOptions);
+			map.setOptions({styles: styles});
+			var bounds = new google.maps.LatLngBounds();
+			var markersPointer = [
+				[55.765045, 37.365775]
+			];
+			var infoArray = [
+				'House1'
+			];
+
+			function setMarkersArray(markersArrayPosition) {
+				var i = 0;
+				var markersArray = [];
+				for (i = 0; i < markersArrayPosition.length; i++) {
+					markersArray[i] = new google.maps.Marker({
+						position: new google.maps.LatLng(markersArrayPosition[i][0], markersArrayPosition[i][1]),
+						icon: 'assets/images/map-house.png'
+					});
+					bounds.extend(new google.maps.LatLng(markersArrayPosition[i][0], markersArrayPosition[i][1]));
+				}
+				return markersArray;
+			}
+
+			var markers = setMarkersArray(markersPointer);
+			var infowindow = new google.maps.InfoWindow();
+
+			function setInfoWindowToMarkers(info, markersArray, map) {
+				var i = 0;
+				for (i = 0; i < markersArray.length; i++) {
+					markersArray[i].content = '<div style="color: #fff;">' + info[i] + '</div>';
+					google.maps.event.addListener(markersArray[i], 'click', function () {
+						infowindow.setContent(this.content);
+						infowindow.open(map, this);
+						jQuery(".gm-style-iw").css('background-color', '#c74b4b');
+						jQuery(".gm-style-iw").prev().html('' +
+										'<div style="width: 0px; height: 0px; border-right-width: 10px; border-right-style: solid; border-right-color: transparent; border-left-width: 10px; border-left-style: solid; border-left-color: transparent; border-top-width: 24px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0.0980392); position: absolute; left: 39px; top: 40px;"></div><div style="position: absolute; left: 0px; top: 0px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; width: 97px; height: 40px; background-color: rgba(0, 0, 0, 0.2);/* border: 20px; */"></div><div style="border-top-width: 24px; position: absolute; left: 39px; top: 37px;"><div style="position: absolute; overflow: hidden; left: -6px; top: -1px; width: 16px; height: 30px;"><div style="position: absolute; left: 6px; transform: skewX(22.6deg); transform-origin: 0px 0px 0px; height: 24px; width: 10px; box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(199, 75, 75);"></div></div><div style="position: absolute; overflow: hidden; top: -1px; left: 10px; width: 16px; height: 30px;"><div style="position: absolute; left: 0px; transform: skewX(-22.6deg); transform-origin: 10px 0px 0px; height: 24px; width: 10px; box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(199, 75, 75);"></div></div></div><div style="position: absolute; left: 1px; top: 1px; border-radius: 2px; width: 95px; height: 38px;background-color: rgb(199, 75, 75);"></div>' +
+										'');
+						//jQuery(".gm-style-iw").next().css('display', 'none');
+					});
+				}
+			}
+
+			setInfoWindowToMarkers(infoArray, markers, map);
+			var clusterStyles = [{
+				textColor: '#fff',
+				fontFamily: 'Roboto',
+				textSize: 18,
+				width: 64,
+				height: 64,
+				url: 'assets/images/cluster-image-back.png'
+			}
+			];
+			var mcOptions = {
+				gridSize: 50,
+				styles: clusterStyles,
+				maxZoom: 15
+			};
+			var mc = new MarkerClusterer(map, markers, mcOptions);
+			//map.fitBounds(bounds);
+			//map.panToBounds(bounds);
+		}
+		//    jQuery(window).resize(function(){
+		//        initialize();
+	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH1xmBKAuW8tHc0BkYZOIHku_txc-UrI&callback=initialize')

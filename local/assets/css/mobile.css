@@ -426,11 +426,13 @@
     }
 
     #body-object
-    #contacts-bottom,
+        #contacts-bottom,
     #body-poselok
-    #contacts-bottom,
+        #contacts-bottom,
+    #body-filtered
+        #contacts-bottom,
     #body-cottage
-    #contacts-bottom {
+        #contacts-bottom {
         display: none;
     }
 
@@ -525,12 +527,13 @@
     }
 
     #body-object #top-block,
-    #body-poselok #top-block {
+    #body-poselok #top-block,
+    #body-filtered #top-block {
         padding-bottom: 0;
     }
 
-    #body-poselok .filter-block_find {
-        /*font-weight:bold;*/
+    #body-poselok .filter-block_find,
+    #body-filtered .filter-block_find {
         margin-top: 29px;
         text-transform: uppercase;
     }
@@ -597,11 +600,13 @@
         display: none;
     }
 
-    #body-poselok .fotorama__nav-wrap {
+    #body-poselok .fotorama__nav-wrap,
+    #body-filtered .fotorama__nav-wrap {
         display: none;
     }
 
-    #body-poselok .house-item {
+    #body-poselok .house-item,
+    #body-filtered .house-item {
         border: none;
         display: block;
         margin-bottom: 0;
@@ -610,21 +615,24 @@
         padding: 0 15px;
     }
 
-    #body-poselok .house-item .img-block {
+    #body-poselok .house-item .img-block,
+    #body-filtered .house-item .img-block {
         max-height: inherit;
     }
 
-    #body-poselok .img-block-icon {
+    /*#body-poselok .img-block-icon {
 
-    }
+    }*/
 
-    #body-poselok .img-block-price {
+    #body-poselok .img-block-price,
+    #body-filtered .img-block-price {
         bottom: 60px;
         font-size: 22px;
         padding-left: 15px;
     }
 
-    #body-poselok .house-item_textblock {
+    #body-poselok .house-item_textblock,
+    #body-filtered .house-item_textblock {
         background: transparent;
         bottom: 0;
         color: white;
@@ -633,8 +641,12 @@
         position: absolute;
     }
 
-    #body-poselok .house-item_textblock
-    .direction {
+    #body-poselok 
+        .house-item_textblock
+            .direction,
+    #body-filtered 
+        .house-item_textblock
+            .direction {
         clear: both;
         color: white;
         height: 12px;
@@ -643,8 +655,12 @@
         width: auto;
     }
 
-    #body-poselok .house-item_textblock
-    .name {
+    #body-poselok 
+        .house-item_textblock
+            .name,
+    #body-filtered 
+        .house-item_textblock
+            .name {
         height: 26px;
         margin-bottom: 0;
         float: left;
@@ -653,24 +669,34 @@
         color: white;
     }
 
-    #body-poselok .house-item_textblock
-    .params1 {
+    #body-poselok 
+        .house-item_textblock
+            .params1,
+    #body-filtered 
+        .house-item_textblock
+            .params1 {
         float: left;
         clear: left;
         margin-bottom: 5px;
     }
 
-    #body-poselok .house-item_textblock
-    .params2 {
+    #body-poselok 
+        .house-item_textblock
+            .params2,
+    #body-filtered 
+        .house-item_textblock
+            .params2 {
         float: left;
     }
 
-    #body-poselok .opacity-layer {
+    #body-poselok .opacity-layer,
+    #body-filtered .opacity-layer {
         background: transparent;
     }
 
     #body-poselok .topbottompagepadding,
-    #body-cottage .topbottompagepadding{
+    #body-cottage .topbottompagepadding,
+    #body-filtered .topbottompagepadding{
         margin-bottom:0;
     }
 

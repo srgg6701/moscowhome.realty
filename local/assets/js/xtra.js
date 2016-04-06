@@ -149,7 +149,7 @@ function applyResizeChanges(jQuery){
             handleDOMBlocksOrder(villageHeader, villageCard, 'before', true);
             handleDOMBlocksOrder(villageInfo, villageCard, 'has');
         }else{ // go mobile
-            console.log('applyResizeChanges <'+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet');
+            //console.log('applyResizeChanges <'+mobilePoint+', windowWidth: %c'+windowWidth, 'color:violet');
             handleDOMBlocksOrder(searchBox, found, 'before');
             handleDOMBlocksOrder(sliderBlockDescrObj, owlWrapperOuter, 'before');
             // фото на стр. объекта
