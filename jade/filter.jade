@@ -5,34 +5,29 @@ block contents
 	hr.top-hr
 	.container
 		#filter-primary
-			.pull-left
-				div.inner
-					p Что ищем:
-					select(name="select-filter-primary")
-						option(value="flat") Квартира
-						option(value="townhouse") Таунхауз
-						option(value="house") Дом
-						option(value="land") Участок
-					.pointer ^
-			.pull-left
-				div.inner
-					p Тип сделки:
-					select(name="select-deal-type")
-						option(value="selling") Продажа
-						option(value="leasing") Аренда
-					.pointer ^
-			#filtered Подобрано
+			.selects-box
+				.pull-left
+					div.inner
+						p Что ищем:
+						select(name="select-filter-primary")
+							option(value="flat") Квартира
+							option(value="townhouse") Таунхауз
+							option(value="house") Дом
+							option(value="land") Участок
+						.pointer ^
+				.pull-left
+					div.inner
+						p Тип сделки:
+						select(name="select-deal-type")
+							option(value="selling") Продажа
+							option(value="leasing") Аренда
+						.pointer ^
+		#filtered Подобрано
 				span 450
 		.topbottompagepadding
 			.row
 				.col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1.main-block
 					.filter-block
-						.row
-							.col-md-12.col-lg-12
-								.filter-block_find
-									.filter-block_find-number 87
-									.filter-block_find-text объектов
-										span.hidden-mobile для инвестиций
 						.row
 							.col-md-12.col-lg-12
 								ul.finder-menu

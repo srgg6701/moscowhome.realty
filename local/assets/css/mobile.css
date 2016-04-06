@@ -47,6 +47,16 @@
 
 @media (max-width: 969px) {
 
+
+    .main-block ul.finder-menu li:first-child{
+margin-right: 10px;
+}
+    .main-block ul.finder-menu li:last-child{
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+
     body {
         min-width: inherit;
         overflow-x:hidden;
@@ -110,6 +120,9 @@
 
     .filter-block {
         text-align: center;
+    }
+    #body-filtered .filter-block {
+        margin-bottom: 0;
     }
 
     .footer-block {
@@ -427,20 +440,45 @@
 
     #filtered{
         clear:both;
+        display: table;
+        font-size: 17px;
+        margin: auto;
+        margin-bottom: 4px;
+        padding-top: 11px;
+        text-transform: uppercase;
+    }
+
+    #filtered span{
+        color: #ce3133;
+        margin-left: 6px;
     }
 
     #filter-primary{
-        margin: 12px auto;
+        background-color: whitesmoke;
+        margin: 1px -15px auto;
+        overflow: auto;
+        padding-bottom: 15px;
     }
 
-    #filter-primary > .pull-left{
-        padding: 0 8px 0 0;
+    #filter-primary .selects-box{
+        margin: 12px auto;
+        padding: 0 15px;
+    }
+
+    #filter-primary .pull-left{
         width:50%;
+    }
+    #filter-primary .pull-left:first-child{
+        padding-right:4px;    
+    }
+    #filter-primary .pull-left:last-child{
+        padding-left:4px;    
     }
 
     #filter-primary .inner{
+        background-color: white;
         border: solid 1px #ce3234;
-        padding: 0 8px 0 0;
+        padding-right: 1px;
         position: relative;
     }
 
@@ -459,7 +497,9 @@
         /* background-color: cyan; */
         font-size: 18px;
         font-weight: bold;
-        height: 26px;
+        height: 25px;
+        margin-bottom: 1px;
+        /* margin-right: 8px; */
         outline: none;
         padding-left: 5px;
         text-transform: uppercase;
@@ -468,13 +508,13 @@
 
     #filter-primary .pointer{
         background-color: white;
-        bottom: 0px;
+        bottom: -3px;
         font-size: 16px;
         font-weight: bold;
         padding: 6px;
         padding-top: 13px;
         pointer-events: none;
-        right: 7px;
+        right: 6px;
         position:absolute;
         text-align: center;
         transform: rotate(180deg) scale(1.5, 0.85);
