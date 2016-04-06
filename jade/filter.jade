@@ -177,14 +177,19 @@ block contents
 					// </div>
 					// </div>
 					// </div>
-block afterFooter
-	#filter-manager
+	#filter-manager.container
+		-var sendToEmail = "Отправить на емэйл"
+		form.overflow-collapsed
+			h4 #{sendToEmail}
+			input(type="email", placeholder="Адрес Email")
+			button #{sendToEmail}
 		.show-filters(data-action="show-filters") Показать фильтры
 		.send-by-email.hidden
-			.pull-left(data-action="send-by-email") Отправить на емэйл
+			.pull-left(data-action="send-by-email") #{sendToEmail}
 			.pull-left(data-action="hide") Скрыть
 		span.img-block-icon
 			i.fa.fa-star-o(data-action="show-favorites")
+block afterFooter
 	script(type='text/javascript').
 		var map;
 		function initialize() {

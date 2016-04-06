@@ -68,27 +68,45 @@ window.onload=function(){
 
                 var filterManager =$('#filter-manager'),
                     showFilters = $('[data-action="show-filters"]', filterManager),
+                    sendByEmailBox = $('>.send-by-email', filterManager),
                     sendByEmail = $('[data-action="send-by-email"]', filterManager),
                     showFavorites = $('[data-action="show-favorites"]', filterManager),
-                    emailHide = $('[data-action="hide"]', filterManager);
+                    emailHide = $('[data-action="hide"]', filterManager),
+                    emailForm = $('form', filterManager),
+                    hiddenClass = 'hidden';
 
                 filterManager.on('click', function(event){
 
                     switch (event.target) {
                         case showFilters[0]:
                             console.log('showFilters');
+                            showFilters.addClass(hiddenClass);
+                            sendByEmailBox.removeClass(hiddenClass);
+                            //console.log({showFilters:showFilters, sendByEmail:sendByEmail});
                             break;
                         case sendByEmail[0]:
                             console.log('sendByEmail');
+                            sendByEmail.addClass(hiddenClass);
+                            emailForm.slideDown();
+                            //showEmailForm();
                             break;
                         case showFavorites[0]:
                             console.log('showFavorites');
                             break;
                         case emailHide[0]:
                             console.log('emailHide');
+                            emailForm.slideUp();
+                            showFilters.removeClass(hiddenClass);
+                            sendByEmail.removeClass(hiddenClass);
+                            sendByEmailBox.addClass(hiddenClass);
                             break;
                     }
                 });
+
+                /*function showEmailForm(){
+                    console.log('showEmailForm');
+                    emailForm.slideUp();
+                }*/
 
                 clearInterval(intrvl);
             }

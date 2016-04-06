@@ -23,6 +23,10 @@
     position: fixed;
 }
 
+.overflow-collapsed{
+    height:0;    
+}
+
 #contacts.fixed {
     margin-top: 0;
     left: 0;
@@ -49,38 +53,100 @@
 @media (max-width: 969px) {
 
     #filter-manager{
+        background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.05));
         /* outline: solid 1px blue; */
         background-color: white;
-        bottom: 100px;
-        height: 40px;
-        position: fixed;
+        /* bottom: 100px; */
+        height: 44px;
+        margin-bottom: 1px;
+        position: relative;
         text-align: center;
         text-transform:uppercase;
         width: 100%;
+        z-index: 100;
+    }
+
+    #filter-manager form{
+        background-color: whitesmoke;
+        display: none;
+        position: absolute;
+        height: 440px;
+        max-height: 1000%;
+        bottom: 100%;
+        overflow: hidden;
+        left: 15px;
+        padding: 15px;
+        right: 15px;
+    }
+    #filter-manager form h4{
+        margin-bottom: 25px;
+        margin-top:14px;
+    }
+    #filter-manager form input[type="email"]{
+        border: solid 1px #ccc;
+        margin-bottom: 18px;
+        padding: 0 12px;
+        width:100%;
+    }
+
+    #filter-manager form button{
+        border:none;
+        line-height:40px;
+        width:100%;
     }
 
     #filter-manager .show-filters{
-        background-color:#ce3133;
-        color:white;
-        cursor: pointer;
         line-height:40px;
-        margin-right: 40px;
+        margin-left: 15px;
+        margin-right: 55px;
     }
 
+    #filter-manager .show-filters,
+    #filter-manager [data-action="send-by-email"],
+    #filter-manager form button{
+        background-color:#ce3133;
+        color:white;
+        cursor: pointer;        
+    }
+
+    #filter-manager >.send-by-email{
+        padding: 6px 15px;
+    }
+
+    #filter-manager >.send-by-email > div{
+        height: 32px;
+        line-height: 32px;
+        padding: 0 9px;
+        font-size: 12px;
+    }
+
+    #filter-manager [data-action="hide"]{
+    
+cursor: pointer;
+    
+margin-left: 10px;
+    
+text-decoration: underline;
+    }
+    
     #filter-manager .img-block-icon{
         background-color: whitesmoke;
         height: 40px;
         position:absolute;
-        right:0;
+        right: 15px;
         top: 0;
         width: 40px;
     }
 
     #filter-manager .img-block-icon .fa{
-        color: #ce3133;
-        cursor: pointer;
-        font-size: 25px;
-        margin-top: 7px;
+        
+color: #ce3133;
+        
+cursor: pointer;
+        
+font-size: 25px;
+        
+margin-top: 7px;
     }
 
     .main-block ul.finder-menu li:first-child{
