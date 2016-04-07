@@ -80,7 +80,7 @@ window.onload=function(){
                     // Ссылка "скрыть"
                     emailHide = $('[data-action="hide"]', filterManager),
                     // "Звёздочка"/колич. в "Избранном"
-                    showFavorites = $('[data-action="show-favorites"]', filterManager),
+                    //showFavorites = $('[data-action="show-favorites"]', filterManager),
                     // счётчик избранного в Избранном
                     favoritesCounterBox = $('h4>span', filterFavorites),
                     // Звёздочка/счётчик Избранного на его пенели
@@ -105,7 +105,7 @@ window.onload=function(){
                 $('#filters-set-commands').on('click', collapseFilter);
 
                 // добавить в Избранное или удалить из него
-                $('#body-filtered').on('click', '.img-block-icon:not(#lodestar)', function(event){
+                $('#body-filtered').on('click', '.img-block-icon:not(#lodestar)', function(){
                     var realtyObject = $(this).parents('a').eq(0),
                         imgSrc = realtyObject.find('img').attr('src');
 
@@ -162,7 +162,6 @@ window.onload=function(){
                         if(!$('img[src="'+imgSrc+'"]', favoritesContainer).length){
 
                             handleIcons($(this));
-
                             var clone = realtyObject.clone();
                             favoritesContainer.prepend(clone);
                             handleIcons(clone.find('.img-block-icon'), 'fa-close');
@@ -171,6 +170,11 @@ window.onload=function(){
                 });
 
                 filterManager.on('click', function(event){
+
+                    if(event.target.dataset.action&&event.target.dataset.action=="show-favorites"){
+                        filterFavorites.slideToggle();
+                        return true;
+                    }
 
                     switch (event.target) {
                         // Показать фильтры
@@ -195,12 +199,8 @@ window.onload=function(){
                             sendByEmail.addClass(hiddenClass);
                             emailForm.slideDown();
                             break;
-                        case showFavorites[0]:
-                            //console.log('showFavorites');
-                            filterFavorites.slideToggle();
-                            break;
                         case emailHide[0]: // скрыть секцию отправки на емэйл и фильтр
-                            console.log('emailHide');
+                            //console.log('emailHide');
                             emailForm.slideUp();
                             // свернуть фильтр, если развёрнут
                             collapseFilter(true);
