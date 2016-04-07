@@ -81,7 +81,12 @@ window.onload=function(){
                     emailHide = $('[data-action="hide"]', filterManager),
                     // "Звёздочка"/колич. в "Избранном"
                     showFavorites = $('[data-action="show-favorites"]', filterManager),
+                    // счётчик избранного в Избранном
                     favoritesCounterBox = $('h4>span', filterFavorites),
+                    // Звёздочка/счётчик Избранного на его пенели
+                    lodestar = $('#lodestar'),
+                    // счётчик избранного на панели Избранного
+                    lodestarCnt = $('>.cnt', lodestar),
                     // Форма отправки
                     emailForm = $('form', filterManager),
                     hiddenClass = 'hidden',
@@ -114,7 +119,8 @@ window.onload=function(){
                         var actionGreen='addClass',
                             iconToAdd='fa-check',
                             iconToRemove='fa-star-o',
-                            cnt=+favoritesCounterBox.text();
+                            cnt=+favoritesCounterBox.text(),
+                            lodestarCounter=lodestar.hasClass('counter');
                         if(remove){
                             actionGreen='removeClass';
                             if(remove===true){
@@ -123,9 +129,13 @@ window.onload=function(){
                             }else
                                 iconToAdd = remove;
                             iconToRemove='fa-check';
+                            if(lodestarCounter&&cnt==0) lodestar.removeClass('counter');
                         }else{
                             favoritesCounterBox.text(++cnt);
+                            if(!lodestarCounter) lodestar.addClass('counter');
                         }
+
+                        lodestarCnt.text(cnt);
                         console.log({
                             '0 ob':ob,
                             actionGreen:actionGreen,

@@ -162,6 +162,10 @@
         font-size: 12px;
     }
 
+    #filter-manager .counter [data-action="show-favorites"]{
+        display:none;
+    }
+
     #filter-manager [data-action="hide"]{    
         cursor: pointer;
         margin-left: 10px;
@@ -175,13 +179,32 @@
         right: 15px;
         top: 0;
         width: 40px;
-    }
+    }        
 
     #filter-manager .img-block-icon .fa{
         color: #ce3133;
         cursor: pointer;
         font-size: 25px;
         margin-top: 7px;
+    }
+    #filter-manager .img-block-icon .cnt{
+        display:none;
+        background-color: white;
+        border-radius: 50%;
+        line-height: 24px;
+        margin: auto;
+        margin-top: 7px;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+    }
+    #filter-manager .img-block-icon.counter .cnt{
+        display:inherit;
+        cursor: pointer;
+    }
+
+    #lodestar.counter{
+        background-color: #ce3133;
     }
 
     .main-block ul.finder-menu li:first-child{
