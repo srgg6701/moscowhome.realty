@@ -109,11 +109,11 @@ window.onload=function(){
                     var realtyObject = $(this).parents('a').eq(0),
                         imgSrc = realtyObject.find('img').attr('src');
 
-                    console.log({
+                    /*console.log({
                         imgSrc:imgSrc,
                         imgSrcFavorites: $('img[src="'+imgSrc+'"]', favoritesContainer),
                         realtyObject:realtyObject
-                    });
+                    });*/
 
                     function handleIcons(ob, remove){
                         var actionGreen='addClass',
@@ -136,20 +136,20 @@ window.onload=function(){
                         }
 
                         lodestarCnt.text(cnt);
-                        console.log({
+                        /*console.log({
                             '0 ob':ob,
                             actionGreen:actionGreen,
                             iconToAdd:iconToAdd,
                             iconToRemove:iconToRemove,
                             iconToRemoveClass:ob.find('.i')
-                        });
+                        });*/
                         ob[actionGreen]('green');
                         ob.find('i').removeClass(iconToRemove).addClass(iconToAdd);
                     }
 
                     // Удаляем из Избранного
                     if($(this).find('i.fa-close').length){
-                        console.log('remove from Favorites');
+                        //console.log('remove from Favorites');
                         realtyObject.remove();
                         var source=$('#realty-objects')
                             .find('img[src="'+imgSrc+'"]')
@@ -188,10 +188,10 @@ window.onload=function(){
                                     scrollTop:filtersSet.height()+sTop-160
                                 }, 300);
                             });
-                            console.log({showFilters:showFilters, sendByEmail:sendByEmail});
+                            //console.log({showFilters:showFilters, sendByEmail:sendByEmail});
                             break;
                         case sendByEmail[0]:
-                            console.log('sendByEmail');
+                            //console.log('sendByEmail');
                             sendByEmail.addClass(hiddenClass);
                             emailForm.slideDown();
                             break;
