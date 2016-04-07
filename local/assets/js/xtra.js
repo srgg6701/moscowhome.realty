@@ -81,6 +81,7 @@ window.onload=function(){
                     emailHide = $('[data-action="hide"]', filterManager),
                     // "Звёздочка"/колич. в "Избранном"
                     showFavorites = $('[data-action="show-favorites"]', filterManager),
+                    favoritesCounterBox = $('h4>span', filterFavorites),
                     // Форма отправки
                     emailForm = $('form', filterManager),
                     hiddenClass = 'hidden',
@@ -98,7 +99,7 @@ window.onload=function(){
 
                 $('#filters-set-commands').on('click', collapseFilter);
 
-                // добавить в Избранное
+                // добавить в Избранное или удалить из него
                 $('#body-filtered').on('click', '.img-block-icon:not(#lodestar)', function(event){
                     var realtyObject = $(this).parents('a').eq(0),
                         imgSrc = realtyObject.find('img').attr('src');
@@ -112,11 +113,18 @@ window.onload=function(){
                     function handleIcons(ob, remove){
                         var actionGreen='addClass',
                             iconToAdd='fa-check',
-                            iconToRemove='fa-star-o';
+                            iconToRemove='fa-star-o',
+                            cnt=+favoritesCounterBox.text();
                         if(remove){
                             actionGreen='removeClass';
-                            iconToAdd = remove===true? 'fa-star-o' : remove;
+                            if(remove===true){
+                                iconToAdd ='fa-star-o';
+                                favoritesCounterBox.text(--cnt);
+                            }else
+                                iconToAdd = remove;
                             iconToRemove='fa-check';
+                        }else{
+                            favoritesCounterBox.text(++cnt);
                         }
                         console.log({
                             '0 ob':ob,
