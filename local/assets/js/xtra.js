@@ -12,7 +12,8 @@ window.onload=function(){
         intrvl=setTimeout(function(){
             if(jQuery){
                 var $=jQuery,
-                    checkboxes = $('#filters-set input[type="checkbox"]'),
+                    filtersSet = $('#filters-set'),
+                    checkboxes = $('input[type="checkbox"]', filtersSet),
                     contactsPanel = $('#contacts'),
                     classFixed = 'fixed',
                     contactsPanelOffsetTop=contactsPanel.offset().top,
@@ -66,65 +67,131 @@ window.onload=function(){
                     $(this).toggleClass('checked');
                 });
 
-                var filtersSet = $('#filters-set'),
-                    filterManager =$('#filter-manager'),
+                var filterManager = $('#filter-manager'),
+                    // блок с "избранным"
+                    filterFavorites = $('#filter-favorites'),
+                    // контейнер для объектов в Избранном
+                    favoritesContainer = $('#favorites-container'),
                     showFilters = $('[data-action="show-filters"]', filterManager),
+                    // Блок управления избранным
                     sendByEmailBox = $('>.send-by-email', filterManager),
+                    // "Кнопка" "Отправить на емэйл"
                     sendByEmail = $('[data-action="send-by-email"]', filterManager),
-                    showFavorites = $('[data-action="show-favorites"]', filterManager),
+                    // Ссылка "скрыть"
                     emailHide = $('[data-action="hide"]', filterManager),
+                    // "Звёздочка"/колич. в "Избранном"
+                    showFavorites = $('[data-action="show-favorites"]', filterManager),
+                    // Форма отправки
                     emailForm = $('form', filterManager),
                     hiddenClass = 'hidden',
                     body = $('body'),
                     sTop;
 
-                // свернуть фильтр
-                $('#filters-set-commands').on('click', function(){
-                    filtersSet.slideUp();
+                // свернуть/развернуть фильтр
+                function collapseFilter(check){
+                    if(check){
+                        if(filtersSet.is(':visible'))
+                            filtersSet.slideUp();
+                    }else
+                        filtersSet.slideToggle();
+                }
+
+                $('#filters-set-commands').on('click', collapseFilter);
+
+                // добавить в Избранное
+                $('#body-filtered').on('click', '.img-block-icon:not(#lodestar)', function(event){
+                    var realtyObject = $(this).parents('a').eq(0),
+                        imgSrc = realtyObject.find('img').attr('src');
+
+                    console.log({
+                        imgSrc:imgSrc,
+                        imgSrcFavorites: $('img[src="'+imgSrc+'"]', favoritesContainer),
+                        realtyObject:realtyObject
+                    });
+
+                    function handleIcons(ob, remove){
+                        var actionGreen='addClass',
+                            iconToAdd='fa-check',
+                            iconToRemove='fa-star-o';
+                        if(remove){
+                            actionGreen='removeClass';
+                            iconToAdd = remove===true? 'fa-star-o' : remove;
+                            iconToRemove='fa-check';
+                        }
+                        console.log({
+                            '0 ob':ob,
+                            actionGreen:actionGreen,
+                            iconToAdd:iconToAdd,
+                            iconToRemove:iconToRemove,
+                            iconToRemoveClass:ob.find('.i')
+                        });
+                        ob[actionGreen]('green');
+                        ob.find('i').removeClass(iconToRemove).addClass(iconToAdd);
+                    }
+
+                    // Удаляем из Избранного
+                    if($(this).find('i.fa-close').length){
+                        console.log('remove from Favorites');
+                        realtyObject.remove();
+                        var source=$('#realty-objects')
+                            .find('img[src="'+imgSrc+'"]')
+                            .parent().find('.img-block-icon');
+                        //
+                        handleIcons(source, true);
+
+                    }else if(filterFavorites.length){ // Добавляем в избранное
+                        // выберем для сравнения картинку из объекта
+                        if(!$('img[src="'+imgSrc+'"]', favoritesContainer).length){
+
+                            handleIcons($(this));
+
+                            var clone = realtyObject.clone();
+                            favoritesContainer.prepend(clone);
+                            handleIcons(clone.find('.img-block-icon'), 'fa-close');
+                        }
+                    }
                 });
 
                 filterManager.on('click', function(event){
 
                     switch (event.target) {
-                        case showFilters[0]: // Показать фильтры
+                        // Показать фильтры
+                        case showFilters[0]:
                             showFilters.addClass(hiddenClass);
                             sendByEmailBox.removeClass(hiddenClass);
                             filtersSet.slideDown(10, function(){
                                 sTop = body.scrollTop();
-                                console.log('showFilters', {
+                                /*console.log('showFilters', {
                                     body: body,
                                     height: filtersSet.height(),
                                     sTop: sTop
-                                });
+                                });*/
                                 body.animate({
                                     scrollTop:filtersSet.height()+sTop-160
                                 }, 300);
                             });
-                            //console.log({showFilters:showFilters, sendByEmail:sendByEmail});
+                            console.log({showFilters:showFilters, sendByEmail:sendByEmail});
                             break;
                         case sendByEmail[0]:
                             console.log('sendByEmail');
                             sendByEmail.addClass(hiddenClass);
                             emailForm.slideDown();
-                            //showEmailForm();
                             break;
                         case showFavorites[0]:
-                            console.log('showFavorites');
+                            //console.log('showFavorites');
+                            filterFavorites.slideToggle();
                             break;
-                        case emailHide[0]:
+                        case emailHide[0]: // скрыть секцию отправки на емэйл и фильтр
                             console.log('emailHide');
                             emailForm.slideUp();
+                            // свернуть фильтр, если развёрнут
+                            collapseFilter(true);
                             showFilters.removeClass(hiddenClass);
                             sendByEmail.removeClass(hiddenClass);
                             sendByEmailBox.addClass(hiddenClass);
                             break;
                     }
                 });
-
-                /*function showEmailForm(){
-                    console.log('showEmailForm');
-                    emailForm.slideUp();
-                }*/
 
                 clearInterval(intrvl);
             }

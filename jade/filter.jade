@@ -35,8 +35,8 @@ block contents
 									li По площади
 					.row
 						.col-md-12.col-lg-12
-							.row
-								a(href='#')
+							#realty-objects.row
+								a(href='javascript:void(0)')
 									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
@@ -54,7 +54,7 @@ block contents
 													span.home-suare 510 кв. м.
 												span.params2
 													span.dop  с мебелью
-								a(href='#')
+								a(href='javascript:void(0)')
 									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
@@ -72,7 +72,7 @@ block contents
 													span.home-suare 510 кв. м.
 												span.params2
 													span.dop  с мебелью
-								a(href='#')
+								a(href='javascript:void(0)')
 									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
@@ -90,7 +90,7 @@ block contents
 													span.home-suare 510 кв. м.
 												span.params2
 													span.dop  с мебелью
-								a(href='#')
+								a(href='javascript:void(0)')
 									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
@@ -108,7 +108,7 @@ block contents
 													span.home-suare 510 кв. м.
 												span.params2
 													span.dop  с мебелью
-								a(href='#')
+								a(href='javascript:void(0)')
 									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
@@ -126,7 +126,7 @@ block contents
 													span.home-suare 510 кв. м.
 												span.params2
 													span.dop  с мебелью
-								a(href='#')
+								a(href='javascript:void(0)')
 									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
@@ -144,7 +144,7 @@ block contents
 													span.home-suare 510 кв. м.
 												span.params2
 													span.dop  с мебелью
-								a(href='#')
+								a(href='javascript:void(0)')
 									span.col-md-3.col-lg-3
 										span.house-item
 											span.img-block
@@ -163,6 +163,10 @@ block contents
 												span.params2
 													span.dop  с мебелью
 	include filters/form-layout
+	#filter-favorites.container
+		h4 В избранном
+			span 0
+		#favorites-container
 	#filter-manager.container
 		-var sendToEmail = "Отправить на емэйл"
 		form
@@ -173,7 +177,7 @@ block contents
 		.send-by-email.hidden
 			.pull-left(data-action="send-by-email") #{sendToEmail}
 			.pull-left(data-action="hide") Скрыть
-		span.img-block-icon
+		span#lodestar.img-block-icon
 			i.fa.fa-star-o(data-action="show-favorites")
 block afterFooter
 	script(type='text/javascript').

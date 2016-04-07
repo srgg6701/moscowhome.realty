@@ -4,6 +4,7 @@
 #test-box {
     background-color: yellow;
     bottom: 0;
+    pointer-events: none;
     height: 40px;
     opacity: 0;
     padding: 10px;
@@ -16,11 +17,15 @@
 }
 
 #test-box:hover {
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 .fixed {
     position: fixed;
+}
+
+.green{
+    background-color: green !important;
 }
 
 #contacts.fixed {
@@ -52,14 +57,50 @@
         background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.05));
         /* outline: solid 1px blue; */
         background-color: white;
-        /* bottom: 100px; */
+        bottom: 0;
         height: 44px;
         margin-bottom: 1px;
-        position: relative;
+        position: fixed;
         text-align: center;
         text-transform:uppercase;
         width: 100%;
         z-index: 100;
+    }
+
+    #favorites-container >a >span,
+    #favorites-container >a >span >span{
+        padding: 0 !important;
+    }
+
+    #filter-favorites{       
+        background-color: whitesmoke;
+        display: none;
+        margin-bottom: -8px;
+    }
+
+    #body-filtered .fa.fa-check, 
+    #body-filtered .fa.fa-close{
+        font-size: 23px;
+        margin-top: 4px;
+    }
+    #body-filtered .fa.fa-check{
+        color: white;
+    }
+
+    #filter-favorites h4{
+        margin-bottom: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 16px;
+    }
+
+    #filter-favorites h4 span{
+        color:#ce3133;
+        margin-left:10px;
+    }
+
+    #body-filtered .footer-block{
+      margin-bottom:40px;  
     }
 
     #body-filtered #filters-set,
@@ -98,8 +139,8 @@
 
     #filter-manager .show-filters{
         line-height:40px;
-        margin-left: 15px;
-        margin-right: 55px;
+        /* margin-left: 15px; */
+        margin-right: 40px;
     }
 
     #filter-manager .show-filters,
@@ -111,7 +152,7 @@
     }
 
     #filter-manager >.send-by-email{
-        padding: 6px 15px;
+        padding-top: 6px;
     }
 
     #filter-manager >.send-by-email > div{
@@ -121,17 +162,14 @@
         font-size: 12px;
     }
 
-    #filter-manager [data-action="hide"]{
-    
-cursor: pointer;
-    
-margin-left: 10px;
-    
-text-decoration: underline;
+    #filter-manager [data-action="hide"]{    
+        cursor: pointer;
+        margin-left: 10px;
+        text-decoration: underline;
     }
     
     #filter-manager .img-block-icon{
-        background-color: whitesmoke;
+        background-color: rgba(0,0,0,0.25);
         height: 40px;
         position:absolute;
         right: 15px;
@@ -140,14 +178,10 @@ text-decoration: underline;
     }
 
     #filter-manager .img-block-icon .fa{
-        
-color: #ce3133;
-        
-cursor: pointer;
-        
-font-size: 25px;
-        
-margin-top: 7px;
+        color: #ce3133;
+        cursor: pointer;
+        font-size: 25px;
+        margin-top: 7px;
     }
 
     .main-block ul.finder-menu li:first-child{
