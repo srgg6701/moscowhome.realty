@@ -17,7 +17,9 @@ window.onload=function(){
                     contactsPanel = $('#contacts'),
                     classFixed = 'fixed',
                     contactsPanelOffsetTop=contactsPanel.offset().top,
-                    doc = $(document);
+                    doc = $(document),
+                    body = $('body'),
+                    bodyHeight=body.height();
 
                 window.removeFixed = function(){
                     if(contactsPanel.hasClass(classFixed)){
@@ -89,9 +91,7 @@ window.onload=function(){
                     lodestarCnt = $('>.cnt', lodestar),
                     // Форма отправки
                     emailForm = $('form', filterManager),
-                    hiddenClass = 'hidden',
-                    body = $('body'),
-                    sTop;
+                    hiddenClass = 'hidden';
 
                 // свернуть/развернуть фильтр
                 function collapseFilter(check){
@@ -182,14 +182,17 @@ window.onload=function(){
                             showFilters.addClass(hiddenClass);
                             sendByEmailBox.removeClass(hiddenClass);
                             filtersSet.slideDown(10, function(){
-                                sTop = body.scrollTop();
+                                var contactsPanelHeight = contactsPanel.height() + parseInt(contactsPanel.css('padding-top')),
+                                    windowDiff = window.innerHeight-filtersSet.height(),
+                                    scrollHeight = bodyHeight - windowDiff - contactsPanelHeight - 1;
                                 /*console.log('showFilters', {
-                                    body: body,
-                                    height: filtersSet.height(),
-                                    sTop: sTop
+                                    bodyHeight: bodyHeight,
+                                    windowDiff:windowDiff,
+                                    contactsPanelHeight:contactsPanelHeight,
+                                    scrollHeight:scrollHeight
                                 });*/
                                 body.animate({
-                                    scrollTop:filtersSet.height()+sTop-160
+                                    scrollTop: scrollHeight
                                 }, 300);
                             });
                             //console.log({showFilters:showFilters, sendByEmail:sendByEmail});
