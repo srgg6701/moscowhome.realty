@@ -20,14 +20,6 @@
     /* opacity: 1; */
 }
 
-.fixed {
-    position: fixed;
-}
-
-.green{
-    background-color: green !important;
-}
-
 #contacts.fixed {
     margin-top: 0;
     left: 0;
@@ -53,160 +45,6 @@
 
 @media (max-width: 969px) {
 
-    #filter-manager{
-        background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.05));
-        /* outline: solid 1px blue; */
-        background-color: white;
-        bottom: 0;
-        height: 44px;
-        margin-bottom: 1px;
-        position: fixed;
-        text-align: center;
-        text-transform:uppercase;
-        width: 100%;
-        z-index: 100;
-    }
-
-    #favorites-container >a >span,
-    #favorites-container >a >span >span{
-        padding: 0 !important;
-    }
-
-    #filter-favorites{       
-        background-color: whitesmoke;
-        display: none;
-        margin-bottom: -8px;
-    }
-
-    #body-filtered .fa.fa-check, 
-    #body-filtered .fa.fa-close{
-        font-size: 23px;
-        margin-top: 4px;
-    }
-    #body-filtered .fa.fa-check{
-        color: white;
-    }
-
-    #filter-favorites h4{
-        margin-bottom: 10px;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 16px;
-    }
-
-    #filter-favorites h4 span{
-        color:#ce3133;
-        margin-left:10px;
-    }
-
-    #body-filtered .footer-block{
-      margin-bottom:40px;  
-    }
-
-    #body-filtered #filters-set,
-    #filter-manager form {
-        display: none;
-    }
-
-
-    #filter-manager form{
-        background-color: whitesmoke;
-        position: absolute;
-        height: 440px;
-        max-height: 1000%;
-        bottom: 100%;
-        overflow: hidden;
-        left: 15px;
-        padding: 15px;
-        right: 15px;
-    }
-    #filter-manager form h4{
-        margin-bottom: 25px;
-        margin-top:14px;
-    }
-    #filter-manager form input[type="email"]{
-        border: solid 1px #ccc;
-        margin-bottom: 18px;
-        padding: 0 12px;
-        width:100%;
-    }
-
-    #filter-manager form button{
-        border:none;
-        line-height:40px;
-        width:100%;
-    }
-
-    #filter-manager .show-filters{
-        line-height:40px;
-        /* margin-left: 15px; */
-        margin-right: 40px;
-    }
-
-    #filter-manager .show-filters,
-    #filter-manager [data-action="send-by-email"],
-    #filter-manager form button{
-        background-color:#ce3133;
-        color:white;
-        cursor: pointer;        
-    }
-
-    #filter-manager >.send-by-email{
-        padding-top: 6px;
-    }
-
-    #filter-manager >.send-by-email > div{
-        height: 32px;
-        line-height: 32px;
-        padding: 0 9px;
-        font-size: 12px;
-    }
-
-    #filter-manager .counter [data-action="show-favorites"]{
-        display:none;
-    }
-
-    #filter-manager [data-action="hide"]{    
-        cursor: pointer;
-        margin-left: 10px;
-        text-decoration: underline;
-    }
-    
-    #filter-manager .img-block-icon{
-        background-color: rgba(0,0,0,0.25);
-        height: 40px;
-        position:absolute;
-        right: 15px;
-        top: 0;
-        width: 40px;
-    }        
-
-    #filter-manager .img-block-icon .fa{
-        color: #ce3133;
-        cursor: pointer;
-        font-size: 25px;
-        margin-top: 7px;
-    }
-    #filter-manager .img-block-icon .cnt{
-        display:none;
-        background-color: white;
-        border-radius: 50%;
-        line-height: 24px;
-        margin: auto;
-        margin-top: 7px;
-        height: 25px;
-        width: 25px;
-        text-align: center;
-    }
-    #filter-manager .img-block-icon.counter .cnt{
-        display:inherit;
-        cursor: pointer;
-    }
-
-    #lodestar.counter{
-        background-color: #ce3133;
-    }
-
     .main-block ul.finder-menu li:first-child{
         margin-right: 10px;
     }
@@ -214,7 +52,6 @@
         margin-left: 10px;        
         margin-right: 0;
     }
-
 
     body {
         min-width: inherit;
@@ -275,13 +112,6 @@
     .feedback-text {
         text-align: center;
         margin-bottom: 18px !important;
-    }
-
-    .filter-block {
-        text-align: center;
-    }
-    #body-filtered .filter-block {
-        margin-bottom: 0;
     }
 
     .footer-block {
@@ -595,90 +425,6 @@
     .top-block_info-2 {
         margin-top: -35px;
         top: 1px;
-    }
-
-    #filtered{
-        clear:both;
-        display: table;
-        font-size: 17px;
-        margin: auto;
-        margin-bottom: 4px;
-        padding-top: 11px;
-        text-transform: uppercase;
-    }
-
-    #filtered span{
-        color: #ce3133;
-        margin-left: 6px;
-    }
-
-    #filter-primary{
-        background-color: whitesmoke;
-        margin: 1px -15px auto;
-        overflow: auto;
-        padding-bottom: 15px;
-    }
-
-    #filter-primary .selects-box{
-        margin: 12px auto;
-        padding: 0 15px;
-    }
-
-    #filter-primary .pull-left{
-        width:50%;
-    }
-    #filter-primary .pull-left:first-child{
-        padding-right:4px;    
-    }
-    #filter-primary .pull-left:last-child{
-        padding-left:4px;    
-    }
-
-    #filter-primary .inner{
-        background-color: white;
-        border: solid 1px #ce3234;
-        padding-right: 1px;
-        position: relative;
-    }
-
-    #filter-primary p{
-        font-size: 10px;
-        margin:0;
-        margin-bottom: -1px;
-        padding: 7px;
-        padding-bottom: 0;
-        text-transform: uppercase;
-    }
-
-    #filter-primary select{
-        border: none;
-        color: #b23537;
-        /* background-color: cyan; */
-        font-size: 18px;
-        font-weight: bold;
-        height: 25px;
-        margin-bottom: 1px;
-        /* margin-right: 8px; */
-        outline: none;
-        padding-left: 5px;
-        text-transform: uppercase;
-        width:100%;
-    }
-
-    #filter-primary .pointer{
-        background-color: white;
-        bottom: -3px;
-        font-size: 16px;
-        font-weight: bold;
-        padding: 6px;
-        padding-top: 13px;
-        pointer-events: none;
-        right: 6px;
-        position:absolute;
-        text-align: center;
-        transform: rotate(180deg) scale(1.5, 0.85);
-        /* height: 28px; */
-        /* width: 20px; */
     }
 
     #body-object
