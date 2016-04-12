@@ -75,7 +75,7 @@
 }
 
 #filter-primary select{
-    border: none;
+    border: solid 1px white;
     color: #b23537;
     /* background-color: cyan; */
     font-size: 18px;
