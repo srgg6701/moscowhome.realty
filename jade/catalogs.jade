@@ -22,7 +22,7 @@ mixin house(contents)
 					span.params2
 						span.dop  #{contents[1][5]}
 						if contents[1][6]
-							span.type-estate #{contents[1][6]}
+							span.type-estate.hidden-mobile #{contents[1][6]}
 extends ./layout
 block vars
 	-var bodyindex="filtered"
