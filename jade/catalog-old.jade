@@ -1,0 +1,1399 @@
+extends ./layout
+block vars
+	-var bodyindex="filtered"
+block contents
+	hr.top-hr
+	.map
+		#mapcatalog
+			// <img src="assets/images/testimage/maps.png" style="width: 100%; height: 630px;">
+	.container
+		.row
+			.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
+				.filter-top-block
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							ul
+								li.col-xs-3.col-sm-3.col-md-3.col-lg-3.padding0.tab.active(data-tab='1') Квартира
+								li.col-xs-3.col-sm-3.col-md-3.col-lg-3.padding0.tab(data-tab='2') Таунхаус
+								li.col-xs-3.col-sm-3.col-md-3.col-lg-3.padding0.tab(data-tab='3') Дом
+								li.col-xs-3.col-sm-3.col-md-3.col-lg-3.padding0.tab(data-tab='4') Участок
+					.inner-filter-block.toggletab.tab-active(data-tab='1')
+						.row.alphabet-box
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.alphabet-block
+								.alphabet-block-title Расположение
+								ul
+									li
+										| А
+									li Б
+									li
+										| В
+										ul
+											li Велич
+											li Ватутинки
+											li Вилладж Парк
+											li
+												img(src='assets/images/icon-menu-house.png')
+												| Вилладжио
+											li Восход
+									li Г
+									li Д
+									li Е
+									li Ж
+									li З
+									li И
+									li К
+									li Л
+									li М
+									li Н
+									li О
+									li П
+									li Р
+									li С
+									li Т
+									li У
+									li Ф
+									li Х
+									li Ц
+									li Ч
+									li Ш
+									li Э
+									li Ю
+									li Я
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.selected-alphabet
+								.selected-alphabet-item
+									| Высокие Холмы
+									i.fa.fa-remove
+								.selected-alphabet-item
+									| Анасимово
+									i.fa.fa-remove
+								.selected-alphabet-item
+									img(src='assets/images/icon-menu-house-r.png')
+									| Вилладжио
+									i.fa.fa-remove
+						.row.filter-top-block-search
+							.col-xs-1.col-sm-1.col-md-1.col-lg-1.search-block_text-block
+								.search-block_text Найти
+							.col-xs-11.col-sm-11.col-md-11.col-lg-11
+								input(type='text', name='search', placeholder='Название, поселок или населенный пункт', value='')
+						.row.marginleft0.marginright0
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block
+								.row
+									.col-xs-7.col-sm-7.col-md-7.col-lg-7
+										.type-box
+											.label-filter Тип
+											.field-filter
+												.filter-select-box
+													i.fa.fa-chevron-down
+													select.filter-select
+														option Покупка
+														option Аренда
+														option Продажа
+										.price-box
+											.label-filter Цена
+											.field-filter
+												input.from(type='text', name='from', placeholder='от')
+												input.to(type='text', name='to', placeholder='до')
+												.filter-select-box.right.price
+													// <div class="dropdown">
+													// <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													// <span class="caret"></span>
+													// </button>
+													// <ul class="dropdown-menu" aria-labelledby="dLabel">
+													// <li><i class="fa fa-rub"></i></li>
+													// <li><i class="fa fa-dollar"></i></li>
+													// <li><i class="fa fa-euro"></i></li>
+													// </ul>
+													// </div>
+													.select-own-box
+														// <div class="selected-box">
+														.select-selected-text
+															i.fa.fa-rub
+														i.arrow.fa.fa-chevron-down
+														.select-hidden-box
+															.select-item(data-val='0')
+																i.fa.fa-rub
+															.select-item(data-val='1')
+																i.fa.fa-dollar
+															.select-item(data-val='2')
+																i.fa.fa-euro
+															// </div>
+														input(type='hidden', name='select-own-val', value='0')
+													// <select class="filter-select " id="dropdownselect">
+													// <option><i class="fa fa-rub"></i>РУБ</option>
+													// <option><i class="fa fa-dollar"></i>ДОЛ</option>
+													// <option><i class="fa fa-euro"></i>ЕВР</option>
+													// </select>
+									// <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 price-box">
+									//
+									// </div>
+									.col-xs-5.col-sm-5.col-md-5.col-lg-5.distance-box
+										.distance-box-inner
+											.label-filter от МКАД, км
+											.field-filter
+												input.from(type='text', name='distance-from', placeholder='от')
+												input.to(type='text', name='distance-to', placeholder='до')
+						.adding-field-search
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.label-filter Шоссе
+									.field-filter
+										.filter-item.active Любое
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+										.filter-item.link.allroad-btn Показать все
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.allroad-block.hideroad
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+							// <div class="row marginleft0 marginright0">
+							// <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 parameters-block4">
+							// <div class="label-filter">Тип дома</div>
+							// <div class="field-filter">
+							// <div class="filter-item active">Панельный</div>
+							// <div class="filter-item">Блочный</div>
+							// <div class="filter-item active">Кирпичный</div>
+							// <div class="filter-item">Деревянный</div>
+							// <div class="filter-item">Монолитный</div>
+							// <div class="filter-item">Любой</div>
+							// </div>
+							// </div>
+							// </div>
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
+									.distance-box-inner
+										.label-filter
+											| Площадь квартиры,
+											span(style='color: #949494')
+												| м
+												sup 2
+										.field-filter
+											input.from(type='text', name='square-from', placeholder='от')
+											input.to(type='text', name='square-to', placeholder='до')
+									.flat-block
+										.label-filter Комнат
+										.field-filter
+											.filter-item 1
+											.filter-item 2
+											.filter-item.active 3
+											.filter-item 4
+											.filter-item 5+
+									.type-box
+										.label-filter Состояние
+										.field-filter
+											.filter-select-box
+												i.fa.fa-chevron-down
+												select.filter-select
+													option Любое
+													option В отличном
+													option В хорошем
+								// <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 parameters-block2 square-box">
+								// <div class="distance-box-inner">
+								// <div class="label-filter">Площадь участка, <span style="color: #949494">м<sup>2</sup></span></div>
+								// <div class="field-filter">
+								// <input type="text" name="square-from" class="from" placeholder="от">
+								// <input type="text" name="square-to" class="to" placeholder="до">
+								// </div>
+								// </div>
+								// </div>
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
+									.squaredFour
+										input#squaredFourInput1(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput1')
+										span.inlabel Охрана
+							// <div class="row marginleft0 marginright0">
+							// <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 parameters-block2 square-box">
+							// <div class="distance-box-inner">
+							// <div class="label-filter">Площадь дома, <span style="color: #949494">м<sup>2</sup></span></div>
+							// <div class="field-filter">
+							// <input type="text" name="square-from" class="from" placeholder="от">
+							// <input type="text" name="square-to" class="to" placeholder="до">
+							// </div>
+							// </div>
+							// </div>
+							// <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 parameters-block2 square-box">
+							// <div class="distance-box-inner">
+							// <div class="label-filter">Площадь участка, <span style="color: #949494">м<sup>2</sup></span></div>
+							// <div class="field-filter">
+							// <input type="text" name="square-from" class="from" placeholder="от">
+							// <input type="text" name="square-to" class="to" placeholder="до">
+							// </div>
+							// </div>
+							// </div>
+							// </div>
+						.row
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block3.floatright
+								.addingsettings
+									.icon-settings
+									.options-block.closeblock
+										| Расширенный поиск
+									.filter-btn Показать объекты
+					.inner-filter-block.toggletab(data-tab='2')
+						.row.alphabet-box
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.alphabet-block
+								.alphabet-block-title Расположение
+								ul
+									li
+										| А
+									li Б
+									li
+										| В
+										ul
+											li Велич
+											li Ватутинки
+											li Вилладж Парк
+											li
+												img(src='assets/images/icon-menu-house.png')
+												| Вилладжио
+											li Восход
+									li Г
+									li Д
+									li Е
+									li Ж
+									li З
+									li И
+									li К
+									li Л
+									li М
+									li Н
+									li О
+									li П
+									li Р
+									li С
+									li Т
+									li У
+									li Ф
+									li Х
+									li Ц
+									li Ч
+									li Ш
+									li Э
+									li Ю
+									li Я
+						.row.filter-top-block-search
+							.col-xs-1.col-sm-1.col-md-1.col-lg-1.search-block_text-block
+								.search-block_text Найти
+							.col-xs-11.col-sm-11.col-md-11.col-lg-11
+								input(type='text', name='search', placeholder='Название, поселок или населенный пункт', value='')
+						.row.marginleft0.marginright0
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block
+								.row
+									.col-xs-7.col-sm-7.col-md-7.col-lg-7
+										.type-box
+											.label-filter Тип
+											.field-filter
+												.filter-select-box
+													i.fa.fa-chevron-down
+													select.filter-select
+														option Покупка
+														option Аренда
+														option Продажа
+										.price-box
+											.label-filter Цена
+											.field-filter
+												input.from(type='text', name='from', placeholder='от')
+												input.to(type='text', name='to', placeholder='до')
+												.filter-select-box.right.price
+													.select-own-box
+														.select-selected-text
+															i.fa.fa-rub
+														i.arrow.fa.fa-chevron-down
+														.select-hidden-box
+															.select-item(data-val='0')
+																i.fa.fa-rub
+															.select-item(data-val='1')
+																i.fa.fa-dollar
+															.select-item(data-val='2')
+																i.fa.fa-euro
+														input(type='hidden', name='select-own-val', value='0')
+									.col-xs-5.col-sm-5.col-md-5.col-lg-5.distance-box
+										.distance-box-inner
+											.label-filter от МКАД, км
+											.field-filter
+												input.from(type='text', name='distance-from', placeholder='от')
+												input.to(type='text', name='distance-to', placeholder='до')
+						.adding-field-search
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.label-filter Шоссе
+									.field-filter
+										.filter-item.active Любое
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+										.filter-item.link.allroad-btn Показать все
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.allroad-block.hideroad
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
+									.distance-box-inner
+										.label-filter
+											| Площадь дома,
+											span(style='color: #949494')
+												| м
+												sup 2
+										.field-filter
+											input.from(type='text', name='square-from', placeholder='от')
+											input.to(type='text', name='square-to', placeholder='до')
+									.distance-box-inner
+										.label-filter
+											| Площадь участка,
+											span(style='color: #949494')
+												| м
+												sup 2
+										.field-filter
+											input.from(type='text', name='square-from', placeholder='от')
+											input.to(type='text', name='square-to', placeholder='до')
+									.type-box
+										.label-filter Состояние
+										.field-filter
+											.filter-select-box
+												i.fa.fa-chevron-down
+												select.filter-select
+													option Любое
+													option В отличном
+													option В хорошем
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
+									.type-box
+										.label-filter Тип участка
+										.field-filter
+											.filter-select-box
+												i.fa.fa-chevron-down
+												select.filter-select
+													option Любой
+													option Правильной формы
+									.squaredFour
+										input#squaredFourInput2(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput2')
+										span.inlabel Охрана
+									.squaredFour
+										input#squaredFourInput3(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput3')
+										span.inlabel Баня
+									.squaredFour
+										input#squaredFourInput4(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput4')
+										span.inlabel Гараж
+						.row
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block3.floatright
+								.addingsettings
+									.icon-settings
+									.options-block.closeblock
+										| Расширенный поиск
+									.filter-btn Показать объекты
+					.inner-filter-block.toggletab(data-tab='3')
+						.row.alphabet-box
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.alphabet-block
+								.alphabet-block-title Расположение
+								ul
+									li
+										| А
+									li Б
+									li
+										| В
+										ul
+											li Велич
+											li Ватутинки
+											li Вилладж Парк
+											li
+												img(src='assets/images/icon-menu-house.png')
+												| Вилладжио
+											li Восход
+									li Г
+									li Д
+									li Е
+									li Ж
+									li З
+									li И
+									li К
+									li Л
+									li М
+									li Н
+									li О
+									li П
+									li Р
+									li С
+									li Т
+									li У
+									li Ф
+									li Х
+									li Ц
+									li Ч
+									li Ш
+									li Э
+									li Ю
+									li Я
+						.row.filter-top-block-search
+							.col-xs-1.col-sm-1.col-md-1.col-lg-1.search-block_text-block
+								.search-block_text Найти
+							.col-xs-11.col-sm-11.col-md-11.col-lg-11
+								input(type='text', name='search', placeholder='Название, поселок или населенный пункт', value='')
+						.row.marginleft0.marginright0
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block
+								.row
+									.col-xs-7.col-sm-7.col-md-7.col-lg-7
+										.type-box
+											.label-filter Тип
+											.field-filter
+												.filter-select-box
+													i.fa.fa-chevron-down
+													select.filter-select
+														option Покупка
+														option Аренда
+														option Продажа
+										.price-box
+											.label-filter Цена
+											.field-filter
+												input.from(type='text', name='from', placeholder='от')
+												input.to(type='text', name='to', placeholder='до')
+												.filter-select-box.right.price
+													.select-own-box
+														.select-selected-text
+															i.fa.fa-rub
+														i.arrow.fa.fa-chevron-down
+														.select-hidden-box
+															.select-item(data-val='0')
+																i.fa.fa-rub
+															.select-item(data-val='1')
+																i.fa.fa-dollar
+															.select-item(data-val='2')
+																i.fa.fa-euro
+														input(type='hidden', name='select-own-val', value='0')
+									.col-xs-5.col-sm-5.col-md-5.col-lg-5.distance-box
+										.distance-box-inner
+											.label-filter от МКАД, км
+											.field-filter
+												input.from(type='text', name='distance-from', placeholder='от')
+												input.to(type='text', name='distance-to', placeholder='до')
+						.adding-field-search
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.label-filter Шоссе
+									.field-filter
+										.filter-item.active Любое
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+										.filter-item.link.allroad-btn Показать все
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.allroad-block.hideroad
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
+									.distance-box-inner
+										.label-filter
+											| Площадь дома,
+											span(style='color: #949494')
+												| м
+												sup 2
+										.field-filter
+											input.from(type='text', name='square-from', placeholder='от')
+											input.to(type='text', name='square-to', placeholder='до')
+									.distance-box-inner
+										.label-filter
+											| Площадь участка,
+											span(style='color: #949494')
+												| м
+												sup 2
+										.field-filter
+											input.from(type='text', name='square-from', placeholder='от')
+											input.to(type='text', name='square-to', placeholder='до')
+									.type-box
+										.label-filter Состояние
+										.field-filter
+											.filter-select-box
+												i.fa.fa-chevron-down
+												select.filter-select
+													option Любое
+													option В отличном
+													option В хорошем
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
+									.type-box
+										.label-filter Тип участка
+										.field-filter
+											.filter-select-box
+												i.fa.fa-chevron-down
+												select.filter-select
+													option Любой
+													option Правильной формы
+									.squaredFour
+										input#squaredFourInput5(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput5')
+										span.inlabel Бассейн
+									.squaredFour
+										input#squaredFourInput6(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput6')
+										span.inlabel Баня
+									.squaredFour
+										input#squaredFourInput7(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput7')
+										span.inlabel Гараж
+									.squaredFour
+										input#squaredFourInput8(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput8')
+										span.inlabel Охрана
+						.row
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block3.floatright
+								.addingsettings
+									.icon-settings
+									.options-block.closeblock
+										| Расширенный поиск
+									.filter-btn Показать объекты
+					.inner-filter-block.toggletab(data-tab='4')
+						.row.alphabet-box
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.alphabet-block
+								.alphabet-block-title Расположение
+								ul
+									li
+										| А
+									li Б
+									li
+										| В
+										ul
+											li Велич
+											li Ватутинки
+											li Вилладж Парк
+											li
+												img(src='assets/images/icon-menu-house.png')
+												| Вилладжио
+											li Восход
+									li Г
+									li Д
+									li Е
+									li Ж
+									li З
+									li И
+									li К
+									li Л
+									li М
+									li Н
+									li О
+									li П
+									li Р
+									li С
+									li Т
+									li У
+									li Ф
+									li Х
+									li Ц
+									li Ч
+									li Ш
+									li Э
+									li Ю
+									li Я
+						.row.filter-top-block-search
+							.col-xs-1.col-sm-1.col-md-1.col-lg-1.search-block_text-block
+								.search-block_text Найти
+							.col-xs-11.col-sm-11.col-md-11.col-lg-11
+								input(type='text', name='search', placeholder='Название, поселок или населенный пункт', value='')
+						.row.marginleft0.marginright0
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block
+								.row
+									.col-xs-7.col-sm-7.col-md-7.col-lg-7
+										.type-box
+											.label-filter Тип
+											.field-filter
+												.filter-select-box
+													i.fa.fa-chevron-down
+													select.filter-select
+														option Покупка
+														option Аренда
+														option Продажа
+										.price-box
+											.label-filter Цена
+											.field-filter
+												input.from(type='text', name='from', placeholder='от')
+												input.to(type='text', name='to', placeholder='до')
+												.filter-select-box.right.price
+													.select-own-box
+														.select-selected-text
+															i.fa.fa-rub
+														i.arrow.fa.fa-chevron-down
+														.select-hidden-box
+															.select-item(data-val='0')
+																i.fa.fa-rub
+															.select-item(data-val='1')
+																i.fa.fa-dollar
+															.select-item(data-val='2')
+																i.fa.fa-euro
+														input(type='hidden', name='select-own-val', value='0')
+									.col-xs-5.col-sm-5.col-md-5.col-lg-5.distance-box
+										.distance-box-inner
+											.label-filter от МКАД, км
+											.field-filter
+												input.from(type='text', name='distance-from', placeholder='от')
+												input.to(type='text', name='distance-to', placeholder='до')
+						.adding-field-search
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.label-filter Шоссе
+									.field-filter
+										.filter-item.active Любое
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+										.filter-item.link.allroad-btn Показать все
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2
+									.allroad-block.hideroad
+										.filter-item Ильинское
+										.filter-item Минское
+										.filter-item Можайское
+										.filter-item Новорижское
+										.filter-item Рублево-Успенское
+							.row.marginleft0.marginright0
+								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
+									.distance-box-inner
+										.label-filter
+											| Площадь участка,
+											span(style='color: #949494')
+												| м
+												sup 2
+										.field-filter
+											input.from(type='text', name='square-from', placeholder='от')
+											input.to(type='text', name='square-to', placeholder='до')
+									.type-box
+										.label-filter Тип участка
+										.field-filter
+											.filter-select-box
+												i.fa.fa-chevron-down
+												select.filter-select
+													option Любой
+													option Правильной формы
+									.squaredFour
+										input#squaredFourInput9(type='checkbox', value='None', name='check')
+										label(for='squaredFourInput9')
+										span.inlabel Охрана
+						.row
+							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block3.floatright
+								.addingsettings
+									.icon-settings
+									.options-block.closeblock
+										| Расширенный поиск
+									.filter-btn Показать объекты
+	.container
+		.main-block
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
+					.module-title.title-inner-page.center.catalogs
+						| Подобрано
+						.catalog-search-title 72
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					ul.finder-menu.catalog-finder-menu
+						li.active По цене
+						li По площади
+						li По площади участка
+						li По удаленности
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
+					.row
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.price-val
+											i.fa.fa-dollar
+											i.fa.fa-euro
+											i.fa.fa-ruble
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+											span.type-estate Аренда
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.price-val
+											i.fa.fa-dollar
+											i.fa.fa-euro
+											i.fa.fa-ruble
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+											span.type-estate Продажа
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/art3.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12.inc-modules-margin
+							.inc-module
+								.inc-module-img
+									img(src='assets/images/testimage/minislider.png')
+								.inc-module-elements
+									.slider-block-descr
+										.slider-block-descr-textblock
+											.slider-block-descr-textblock-m
+												.col-xs-1.col-sm-1.col-md-1.col-lg-1.discount-block
+													img(src='assets/images/icon-discount.png')
+												.col-xs-7.col-sm-7.col-md-7.col-lg-7
+													.row
+														.col-xs-12.col-sm-12.col-md-12.col-lg-12
+															.slider-block-descr-textblock-info
+																| Дом под ключ с мебелью
+															.slider-block-descr-textblock-info2
+																a(href='') Любушкин Хутор
+																a(href='') Рублево-Успенское
+															.slider-block-descr-textblock-info3
+																.home-suare 500 кв. м.
+																.land-square 51 сотка
+																.distance 15 км
+													.row
+														.col-xs-12.col-sm-12.col-md-12.col-lg-12.slider-block-third-mod
+															.small-block
+																s 52 090 000 руб
+															.big-block
+																span.big-block-1 49 900 000
+																span.big-block-2  руб
+															.after-btn
+																a.module-button.inverse(href='') Посмотреть дом
+										.slider-block-opacity
+					.row
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							.row
+								a(href='#')
+									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/art3.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/house3.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/house2.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+								a(href='#')
+									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+										span.house-item
+											span.img-block
+												span.img-block-icon
+													i.fa.fa-star-o
+												span.img-block-price
+													span.opacity-layer
+													span.price-layer 49 900 000 руб
+												img(src='assets/images/testimage/house2.png')
+											span.house-item_textblock
+												span.direction Рублевское шоссе
+												span.name Лебединое озеро
+												span.params1
+													span.land-square 25 сот
+													span.home-suare 510 кв. м.
+												span.params2
+													span.dop  с мебелью
+					.loadingpage
+						.icon
+					// <div class="pagination catalogs-pagination">
+					// <div class="row">
+					// <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+					// <ul>
+					// <li class="prev"><a href=""><i class="fa fa-chevron-left"></i>Назад</a></li>
+					// <li class="active"><a href="">1</a></li>
+					// <li><a href="">2</a></li>
+					// <li><a href="">3</a></li>
+					// <li class="between"><a href="">&mdash;</a></li>
+					// <li><a href="">46</a></li>
+					// <li class="next"><a href="">Следующая <i class="fa fa-chevron-right"></i></a></li>
+					// </ul>
+					// </div>
+					// </div>
+					// </div>
+	.inc-module.bigslider-outer
+		.inc-module.bigslide
+			.big-slide-container
+				.container
+					.row
+						.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
+							.inc-module-elements
+								.inc-module-text1 Большой выбор?
+								.inc-module-text2
+									| Позвоните и мы поможем вам подобрать идеальный
+									br
+									|  вариант с учетом всех ваших пожеланий!
+								.inc-module-text3 +7 (495) 133 33 88
+								.inc-module-input
+									form(action='', name='order')
+										.row
+											.col-xs-4.col-sm-4.col-md-4.col-lg-4
+												input(type='text', placeholder='Имя')
+											.col-xs-4.col-sm-4.col-md-4.col-lg-4
+												input(type='text', placeholder='Телефон')
+											// <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+											// <input type="text" placeholder="Компания">
+											// </div>
+											.col-xs-4.col-sm-4.col-md-4.col-lg-4
+												input(type='text', placeholder='Email')
+										.row
+											.col-xs-4.col-sm-4.col-md-4.col-lg-4
+												button.btn-send(type='submit', name='send') Отправить заявку
+			.inc-module-img
+				img(src='assets/images/testimage/big-slider.png')
+				.slider-block-opacity
+	.elite-block.catalog
+		.container
+			.row
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10.elite-block-inner
+					.row
+						.col-xs-4.col-sm-4.col-md-4.col-lg-4
+							.elite-block-inner_img
+								img(src='assets/images/icon-first.png')
+							.elite-block-inner_text4 20 лет на рынке
+							.elite-block-inner_text5 Полностью меблирован мебелью известных итальянских марок.
+						.col-xs-4.col-sm-4.col-md-4.col-lg-4
+							.elite-block-inner_img
+								img(src='assets/images/icon-second.png')
+							.elite-block-inner_text4 2 000 объектов
+							.elite-block-inner_text5 Никаких комиссий и дополнительных сборов!Бесплатный трансфер от метро.
+						.col-xs-4.col-sm-4.col-md-4.col-lg-4
+							.elite-block-inner_img
+								img(src='assets/images/icon-third.png')
+							.elite-block-inner_text4 10 00 клиентов
+							.elite-block-inner_text5 н системой умный дом. Полностью меблирован мебелью известных итальянских мар
+					// </div>
+					// </div>
+	//.footer-block
+		.container
+			.row.top-block
+				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-4.col-sm-4.col-md-4.col-lg-4
+					a(href='')
+						img(src='assets/images/logo.png')
+				.col-xs-2.col-sm-2.col-md-2.col-lg-2.padding0
+					.top-block_info-1 +7 (495) 133 33 88
+					.top-block_info-2 Ежедневно с 9:00 до 22:00
+				.col-xs-4.col-sm-4.col-md-4.col-lg-4.top-block_menu-block.paddingright0
+					.top-block_menu
+						ul
+							li
+								a(href='') Городская
+							li
+								a(href='') Загородная
+							li
+								a.marginright0(href='') Коммерческая
+block afterFooter
+	script(type='text/javascript').
+		var map;
+		function initialize() {
+			var styles = [
+				{
+					featureType: "all",
+					stylers: [
+						{ saturation: -100 }
+					]
+				},
+				{
+					featureType: "road",
+					elementType: "geometry",
+					stylers: [
+						{color: '#ff8c8e'}
+					]
+				},{
+					featureType: "road",
+					elementType: "labels",
+					stylers: [
+						{color: ''}
+					]
+				}
+			];
+			var mapOptions = {
+				zoom: 15,
+				//center: new google.maps.LatLng(55.765045, 37.3619133),
+				center: new google.maps.LatLng(55.765045, 37.365775),
+				disableDefaultUI: false,
+				scrollwheel: false
+			};
+			var map = new google.maps.Map(document.getElementById('mapcatalog'),mapOptions);
+			map.setOptions({styles: styles});
+			var bounds = new google.maps.LatLngBounds();
+			//      var marker = new google.maps.Marker({
+			//        position: new google.maps.LatLng(55.765045, 37.365775),
+			//        //map: map,
+			//        icon: 'assets/images/map-house.png'
+			//      });
+			//
+			//      bounds.extend(new google.maps.LatLng(55.765045, 37.365775));
+			//
+			//      var marker2 = new google.maps.Marker({
+			//        position: new google.maps.LatLng(55.765045, 37.375775),
+			//        //map: map,
+			//        icon: 'assets/images/map-house.png'
+			//      });
+			//
+			//      bounds.extend(new google.maps.LatLng(55.765045, 37.375775));
+			//
+			//
+			//      var marker3 = new google.maps.Marker({
+			//        position: new google.maps.LatLng(55.765045, 37.376865),
+			//        //map: map,
+			//        icon: 'assets/images/map-house.png'
+			//      });
+			//
+			//      bounds.extend(new google.maps.LatLng(55.765045, 37.376865));
+			//
+			//      var marker4 = new google.maps.Marker({
+			//        position: new google.maps.LatLng(55.741894, 37.279591),
+			//        //map: map,
+			//        icon: 'assets/images/map-house.png'
+			//      });
+			//
+			//      bounds.extend(new google.maps.LatLng(55.741894, 37.279591));
+			//
+			//
+			//      var marker5 = new google.maps.Marker({
+			//        position: new google.maps.LatLng(55.773400, 37.253307),
+			//        //map: map,
+			//        icon: 'assets/images/map-house.png'
+			//      });
+			//
+			//      bounds.extend(new google.maps.LatLng(55.773400, 37.253307));
+			//
+			//      var marker6 = new google.maps.Marker({
+			//        position: new google.maps.LatLng(55.775068, 37.246339),
+			//        //map: map,
+			//        icon: 'assets/images/map-house.png'
+			//
+			//      });
+			//
+			//      bounds.extend(new google.maps.LatLng(55.775068, 37.246339));
+			//
+			//var markers = [{position: 55.765045, 37.365775},{}];
+			var markersPointer = [
+				[55.765045, 37.365775],
+				[55.765045, 37.375775],
+				[55.765045, 37.376865],
+				[55.741894, 37.279591],
+				[55.773400, 37.253307],
+				[55.775068, 37.246339]
+			];
+			var infoArray = [
+				'House1',
+				'House2',
+				'House3',
+				'House4',
+				'House5',
+				'House6'
+			];
+			function setMarkersArray(markersArrayPosition){
+				var i = 0;
+				var markersArray = [];
+				for(i=0; i < markersArrayPosition.length; i++){
+					markersArray[i] = new google.maps.Marker({
+						position: new google.maps.LatLng(markersArrayPosition[i][0], markersArrayPosition[i][1]),
+						icon: 'assets/images/map-house.png'
+					});
+					bounds.extend(new google.maps.LatLng(markersArrayPosition[i][0], markersArrayPosition[i][1]));
+				}
+				return markersArray;
+			}
+			var markers = setMarkersArray(markersPointer);
+			var infowindow = new google.maps.InfoWindow();
+			function setInfoWindowToMarkers(info, markersArray, map){
+				var i = 0;
+				for(i = 0; i < markersArray.length; i++){
+					markersArray[i].content = '<div style="color: #fff;">'+info[i]+'</div>';
+					google.maps.event.addListener(markersArray[i],'click', function() {
+						infowindow.setContent(this.content);
+						infowindow.open(map, this);
+						jQuery(".gm-style-iw").css('background-color', '#c74b4b');
+						jQuery(".gm-style-iw").prev().html('' +
+									'<div style="width: 0px; height: 0px; border-right-width: 10px; border-right-style: solid; border-right-color: transparent; border-left-width: 10px; border-left-style: solid; border-left-color: transparent; border-top-width: 24px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0.0980392); position: absolute; left: 39px; top: 40px;"></div><div style="position: absolute; left: 0px; top: 0px; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; width: 97px; height: 40px; background-color: rgba(0, 0, 0, 0.2);/* border: 20px; */"></div><div style="border-top-width: 24px; position: absolute; left: 39px; top: 37px;"><div style="position: absolute; overflow: hidden; left: -6px; top: -1px; width: 16px; height: 30px;"><div style="position: absolute; left: 6px; transform: skewX(22.6deg); transform-origin: 0px 0px 0px; height: 24px; width: 10px; box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(199, 75, 75);"></div></div><div style="position: absolute; overflow: hidden; top: -1px; left: 10px; width: 16px; height: 30px;"><div style="position: absolute; left: 0px; transform: skewX(-22.6deg); transform-origin: 10px 0px 0px; height: 24px; width: 10px; box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;background-color: rgb(199, 75, 75);"></div></div></div><div style="position: absolute; left: 1px; top: 1px; border-radius: 2px; width: 95px; height: 38px;background-color: rgb(199, 75, 75);"></div>' +
+									'');
+						//jQuery(".gm-style-iw").next().css('display', 'none');
+					});
+				}
+			}
+			setInfoWindowToMarkers(infoArray, markers, map);
+			var clusterStyles = [{
+				textColor: '#fff',
+				fontFamily: 'Roboto',
+				textSize: 18,
+				width: 64,
+				height: 64,
+				url: 'assets/images/cluster-image-back.png'
+			}
+			];
+			var mcOptions = {
+				gridSize: 50,
+				styles: clusterStyles,
+				maxZoom: 15
+			};
+			var mc = new MarkerClusterer(map, markers, mcOptions);
+			map.fitBounds(bounds);
+			map.panToBounds(bounds);
+		}
+		//   jQuery(window).resize(function(){
+		//      initialize();
+		//   });
+	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH1xmBKAuW8tHc0BkYZOIHku_txc-UrI&callback=initialize')
+	.fav-bottom
+		.favourites-block
+			.container
+				.row.favourites-block-inner
+					.toggle-block-1
+						.col-xs-3.col-sm-3.col-md-3.col-lg-3.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+							.favourites-block-inner-title.closebox
+								.open Посмотреть избранное: 3
+								.close Скрыть
+						.col-xs-5.col-sm-5.col-md-5.col-lg-5.center
+							.last-added-text1 Последний добавленный:
+							.last-added-text2
+								a(href='') Дом "Лебединое озеро"
+						.col-xs-3.col-sm-3.col-md-3.col-lg-3
+							button.favourites-btn-send Отправить всё на email
+					.toggle-block-2
+						.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.center
+							input.sendtoemailtext(type='text', name='email', value='', placeholder='Введите ваш Email')
+							button.sendtoemail Отправить
+							.cancel-btn Отмена
+		.favourites-open-box
+			.container
+				.row
+					.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+						.slider-arrow-left
+							i.fa.fa-chevron-left
+						.slider-arrow-right
+							i.fa.fa-chevron-right
+				.row
+					.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+						.favourites-open-box_title
+							| В избранном 3
+				.row
+					.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon.favourite
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/house2.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon.favourite
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/house2.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon.favourite
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/house2.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
+						a(href='#')
+							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
+								span.house-item
+									span.img-block
+										span.img-block-icon.favourite
+											i.fa.fa-star-o
+										span.img-block-price
+											span.opacity-layer
+											span.price-layer 49 900 000 руб
+										img(src='assets/images/testimage/house2.png')
+									span.house-item_textblock
+										span.direction Рублевское шоссе
+										span.name Лебединое озеро
+										span.params1
+											span.land-square 25 сот
+											span.home-suare 510 кв. м.
+										span.params2
+											span.dop  с мебелью
