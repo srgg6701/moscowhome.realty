@@ -1,12 +1,36 @@
+mixin house(contents)
+	a(href="javascript:void(0)")
+		span.col-md-3.col-lg-3
+			span.house-item
+				span.img-block
+					span.img-block-icon
+						i.fa.fa-star-o
+					span.img-block-price
+						span.opacity-layer
+						span.price-layer #{contents[1][0]} руб
+					img(src='assets/images/testimage/' + contents[1][1] )
+				span.house-item_textblock
+					span.direction #{contents[0]}
+					span.price-val.hidden-mobile
+						i.fa.fa-dollar
+						i.fa.fa-euro
+						i.fa.fa-ruble
+					span.name #{contents[1][2]}
+					span.params1
+						span.land-square #{contents[1][3]}
+						span.home-suare #{contents[1][4]}.
+					span.params2
+						span.dop  #{contents[1][5]}
+						if contents[1][6]
+							span.type-estate #{contents[1][6]}
 extends ./layout
 block vars
 	-var bodyindex="filtered"
 block contents
 	hr.top-hr
-	.map
+	.map.hidden-mobile
 		#mapcatalog
-			// <img src="assets/images/testimage/maps.png" style="width: 100%; height: 630px;">
-	.container
+	.container.hidden-mobile
 		.row
 			.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
 				.filter-top-block
@@ -94,18 +118,7 @@ block contents
 												input.from(type='text', name='from', placeholder='от')
 												input.to(type='text', name='to', placeholder='до')
 												.filter-select-box.right.price
-													// <div class="dropdown">
-													// <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-													// <span class="caret"></span>
-													// </button>
-													// <ul class="dropdown-menu" aria-labelledby="dLabel">
-													// <li><i class="fa fa-rub"></i></li>
-													// <li><i class="fa fa-dollar"></i></li>
-													// <li><i class="fa fa-euro"></i></li>
-													// </ul>
-													// </div>
 													.select-own-box
-														// <div class="selected-box">
 														.select-selected-text
 															i.fa.fa-rub
 														i.arrow.fa.fa-chevron-down
@@ -118,14 +131,6 @@ block contents
 																i.fa.fa-euro
 															// </div>
 														input(type='hidden', name='select-own-val', value='0')
-													// <select class="filter-select " id="dropdownselect">
-													// <option><i class="fa fa-rub"></i>РУБ</option>
-													// <option><i class="fa fa-dollar"></i>ДОЛ</option>
-													// <option><i class="fa fa-euro"></i>ЕВР</option>
-													// </select>
-									// <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 price-box">
-									//
-									// </div>
 									.col-xs-5.col-sm-5.col-md-5.col-lg-5.distance-box
 										.distance-box-inner
 											.label-filter от МКАД, км
@@ -152,19 +157,6 @@ block contents
 										.filter-item Можайское
 										.filter-item Новорижское
 										.filter-item Рублево-Успенское
-							// <div class="row marginleft0 marginright0">
-							// <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 parameters-block4">
-							// <div class="label-filter">Тип дома</div>
-							// <div class="field-filter">
-							// <div class="filter-item active">Панельный</div>
-							// <div class="filter-item">Блочный</div>
-							// <div class="filter-item active">Кирпичный</div>
-							// <div class="filter-item">Деревянный</div>
-							// <div class="filter-item">Монолитный</div>
-							// <div class="filter-item">Любой</div>
-							// </div>
-							// </div>
-							// </div>
 							.row.marginleft0.marginright0
 								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
 									.distance-box-inner
@@ -193,41 +185,12 @@ block contents
 													option Любое
 													option В отличном
 													option В хорошем
-								// <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 parameters-block2 square-box">
-								// <div class="distance-box-inner">
-								// <div class="label-filter">Площадь участка, <span style="color: #949494">м<sup>2</sup></span></div>
-								// <div class="field-filter">
-								// <input type="text" name="square-from" class="from" placeholder="от">
-								// <input type="text" name="square-to" class="to" placeholder="до">
-								// </div>
-								// </div>
-								// </div>
 							.row.marginleft0.marginright0
 								.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block2.square-box
 									.squaredFour
 										input#squaredFourInput1(type='checkbox', value='None', name='check')
 										label(for='squaredFourInput1')
 										span.inlabel Охрана
-							// <div class="row marginleft0 marginright0">
-							// <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 parameters-block2 square-box">
-							// <div class="distance-box-inner">
-							// <div class="label-filter">Площадь дома, <span style="color: #949494">м<sup>2</sup></span></div>
-							// <div class="field-filter">
-							// <input type="text" name="square-from" class="from" placeholder="от">
-							// <input type="text" name="square-to" class="to" placeholder="до">
-							// </div>
-							// </div>
-							// </div>
-							// <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 parameters-block2 square-box">
-							// <div class="distance-box-inner">
-							// <div class="label-filter">Площадь участка, <span style="color: #949494">м<sup>2</sup></span></div>
-							// <div class="field-filter">
-							// <input type="text" name="square-from" class="from" placeholder="от">
-							// <input type="text" name="square-to" class="to" placeholder="до">
-							// </div>
-							// </div>
-							// </div>
-							// </div>
 						.row
 							.col-xs-12.col-sm-12.col-md-12.col-lg-12.parameters-block3.floatright
 								.addingsettings
@@ -698,249 +661,52 @@ block contents
 										| Расширенный поиск
 									.filter-btn Показать объекты
 	.container
+		#filter-primary.hidden-desktop
+			.selects-box
+				.pull-left
+					div.inner
+						p Что ищем:
+						select(name="select-filter-primary")
+							option(value="flat") Квартира
+							option(value="townhouse") Таунхауз
+							option(value="house") Дом
+							option(value="land") Участок
+						.pointer ^
+				.pull-left
+					div.inner
+						p Тип сделки:
+						select(name="select-deal-type")
+							option(value="selling") Продажа
+							option(value="leasing") Аренда
+						.pointer ^
+
+		#filtered.hidden-desktop Подобрано
+			span 450
 		.main-block
-			.row
+			.row.hidden-mobile
 				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
 					.module-title.title-inner-page.center.catalogs
 						| Подобрано
 						.catalog-search-title 72
-			.row
+			.row.hidden-mobile
 				.col-xs-12.col-sm-12.col-md-12.col-lg-12
 					ul.finder-menu.catalog-finder-menu
 						li.active По цене
 						li По площади
 						li По площади участка
 						li По удаленности
+			.filter-block
+				.row
+					.col-md-12.col-lg-12
+						ul.finder-menu
+							li.active По цене
+							li По площади
 			.row
-				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10
-					.row
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.price-val
-											i.fa.fa-dollar
-											i.fa.fa-euro
-											i.fa.fa-ruble
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-											span.type-estate Аренда
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.price-val
-											i.fa.fa-dollar
-											i.fa.fa-euro
-											i.fa.fa-ruble
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-											span.type-estate Продажа
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-						a(href='#')
-							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-								span.house-item
-									span.img-block
-										span.img-block-icon
-											i.fa.fa-star-o
-										span.img-block-price
-											span.opacity-layer
-											span.price-layer 49 900 000 руб
-										img(src='assets/images/testimage/art3.png')
-									span.house-item_textblock
-										span.direction Рублевское шоссе
-										span.name Лебединое озеро
-										span.params1
-											span.land-square 25 сот
-											span.home-suare 510 кв. м.
-										span.params2
-											span.dop  с мебелью
-					.row
+				.col-md-offset-1.col-lg-offset-1.col-md-10.col-lg-10
+					#realty-objects.row
+						each contents  in [ ["Рублёвское шоссе",[ "49 900 000", "art1.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью", "Аренда" ]], ["Болотово", [ "50000", "art2.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью", "Аренда" ]], ["Рублёвское шоссе",[ "49 900 000", "art3.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью", "Аренда" ]], ["Болотово", [ "50000", "art4.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью", "Аренда" ]], ["Рублёвское шоссе",[ "49 900 000", "art5.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью", "Аренда" ]], ["Болотово", [ "50000", "art6.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью", "Аренда" ]], ["Рублёвское шоссе",[ "49 900 000", "house1.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью", "Аренда" ]], ["Болотово", [ "50000", "house2.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью", "Аренда" ]], ["Рублёвское шоссе",[ "49 900 000", "house3.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью", "Аренда" ]], ["Болотово", [ "50000", "timage1.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью", "Аренда" ]], ["Рублёвское шоссе",[ "49 900 000", "timage2.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью", "Аренда" ]], ["Болотово", [ "50000", "poselok2.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью", "Аренда" ]] ]
+							+house(contents)
+					.row.hidden-mobile
 						.col-xs-12.col-sm-12.col-md-12.col-lg-12.inc-modules-margin
 							.inc-module
 								.inc-module-img
@@ -973,99 +739,14 @@ block contents
 															.after-btn
 																a.module-button.inverse(href='') Посмотреть дом
 										.slider-block-opacity
-					.row
+					.row.hidden-mobile
 						.col-xs-12.col-sm-12.col-md-12.col-lg-12
 							.row
-								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-										span.house-item
-											span.img-block
-												span.img-block-icon
-													i.fa.fa-star-o
-												span.img-block-price
-													span.opacity-layer
-													span.price-layer 49 900 000 руб
-												img(src='assets/images/testimage/art3.png')
-											span.house-item_textblock
-												span.direction Рублевское шоссе
-												span.name Лебединое озеро
-												span.params1
-													span.land-square 25 сот
-													span.home-suare 510 кв. м.
-												span.params2
-													span.dop  с мебелью
-								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-										span.house-item
-											span.img-block
-												span.img-block-icon
-													i.fa.fa-star-o
-												span.img-block-price
-													span.opacity-layer
-													span.price-layer 49 900 000 руб
-												img(src='assets/images/testimage/house3.png')
-											span.house-item_textblock
-												span.direction Рублевское шоссе
-												span.name Лебединое озеро
-												span.params1
-													span.land-square 25 сот
-													span.home-suare 510 кв. м.
-												span.params2
-													span.dop  с мебелью
-								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-										span.house-item
-											span.img-block
-												span.img-block-icon
-													i.fa.fa-star-o
-												span.img-block-price
-													span.opacity-layer
-													span.price-layer 49 900 000 руб
-												img(src='assets/images/testimage/house2.png')
-											span.house-item_textblock
-												span.direction Рублевское шоссе
-												span.name Лебединое озеро
-												span.params1
-													span.land-square 25 сот
-													span.home-suare 510 кв. м.
-												span.params2
-													span.dop  с мебелью
-								a(href='#')
-									span.col-xs-3.col-sm-3.col-md-3.col-lg-3
-										span.house-item
-											span.img-block
-												span.img-block-icon
-													i.fa.fa-star-o
-												span.img-block-price
-													span.opacity-layer
-													span.price-layer 49 900 000 руб
-												img(src='assets/images/testimage/house2.png')
-											span.house-item_textblock
-												span.direction Рублевское шоссе
-												span.name Лебединое озеро
-												span.params1
-													span.land-square 25 сот
-													span.home-suare 510 кв. м.
-												span.params2
-													span.dop  с мебелью
+								each contents  in [ ["Рублёвское шоссе",[ "49 900 000", "art3.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью" ]], ["Болотово", [ "50000", "art3.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью" ]], ["Рублёвское шоссе",[ "49 900 000", "art3.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью" ]], ["Болотово", [ "50000", "art3.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью" ]] ]
+									+house(contents)
 					.loadingpage
 						.icon
-					// <div class="pagination catalogs-pagination">
-					// <div class="row">
-					// <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
-					// <ul>
-					// <li class="prev"><a href=""><i class="fa fa-chevron-left"></i>Назад</a></li>
-					// <li class="active"><a href="">1</a></li>
-					// <li><a href="">2</a></li>
-					// <li><a href="">3</a></li>
-					// <li class="between"><a href="">&mdash;</a></li>
-					// <li><a href="">46</a></li>
-					// <li class="next"><a href="">Следующая <i class="fa fa-chevron-right"></i></a></li>
-					// </ul>
-					// </div>
-					// </div>
-					// </div>
-	.inc-module.bigslider-outer
+	.inc-module.bigslider-outer.hidden-mobile
 		.inc-module.bigslide
 			.big-slide-container
 				.container
@@ -1085,9 +766,6 @@ block contents
 												input(type='text', placeholder='Имя')
 											.col-xs-4.col-sm-4.col-md-4.col-lg-4
 												input(type='text', placeholder='Телефон')
-											// <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-											// <input type="text" placeholder="Компания">
-											// </div>
 											.col-xs-4.col-sm-4.col-md-4.col-lg-4
 												input(type='text', placeholder='Email')
 										.row
@@ -1096,7 +774,7 @@ block contents
 			.inc-module-img
 				img(src='assets/images/testimage/big-slider.png')
 				.slider-block-opacity
-	.elite-block.catalog
+	.elite-block.catalog.hidden-mobile
 		.container
 			.row
 				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-10.col-sm-10.col-md-10.col-lg-10.elite-block-inner
@@ -1116,26 +794,24 @@ block contents
 								img(src='assets/images/icon-third.png')
 							.elite-block-inner_text4 10 00 клиентов
 							.elite-block-inner_text5 н системой умный дом. Полностью меблирован мебелью известных итальянских мар
-					// </div>
-					// </div>
-	//.footer-block
-		.container
-			.row.top-block
-				.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1.col-xs-4.col-sm-4.col-md-4.col-lg-4
-					a(href='')
-						img(src='assets/images/logo.png')
-				.col-xs-2.col-sm-2.col-md-2.col-lg-2.padding0
-					.top-block_info-1 +7 (495) 133 33 88
-					.top-block_info-2 Ежедневно с 9:00 до 22:00
-				.col-xs-4.col-sm-4.col-md-4.col-lg-4.top-block_menu-block.paddingright0
-					.top-block_menu
-						ul
-							li
-								a(href='') Городская
-							li
-								a(href='') Загородная
-							li
-								a.marginright0(href='') Коммерческая
+	include filters/form-layout
+	#filter-favorites.container
+		h4 В избранном
+			span 0
+		#favorites-container
+	#filter-manager.container
+		-var sendToEmail = "Отправить на емэйл"
+		form
+			h4 #{sendToEmail}
+			input(type="email", placeholder="Адрес Email")
+			button #{sendToEmail}
+		.show-filters(data-action="show-filters") Показать фильтры
+		.send-by-email.hidden
+			.pull-left(data-action="send-by-email") #{sendToEmail}
+			.pull-left(data-action="hide") Скрыть
+		span#lodestar.img-block-icon
+			.cnt(data-action="show-favorites")
+			i.fa.fa-star-o(data-action="show-favorites")
 block afterFooter
 	script(type='text/javascript').
 		var map;
@@ -1171,58 +847,6 @@ block afterFooter
 			var map = new google.maps.Map(document.getElementById('mapcatalog'),mapOptions);
 			map.setOptions({styles: styles});
 			var bounds = new google.maps.LatLngBounds();
-			//      var marker = new google.maps.Marker({
-			//        position: new google.maps.LatLng(55.765045, 37.365775),
-			//        //map: map,
-			//        icon: 'assets/images/map-house.png'
-			//      });
-			//
-			//      bounds.extend(new google.maps.LatLng(55.765045, 37.365775));
-			//
-			//      var marker2 = new google.maps.Marker({
-			//        position: new google.maps.LatLng(55.765045, 37.375775),
-			//        //map: map,
-			//        icon: 'assets/images/map-house.png'
-			//      });
-			//
-			//      bounds.extend(new google.maps.LatLng(55.765045, 37.375775));
-			//
-			//
-			//      var marker3 = new google.maps.Marker({
-			//        position: new google.maps.LatLng(55.765045, 37.376865),
-			//        //map: map,
-			//        icon: 'assets/images/map-house.png'
-			//      });
-			//
-			//      bounds.extend(new google.maps.LatLng(55.765045, 37.376865));
-			//
-			//      var marker4 = new google.maps.Marker({
-			//        position: new google.maps.LatLng(55.741894, 37.279591),
-			//        //map: map,
-			//        icon: 'assets/images/map-house.png'
-			//      });
-			//
-			//      bounds.extend(new google.maps.LatLng(55.741894, 37.279591));
-			//
-			//
-			//      var marker5 = new google.maps.Marker({
-			//        position: new google.maps.LatLng(55.773400, 37.253307),
-			//        //map: map,
-			//        icon: 'assets/images/map-house.png'
-			//      });
-			//
-			//      bounds.extend(new google.maps.LatLng(55.773400, 37.253307));
-			//
-			//      var marker6 = new google.maps.Marker({
-			//        position: new google.maps.LatLng(55.775068, 37.246339),
-			//        //map: map,
-			//        icon: 'assets/images/map-house.png'
-			//
-			//      });
-			//
-			//      bounds.extend(new google.maps.LatLng(55.775068, 37.246339));
-			//
-			//var markers = [{position: 55.765045, 37.365775},{}];
 			var markersPointer = [
 				[55.765045, 37.365775],
 				[55.765045, 37.375775],
@@ -1291,7 +915,7 @@ block afterFooter
 		//      initialize();
 		//   });
 	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH1xmBKAuW8tHc0BkYZOIHku_txc-UrI&callback=initialize')
-	.fav-bottom
+	.fav-bottom.hidden-mobile
 		.favourites-block
 			.container
 				.row.favourites-block-inner
@@ -1325,7 +949,9 @@ block afterFooter
 							| В избранном 3
 				.row
 					.col-xs-10.col-sm-10.col-md-10.col-lg-10.col-xs-offset-1.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
-						a(href='#')
+						each contents  in [ ["Рублёвское шоссе",[ "49 900 000", "art3.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью" ]], ["Болотово", [ "50000", "art3.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью" ]], ["Рублёвское шоссе",[ "49 900 000", "art3.png", "Лебединое озеро", "25 сот", "510 кв. м", "с мебелью" ]], ["Болотово", [ "50000", "art3.png", "Трясинное",  "53 сот", "460 кв. м", "с мебелью" ]] ]
+							+house(contents)
+						//a(href='#')
 							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
 								span.house-item
 									span.img-block
@@ -1343,7 +969,7 @@ block afterFooter
 											span.home-suare 510 кв. м.
 										span.params2
 											span.dop  с мебелью
-						a(href='#')
+						//a(href='#')
 							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
 								span.house-item
 									span.img-block
@@ -1361,7 +987,7 @@ block afterFooter
 											span.home-suare 510 кв. м.
 										span.params2
 											span.dop  с мебелью
-						a(href='#')
+						//a(href='#')
 							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
 								span.house-item
 									span.img-block
@@ -1379,7 +1005,7 @@ block afterFooter
 											span.home-suare 510 кв. м.
 										span.params2
 											span.dop  с мебелью
-						a(href='#')
+						//a(href='#')
 							span.col-xs-3.col-sm-3.col-md-3.col-lg-3
 								span.house-item
 									span.img-block
