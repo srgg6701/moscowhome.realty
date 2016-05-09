@@ -45,6 +45,12 @@
 
 @media (max-width: 969px) {
 
+    .opacity-layer{
+        bottom: -60px !important;
+        min-height: 110px;
+        z-index: 0 !important;
+    }
+
     .main-block ul.finder-menu li:first-child{
         margin-right: 10px;
     }
@@ -689,11 +695,6 @@
         .house-item_textblock
             .params2 {
         float: left;
-    }
-
-    #body-poselok .opacity-layer,
-    #body-filtered .opacity-layer {
-        background: transparent;
     }
 
     #body-poselok .topbottompagepadding,
